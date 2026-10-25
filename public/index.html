@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Jardín Malva · Vivero boutique en San Pedro de la Paz</title>
+<meta name="description" content="Vivero boutique en San Pedro de la Paz. Plantas de interior, exterior y de colección. Pet friendly. Ing. Ernesto Pinto Lagarrigue 793.">
+<meta name="theme-color" content="#151714">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:title" content="Jardín Malva · Vivero boutique">
+<meta property="og:description" content="Cultivar, cuidar y vivir más lento. Plantas de interior, exterior y de colección en San Pedro de la Paz. Pet friendly.">
+<meta property="og:url" content="https://jardinmalva.cl/">
+<meta property="og:image" content="https://jardinmalva.cl/assets/og.jpg">
+<link rel="canonical" href="https://jardinmalva.cl/">
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"GardenStore","name":"Jardín Malva","description":"Vivero boutique. Plantas de interior, exterior y de colección. Pet friendly.","slogan":"Cultivar, cuidar y vivir más lento","address":{"@type":"PostalAddress","streetAddress":"Ing. Ernesto Pinto Lagarrigue 793","addressLocality":"San Pedro de la Paz","addressRegion":"Biobío","postalCode":"4130642","addressCountry":"CL"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:30","closes":"18:30"}],"sameAs":["https://www.instagram.com/jardin.malva/"]}
+</script>
+<link rel="preload" href="assets/fonts/marcellus.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jost.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:"Marcellus";src:url(assets/fonts/marcellus.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Jost";src:url(assets/fonts/jost.woff2) format("woff2");font-weight:400 500;font-style:normal;font-display:swap}
+@font-face{font-family:"Parisienne";src:url(assets/fonts/parisienne.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
+/* Layout: fachada negra de zinc arriba; bandas crema y verde bosque alternas; el arco del invernadero como marco recurrente de fotos y vídeos. */
+:root{
+  --negro:#151714; --negro-2:#1e211d; --bosque:#25392d; --bosque-2:#2f4739;
+  --malva:#c7a9dc; --malva-osc:#6f5189; --rosa:#efc7d0;
+  --crema:#f4eee3; --crema-2:#e8dfcf; --tinta:#1b231d; --tinta-2:#4c5a4f; --salvia:#b9c6b4;
+  --f-display:"Marcellus","Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --f-body:"Jost","Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;
+  --f-script:"Parisienne","Snell Roundhand","Apple Chancery","Brush Script MT",cursive;
+  --r:14px; --ease:cubic-bezier(.2,.7,.2,1);
+  color-scheme:light;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--crema);color:var(--tinta);font:400 1.0625rem/1.6 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:clip}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--negro)}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--malva);outline-offset:3px;border-radius:6px}
+.wrap{width:100%;max-width:1160px;margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(64px,10vw,120px)}
+.negro{background:var(--negro);color:var(--crema)}
+.bosque{background:var(--bosque);color:var(--crema)}
+.crema{background:var(--crema);color:var(--tinta)}
+.crema :focus-visible{outline-color:var(--malva-osc)}
+[hidden]{display:none!important}
+
+/* Tipografía */
+.eyebrow{margin:0;text-wrap:balance;font:500 .78rem/1.3 var(--f-body);letter-spacing:.22em;text-transform:uppercase;color:var(--malva)}
+.crema .eyebrow{color:var(--malva-osc)}
+.h1,.h2{font-family:var(--f-display);font-weight:400;text-transform:uppercase;text-wrap:balance;margin:0}
+.h1{font-size:clamp(3.1rem,9.4vw,7rem);line-height:.92;letter-spacing:.035em}
+.h2{font-size:clamp(2.1rem,5.2vw,3.6rem);line-height:1;letter-spacing:.05em}
+.script{margin:0;font-family:var(--f-script);font-size:clamp(1.7rem,4.2vw,2.6rem);line-height:1.15;color:var(--malva)}
+.crema .script{color:var(--malva-osc)}
+h3{margin:0;font:500 1.12rem/1.3 var(--f-body);letter-spacing:.01em}
+p{margin:0}
+.muted{color:var(--salvia)}
+.crema .muted{color:var(--tinta-2)}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:50px;padding:0 1.35em;border-radius:999px;border:1px solid transparent;font:500 1rem/1 var(--f-body);text-decoration:none;cursor:pointer;transition:transform .25s var(--ease),background-color .25s,color .25s,border-color .25s}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:1.2em;height:1.2em;flex:none}
+.btn small{font-size:.78em;opacity:.75;font-weight:400}
+.btn-malva{background:var(--malva);color:var(--negro)}
+.btn-malva:hover{background:var(--rosa)}
+.btn-line{border-color:rgba(244,238,227,.4);color:var(--crema);background:transparent}
+.btn-line:hover{border-color:var(--crema)}
+.btn-bosque{background:var(--bosque);color:var(--crema)}
+.btn-bosque:hover{background:var(--bosque-2)}
+.btn-line-d{border-color:rgba(27,35,29,.35);color:var(--tinta);background:transparent}
+.btn-line-d:hover{border-color:var(--tinta)}
+.btn-crema{background:var(--crema);color:var(--tinta)}
+.btn-crema:hover{background:#fff}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+
+/* Cabecera */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(21,23,20,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--crema);border-bottom:1px solid rgba(244,238,227,.08)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:400 1.05rem/1 var(--f-display);letter-spacing:.16em;text-transform:uppercase;white-space:nowrap}
+.brand img{width:40px;height:40px}
+.nav{display:none;gap:28px}
+.nav a{text-decoration:none;font-size:.95rem;color:rgba(244,238,227,.82);transition:color .2s}
+.nav a:hover{color:var(--malva)}
+.top .btn{min-height:40px;padding:0 1em;font-size:.92rem}
+@media (min-width:880px){.nav{display:flex}}
+@media (max-width:359px){.brand span{display:none}}
+
+/* Hero */
+.hero{position:relative;color:var(--crema);background:repeating-linear-gradient(90deg,rgba(255,255,255,.028) 0 1px,transparent 1px 15px),var(--negro);padding-block:clamp(40px,7vw,88px) clamp(64px,9vw,112px);overflow:hidden}
+.hero-grid{display:grid;gap:clamp(40px,6vw,72px);align-items:center}
+.hero-copy{display:grid;gap:22px;min-width:0}
+.h1 span{display:inline-block;animation:rise 1s var(--ease) both}
+.h1 span+span{animation-delay:.12s}
+.lema{font-family:var(--f-script);font-size:clamp(1.9rem,4.6vw,3rem);line-height:1.1;color:var(--malva);margin-top:-6px}
+.lema span{display:inline-block;padding-right:.2em;animation:write 1.8s .55s ease-out both}
+.lead{max-width:34ch;font-size:clamp(1.08rem,1.6vw,1.22rem);color:rgba(244,238,227,.86)}
+.facts{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:.95rem;color:var(--salvia)}
+.facts li{display:flex;align-items:center;gap:8px}
+.facts svg{width:18px;height:18px;color:var(--malva);flex:none}
+.hero-media{position:relative;margin:0;justify-self:center;width:min(100%,440px);aspect-ratio:1/1}
+.arch{position:relative;overflow:hidden;aspect-ratio:9/15;border-radius:999px 999px var(--r) var(--r);outline:1px solid rgba(199,169,220,.55);outline-offset:10px;background:var(--negro-2);max-width:100%}
+.ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.ring .spin{transform-origin:200px 200px;animation:spin 48s linear infinite}
+.logo-pf{position:absolute;left:10%;top:10%;width:80%;height:80%;border-radius:50%;box-shadow:0 28px 60px rgba(0,0,0,.5);animation:settle 1.4s .15s var(--ease) both}
+@media (min-width:860px){.hero-grid{grid-template-columns:1.2fr .8fr}.hero-media{justify-self:end}}
+@media (max-width:859px){.hero-media{width:min(88%,360px)}}
+
+/* Clips de vídeo */
+.clip img.poster,.clip video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.clip video{opacity:0;transition:opacity .9s ease}
+.clip.is-playing video{opacity:1}
+.clip .play{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:2;min-height:44px;background:rgba(21,23,20,.72);color:var(--crema);border:1px solid rgba(244,238,227,.3);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);white-space:nowrap}
+.clip .play:hover{transform:translateX(-50%) translateY(-2px)}
+.clip .pause{position:absolute;right:14px;bottom:14px;z-index:2;width:40px;height:40px;border-radius:50%;border:1px solid rgba(244,238,227,.35);background:rgba(21,23,20,.6);color:var(--crema);display:grid;place-items:center;cursor:pointer;padding:0}
+.clip .pause svg{width:16px;height:16px}
+
+/* El vivero */
+.sec-head{display:grid;gap:12px;margin-bottom:clamp(36px,5vw,56px)}
+.offer{list-style:none;margin:0 0 clamp(48px,7vw,80px);padding:0;display:grid;gap:14px}
+.offer li{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;align-items:start;padding:22px;border-radius:var(--r);background:var(--crema-2)}
+.offer svg{grid-row:span 2;width:34px;height:34px;color:var(--bosque)}
+.offer p{color:var(--tinta-2);font-size:.98rem}
+@media (min-width:560px){.offer{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:980px){.offer{grid-template-columns:repeat(4,1fr)}.offer li{grid-template-columns:1fr}.offer svg{grid-row:auto;margin-bottom:10px}}
+.gallery{display:grid;gap:14px;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:12px;scrollbar-width:thin;-webkit-overflow-scrolling:touch}
+.gallery figure{margin:0;scroll-snap-align:start;min-width:0}
+.gallery img{width:100%;height:auto;aspect-ratio:3/4;object-fit:cover;border-radius:var(--r);background:var(--crema-2)}
+.gallery figure:first-child img{border-radius:999px 999px var(--r) var(--r)}
+.gallery figcaption{margin-top:10px;font-size:.92rem;color:var(--tinta-2)}
+@media (min-width:760px){.gallery{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);grid-auto-columns:auto;overflow:visible;gap:22px}}
+
+/* Pet friendly */
+.pet-grid{display:grid;gap:clamp(40px,6vw,80px);align-items:center}
+.pet-media{justify-self:center;width:min(86%,360px)}
+.pet-copy{display:grid;gap:20px;min-width:0}
+.pet-copy>p:not(.eyebrow):not(.script){max-width:40ch;color:rgba(244,238,227,.86)}
+.petunia{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:end;margin-top:52px;padding:18px 22px 18px 12px;border-radius:var(--r);background:var(--bosque-2);border:1px solid rgba(244,238,227,.1)}
+.petunia img{width:116px;height:auto;margin-top:-56px;margin-bottom:-14px;animation:bob 4.5s ease-in-out infinite;filter:drop-shadow(0 12px 14px rgba(0,0,0,.25))}
+.petunia div{display:grid;gap:8px;justify-items:start;align-content:center;min-width:0}
+.petunia p{color:rgba(244,238,227,.8);font-size:.98rem}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (min-width:860px){.pet-grid{grid-template-columns:.85fr 1.15fr}.pet-media{justify-self:start}.petunia img{width:140px}}
+
+/* Visítanos */
+.visit-grid{display:grid;gap:clamp(40px,6vw,80px);align-items:center}
+.visit-photo{margin:0;justify-self:center;width:min(86%,380px)}
+.visit-photo img{width:100%;height:100%;object-fit:cover}
+.visit-photo .arch{outline-color:rgba(111,81,137,.45)}
+.visit-copy{display:grid;gap:24px;min-width:0}
+.info{margin:0;display:grid;gap:0;border-top:1px solid rgba(27,35,29,.14)}
+.info div{display:grid;grid-template-columns:minmax(110px,30%) 1fr;gap:16px;padding:16px 0;border-bottom:1px solid rgba(27,35,29,.14)}
+.info dt{font:500 .78rem/1.6 var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--malva-osc);padding-top:3px}
+.info dd{margin:0;font-size:1.06rem}
+@media (min-width:860px){.visit-grid{grid-template-columns:1.1fr .9fr}.visit-photo{order:2;justify-self:end}}
+@media (max-width:480px){.info div{grid-template-columns:1fr;gap:4px}}
+
+/* Contacto */
+.contact{list-style:none;margin:0;padding:0;border-top:1px solid rgba(244,238,227,.14)}
+.contact li{display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(244,238,227,.14)}
+.c-row{flex:1;min-width:0;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:6px 18px;padding:22px 4px;text-decoration:none}
+.c-row .ico{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--bosque);color:var(--malva);grid-row:span 2;transition:background-color .25s,color .25s}
+.c-row .ico svg{width:22px;height:22px}
+.c-label{font:500 .78rem/1.2 var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--salvia)}
+.c-value{grid-column:2;font:400 clamp(1.25rem,3.4vw,1.9rem)/1.2 var(--f-display);letter-spacing:.02em;overflow-wrap:anywhere}
+.c-row .arrow{grid-row:1/span 2;grid-column:3;width:22px;height:22px;color:var(--malva);transition:transform .25s var(--ease)}
+.c-row:hover .ico{background:var(--malva);color:var(--negro)}
+.c-row:hover .arrow{transform:translate(3px,-3px)}
+[data-wa-text]{white-space:nowrap}
+@media (max-width:480px){.c-row{gap:4px 14px}.c-row .arrow{display:none}.c-value{font-size:1.18rem}.c-row .ico{width:42px;height:42px}}
+.c-row[aria-disabled="true"]{cursor:default}
+.c-row[aria-disabled="true"] .c-value{color:var(--salvia);font-size:1.1rem;font-family:var(--f-body)}
+.c-row[aria-disabled="true"] .arrow{display:none}
+.copy{flex:none;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(244,238,227,.25);background:transparent;color:var(--crema);font:500 .85rem/1 var(--f-body);cursor:pointer}
+.copy:hover{border-color:var(--malva);color:var(--malva)}
+.contact-head{display:grid;gap:12px;margin-bottom:36px}
+.contact-head .muted{max-width:44ch}
+
+/* Pie */
+.foot{background:var(--negro-2);color:var(--salvia);padding-block:44px 104px;font-size:.92rem}
+.foot .wrap{display:grid;gap:18px;justify-items:start}
+.foot .brand{color:var(--crema)}
+.foot .script{font-size:1.6rem}
+.foot a{color:var(--crema)}
+
+/* Botón flotante WhatsApp */
+.fab{position:fixed;z-index:25;right:calc(16px + env(safe-area-inset-right,0px));bottom:calc(16px + env(safe-area-inset-bottom,0px));width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:var(--malva);color:var(--negro);box-shadow:0 10px 30px rgba(0,0,0,.28);transition:transform .3s var(--ease),opacity .3s}
+.fab svg{width:28px;height:28px}
+.fab:hover{transform:scale(1.06)}
+.js .fab{opacity:0;transform:translateY(16px);pointer-events:none}
+.js .fab.show{opacity:1;transform:none;pointer-events:auto}
+
+/* Animaciones */
+@keyframes rise{from{opacity:0;transform:translateY(.35em)}to{opacity:1;transform:none}}
+@keyframes write{from{clip-path:inset(-10% 100% -10% 0)}to{clip-path:inset(-10% 0 -10% 0)}}
+@keyframes settle{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+@keyframes reveal{from{opacity:.15;transform:translateY(28px)}to{opacity:1;transform:none}}
+@supports (animation-timeline:view()){
+  @media (prefers-reduced-motion:no-preference){
+    .reveal{animation:reveal linear both;animation-timeline:view();animation-range:entry 0% entry 180px}
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio" aria-label="Jardín Malva, inicio"><img src="assets/logo-128.webp" width="40" height="40" alt=""><span>Jardín Malva</span></a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#vivero">El vivero</a>
+      <a href="#pet">Pet friendly</a>
+      <a href="#visita">Visítanos</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a class="btn btn-malva" data-wa href="https://www.instagram.com/jardin.malva/" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.2 8.6c.2-.5.5-.6.8-.6h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .5-.1.6l-.5.6c.4.9 1.2 1.7 2.1 2.1l.6-.5c.2-.2.4-.2.6-.1l1.5.6c.2.1.4.3.4.5v.5c0 .3-.1.6-.6.8-.6.3-1.7.4-3.4-.6a8 8 0 0 1-2.6-2.6c-1-1.7-.9-2.8-.6-3.4Z"/></svg>
+      <span>Escríbenos</span>
+    </a>
+  </div>
+</header>
+
+<main id="inicio">
+  <section class="hero" aria-labelledby="titulo">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Vivero boutique · San Pedro de la Paz</p>
+        <h1 class="h1" id="titulo"><span>Jardín</span> <span>Malva</span></h1>
+        <p class="lema"><span>cultivar, cuidar y vivir más lento</span></p>
+        <p class="lead">Plantas de interior, exterior y de colección, en un vivero pensado para recorrer con calma. Y con tu perro.</p>
+        <div class="ctas">
+          <a class="btn btn-malva" data-wa href="https://www.instagram.com/jardin.malva/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.2 8.6c.2-.5.5-.6.8-.6h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .5-.1.6l-.5.6c.4.9 1.2 1.7 2.1 2.1l.6-.5c.2-.2.4-.2.6-.1l1.5.6c.2.1.4.3.4.5v.5c0 .3-.1.6-.6.8-.6.3-1.7.4-3.4-.6a8 8 0 0 1-2.6-2.6c-1-1.7-.9-2.8-.6-3.4Z"/></svg>
+            Escríbenos por WhatsApp
+          </a>
+          <a class="btn btn-line" data-maps href="https://www.google.com/maps/search/?api=1&amp;query=Jard%C3%ADn%20Malva%2C%20Ernesto%20Pinto%20Lagarrigue%20793%2C%20San%20Pedro%20de%20la%20Paz" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Cómo llegar
+          </a>
+        </div>
+        <ul class="facts">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span data-horario>Lunes a sábado · 9:30 a 18:30</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>Ernesto Pinto Lagarrigue 793</li>
+        </ul>
+      </div>
+
+      <figure class="hero-media">
+        <svg class="ring" viewBox="0 0 400 400" aria-hidden="true">
+          <defs><path id="anillo" d="M200,200 m-186,0 a186,186 0 1,1 372,0 a186,186 0 1,1 -372,0"/></defs>
+          <circle cx="200" cy="200" r="172" fill="none" stroke="#c7a9dc" stroke-opacity=".4"/>
+          <g class="spin"><text font-family="Marcellus, Georgia, serif" font-size="14.5" fill="#c7a9dc" textLength="1150" lengthAdjust="spacing"><textPath href="#anillo">VEN CON TU PERRO · PET FRIENDLY · VIVERO BOUTIQUE · SAN PEDRO DE LA PAZ ·</textPath></text></g>
+        </svg>
+        <img class="logo-pf" src="assets/logo-petfriendly-360.webp" srcset="assets/logo-petfriendly-360.webp 360w, assets/logo-petfriendly-640.webp 640w" sizes="(min-width:860px) 352px, 70vw" width="360" height="360" alt="Logo pet friendly de Jardín Malva: un westie blanco junto a la flor malva, con el texto Jardín Malva, vivero boutique" fetchpriority="high" decoding="async">
+      </figure>
+    </div>
+  </section>
+
+  <section id="vivero" class="band crema" aria-labelledby="t-vivero">
+    <div class="wrap">
+      <header class="sec-head reveal">
+        <p class="eyebrow">El vivero</p>
+        <h2 class="h2" id="t-vivero">Lo que encontrarás</h2>
+        <p class="script">pasa a vernos</p>
+      </header>
+
+      <ul class="offer">
+        <li class="reveal">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 29V15"/><path d="M16 17c-6 0-10-4-10-11 7 0 10 4 10 11Z"/><path d="M16 15c0-6 3-10 10-10 0 7-4 10-10 10Z"/><path d="M10 29h12"/></svg>
+          <h3>Plantas de interior</h3>
+          <p>Para cada rincón de la casa, con mucha o poca luz.</p>
+        </li>
+        <li class="reveal">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="16" cy="9" r="4"/><path d="M16 3v1M16 14v1M10 9H9M23 9h-1M11.8 4.8l.7.7M19.5 12.5l.7.7M11.8 13.2l.7-.7M19.5 5.5l.7-.7"/><path d="M5 29c0-5 4-8 11-8s11 3 11 8"/><path d="M16 21v8"/></svg>
+          <h3>Plantas de exterior</h3>
+          <p>Para tu jardín, tu terraza o ese balcón que pide verde.</p>
+        </li>
+        <li class="reveal">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 4c3 4 3 8 0 12-3-4-3-8 0-12Z"/><path d="M16 16c4-2 8-1 10 2-4 2-8 1-10-2Z"/><path d="M16 16c-4-2-8-1-10 2 4 2 8 1 10-2Z"/><path d="M9 22h14l-2 7H11Z"/></svg>
+          <h3>De colección</h3>
+          <p>Especies especiales para quienes ya tienen la mano verde.</p>
+        </li>
+        <li class="reveal">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h22v14H14l-6 5v-5H5Z"/><path d="M11 12.5h10M11 16h6"/></svg>
+          <h3>Consejo sin tecnicismos</h3>
+          <p>Te contamos cómo cuidarla antes de que te la lleves.</p>
+        </li>
+      </ul>
+
+      <div class="gallery reveal" role="list" aria-label="Fotos del vivero">
+        <figure role="listitem"><img src="assets/fachada-480.webp" srcset="assets/fachada-480.webp 480w, assets/fachada-640.webp 640w, assets/fachada-800.webp 800w" sizes="(min-width:760px) 360px, 72vw" width="480" height="640" loading="lazy" decoding="async" alt="Fachada negra de Jardín Malva con la flor malva y el nombre en la reja"><figcaption>La fachada negra con la flor malva. Ahí estamos.</figcaption></figure>
+        <figure role="listitem"><img src="assets/colgantes-480.webp" srcset="assets/colgantes-480.webp 480w, assets/colgantes-640.webp 640w, assets/colgantes-800.webp 800w" sizes="(min-width:760px) 360px, 72vw" width="480" height="640" loading="lazy" decoding="async" alt="Plantas colgantes en maceteros sobre estructuras de fierro negro"><figcaption>Colgantes bajo el techo de luz.</figcaption></figure>
+        <figure role="listitem"><img src="assets/interior-480.webp" srcset="assets/interior-480.webp 480w, assets/interior-640.webp 640w, assets/interior-800.webp 800w" sizes="(min-width:760px) 360px, 72vw" width="480" height="849" loading="lazy" decoding="async" alt="Pasillo amplio del vivero con mesones de plantas a ambos lados"><figcaption>Pasillos amplios para mirar con calma.</figcaption></figure>
+        <figure role="listitem"><img src="assets/mostrador.webp" width="464" height="832" loading="lazy" decoding="async" alt="Mesón de atención del vivero con plantas colgando del techo de madera"><figcaption>El mesón: pregunta lo que quieras.</figcaption></figure>
+        <figure role="listitem"><img src="assets/nave.webp" width="464" height="832" loading="lazy" decoding="async" alt="Vista general del vivero con mesones llenos de plantas"><figcaption>Mucho verde, mucha luz.</figcaption></figure>
+        <figure role="listitem"><img src="assets/vaso-480.webp" srcset="assets/vaso-480.webp 480w, assets/vaso-640.webp 640w, assets/vaso-800.webp 800w" sizes="(min-width:760px) 360px, 72vw" width="480" height="640" loading="lazy" decoding="async" alt="Vaso de vidrio con el logo de Jardín Malva, con el vivero de fondo"><figcaption>Detalles con la flor de la casa.</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="pet" class="band bosque" aria-labelledby="t-pet">
+    <div class="wrap pet-grid">
+      <div class="pet-media reveal">
+        <div class="arch clip" data-clip data-src="assets/perros.mp4">
+          <img class="poster" src="assets/perros-poster.webp" width="360" height="646" loading="lazy" decoding="async" alt="Los perros del vivero paseando entre los mesones de plantas">
+          <video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+          <button class="btn play" type="button" hidden><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>Ver a los perros <small>0,5 MB</small></button>
+          <button class="pause" type="button" aria-label="Pausar video" hidden><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+        </div>
+      </div>
+      <div class="pet-copy">
+        <p class="eyebrow reveal">Pet friendly</p>
+        <h2 class="h2 reveal" id="t-pet">Ven con tu perro</h2>
+        <p class="script reveal">aquí también es visita</p>
+        <p class="reveal">En Jardín Malva los perros son bienvenidos. Y los nuestros suelen salir a recibirlos.</p>
+        <div class="petunia reveal">
+          <img src="assets/petunia-240.webp" srcset="assets/petunia-240.webp 240w, assets/petunia-400.webp 400w" sizes="(min-width:860px) 128px, 104px" width="240" height="588" loading="lazy" decoding="async" alt="Petunia, la mascota animada de Jardín Malva: una cachorra pastor alemán con delantal verde y una flor rosada">
+          <div>
+            <h3>Ella es Petunia</h3>
+            <p>Nuestra mascota. Siempre con delantal y lista para recibirte.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visita" class="band crema" aria-labelledby="t-visita">
+    <div class="wrap visit-grid">
+      <figure class="visit-photo reveal">
+        <div class="arch"><img src="assets/fachada-480.webp" srcset="assets/fachada-480.webp 480w, assets/fachada-640.webp 640w, assets/fachada-800.webp 800w" sizes="(min-width:860px) 380px, 300px" width="480" height="640" loading="lazy" decoding="async" alt="Entrada de Jardín Malva: reja negra con el logo de la flor malva"></div>
+      </figure>
+      <div class="visit-copy">
+        <header class="sec-head reveal" style="margin:0">
+          <p class="eyebrow">Visítanos</p>
+          <h2 class="h2" id="t-visita">Te esperamos</h2>
+        </header>
+        <dl class="info reveal">
+          <div><dt>Dirección</dt><dd>Ing. Ernesto Pinto Lagarrigue 793<br>San Pedro de la Paz, Biobío</dd></div>
+          <div><dt>Horario</dt><dd data-horario>Lunes a sábado · 9:30 a 18:30</dd></div>
+          <div><dt>Cómo reconocernos</dt><dd>Busca la fachada negra con la flor malva.</dd></div>
+        </dl>
+        <div class="ctas reveal">
+          <a class="btn btn-bosque" data-maps href="https://www.google.com/maps/search/?api=1&amp;query=Jard%C3%ADn%20Malva%2C%20Ernesto%20Pinto%20Lagarrigue%20793%2C%20San%20Pedro%20de%20la%20Paz" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            Abrir en Google Maps
+          </a>
+          <a class="btn btn-line-d" href="https://waze.com/ul?q=Ernesto%20Pinto%20Lagarrigue%20793%2C%20San%20Pedro%20de%20la%20Paz&amp;navigate=yes" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 11 18-8-8 18-2-8Z"/></svg>
+            Ir con Waze
+          </a>
+          <a class="btn btn-line-d" href="https://maps.apple.com/?daddr=Ernesto%20Pinto%20Lagarrigue%20793%2C%20San%20Pedro%20de%20la%20Paz%2C%20Chile&amp;q=Jard%C3%ADn%20Malva" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2Z"/><path d="M9 4v14M15 6v14"/></svg>
+            Mapas de Apple
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="band negro" aria-labelledby="t-contacto">
+    <div class="wrap">
+      <header class="contact-head reveal">
+        <p class="eyebrow">Contacto</p>
+        <h2 class="h2" id="t-contacto">Conversemos</h2>
+        <p class="muted">Pregunta por una planta, por cómo cuidarla o por cómo llegar.</p>
+      </header>
+      <ul class="contact">
+        <li class="reveal">
+          <a class="c-row" data-wa href="https://www.instagram.com/jardin.malva/" target="_blank" rel="noopener">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.2 8.6c.2-.5.5-.6.8-.6h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .5-.1.6l-.5.6c.4.9 1.2 1.7 2.1 2.1l.6-.5c.2-.2.4-.2.6-.1l1.5.6c.2.1.4.3.4.5v.5c0 .3-.1.6-.6.8-.6.3-1.7.4-3.4-.6a8 8 0 0 1-2.6-2.6c-1-1.7-.9-2.8-.6-3.4Z"/></svg></span>
+            <span class="c-label">WhatsApp</span>
+            <span class="c-value" data-wa-text>Escríbenos</span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+          <button class="copy" type="button" data-copy="wa" hidden>Copiar</button>
+        </li>
+        <li class="reveal">
+          <a class="c-row" href="https://www.instagram.com/jardin.malva/" target="_blank" rel="noopener">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></span>
+            <span class="c-label">Instagram</span>
+            <span class="c-value">@jardin.malva</span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="c-row" data-mail aria-disabled="true">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg></span>
+            <span class="c-label">Correo</span>
+            <span class="c-value" data-mail-text>Correo por confirmar</span>
+            <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+          </a>
+          <button class="copy" type="button" data-copy="mail" hidden>Copiar</button>
+        </li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><img src="assets/logo-128.webp" width="40" height="40" alt="" loading="lazy"><span>Jardín Malva</span></a>
+    <p class="script">cultivar, cuidar y vivir más lento</p>
+    <p>Vivero boutique · Ing. Ernesto Pinto Lagarrigue 793, San Pedro de la Paz · <a href="https://www.instagram.com/jardin.malva/" target="_blank" rel="noopener">@jardin.malva</a></p>
+    <p>© <span data-year>2026</span> Jardín Malva</p>
+  </div>
+</footer>
+
+<a class="fab" data-wa href="https://www.instagram.com/jardin.malva/" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M9.2 8.6c.2-.5.5-.6.8-.6h.5c.2 0 .4.1.5.4l.6 1.5c.1.2 0 .5-.1.6l-.5.6c.4.9 1.2 1.7 2.1 2.1l.6-.5c.2-.2.4-.2.6-.1l1.5.6c.2.1.4.3.4.5v.5c0 .3-.1.6-.6.8-.6.3-1.7.4-3.4-.6a8 8 0 0 1-2.6-2.6c-1-1.7-.9-2.8-.6-3.4Z"/></svg>
+</a>
+
+<script>
+/* ============ DATOS DE CONTACTO: edita solo estas líneas ============ */
+var MALVA = {
+  whatsapp: "",   // Número con código de país, sin "+" ni espacios. Ej: "56912345678"
+  email: "",      // Ej: "contacto@jardinmalva.cl"
+  instagram: "jardin.malva",
+  horario: "Lunes a sábado · 9:30 a 18:30",
+  mensaje: "Hola Jardín Malva, vengo desde la web y quería consultar por "
+};
+/* ==================================================================== */
+(function(){
+  var d = document, root = d.documentElement;
+  root.classList.add('js');
+  var $$ = function(s){ return Array.prototype.slice.call(d.querySelectorAll(s)); };
+  var num = String(MALVA.whatsapp || '').replace(/\D/g, '');
+  var ig = 'https://www.instagram.com/' + MALVA.instagram + '/';
+
+  function fmtCL(n){
+    var m = n.match(/^56(9)(\d{4})(\d{4})$/);
+    return m ? '+56 ' + m[1] + ' ' + m[2] + ' ' + m[3] : '+' + n;
+  }
+
+  // WhatsApp (si aún no hay número, los botones llevan a Instagram para no dejar enlaces rotos)
+  var waHref = num ? 'https://wa.me/' + num + '?text=' + encodeURIComponent(MALVA.mensaje) : ig;
+  $$('[data-wa]').forEach(function(a){ a.href = waHref; });
+  $$('[data-wa-text]').forEach(function(el){ el.textContent = num ? fmtCL(num) : 'Número por confirmar'; });
+  if (num) $$('[data-copy="wa"]').forEach(function(b){ b.hidden = false; });
+
+  // Correo
+  var mail = String(MALVA.email || '').trim();
+  $$('[data-mail]').forEach(function(a){
+    if (mail) { a.href = 'mailto:' + mail; a.removeAttribute('aria-disabled'); }
+  });
+  $$('[data-mail-text]').forEach(function(el){ el.textContent = mail || 'Correo por confirmar'; });
+  if (mail) $$('[data-copy="mail"]').forEach(function(b){ b.hidden = false; });
+
+  if (MALVA.horario) $$('[data-horario]').forEach(function(el){ el.textContent = MALVA.horario; });
+  $$('[data-year]').forEach(function(el){ el.textContent = new Date().getFullYear(); });
+
+  // Copiar número o correo
+  $$('[data-copy]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var val = b.dataset.copy === 'wa' ? fmtCL(num) : mail;
+      var done = function(){ b.textContent = 'Copiado'; setTimeout(function(){ b.textContent = 'Copiar'; }, 1800); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(val).then(done, function(){ selectText(b); });
+      } else { selectText(b); }
+    });
+  });
+  function selectText(b){
+    var el = b.parentNode.querySelector('.c-value'); if (!el) return;
+    var r = d.createRange(); r.selectNodeContents(el);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+
+  // Vídeos: solo se descargan si se ven y la conexión lo permite
+  var c = navigator.connection || navigator.mozConnection || navigator.webkitConnection || {};
+  var lowData = !!c.saveData || /(^|-)2g$|^3g$/.test(c.effectiveType || '');
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var canIO = 'IntersectionObserver' in window;
+
+  $$('[data-clip]').forEach(function(box){
+    var v = box.querySelector('video'), play = box.querySelector('.play'), pause = box.querySelector('.pause');
+    var userPaused = false, visible = false;
+    function load(){ if (!v.getAttribute('src')) v.src = box.dataset.src; }
+    function start(){ load(); var p = v.play(); if (p && p.catch) p.catch(function(){ play.hidden = false; }); }
+    v.addEventListener('playing', function(){ box.classList.add('is-playing'); play.hidden = true; pause.hidden = false; });
+    pause.addEventListener('click', function(){
+      if (v.paused) { userPaused = false; v.play(); setPause(false); } else { userPaused = true; v.pause(); setPause(true); }
+    });
+    function setPause(p){
+      pause.setAttribute('aria-label', p ? 'Reproducir video' : 'Pausar video');
+      pause.innerHTML = p ? '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10.5-6.5z"/></svg>'
+                          : '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>';
+    }
+    play.addEventListener('click', function(){ userPaused = false; start(); });
+
+    if (lowData || reduce || !canIO) { play.hidden = false; }
+    else {
+      new IntersectionObserver(function(entries){
+        visible = entries[0].isIntersecting;
+        if (visible && !userPaused) start();
+        else if (!visible && !v.paused) v.pause();
+      }, { rootMargin: '150px 0px' }).observe(box);
+    }
+    // Pausar todo si la pestaña queda en segundo plano
+    d.addEventListener('visibilitychange', function(){ if (d.hidden && !v.paused) v.pause(); else if (!d.hidden && visible && !userPaused && v.getAttribute('src')) v.play().catch(function(){}); });
+  });
+
+  // Botón flotante: aparece cuando el botón principal deja de verse
+  var fab = d.querySelector('.fab'), heroCta = d.querySelector('.hero .ctas');
+  if (canIO && heroCta) {
+    new IntersectionObserver(function(e){ fab.classList.toggle('show', !e[0].isIntersecting); }).observe(heroCta);
+  } else { fab.classList.add('show'); }
+})();
+</script>
+</body>
+</html>
