@@ -13,6 +13,9 @@ Dominio: https://jardinmalva.cl
   - Framework: ninguno
   - Comando de compilación: vacío
   - Directorio de salida: `public`
+- Alternativa: si se conecta como Cloudflare Worker (importar repositorio),
+  `wrangler.jsonc` ya indica que se publique `public/` sin compilación.
+  Comando de despliegue: `npx wrangler deploy` (el que propone Cloudflare).
 
 ## Datos de contacto
 

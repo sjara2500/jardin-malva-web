@@ -1,0 +1,10 @@
+// Configuración para Cloudflare Workers (solo archivos estáticos).
+// Publica el contenido de la carpeta public/ tal cual, sin compilación.
+// Si el proyecto está en Cloudflare Pages, este archivo se ignora.
+{
+  "name": "jardin-malva-web",
+  "compatibility_date": "2026-01-01",
+  "assets": {
+    "directory": "./public"
+  }
+}
