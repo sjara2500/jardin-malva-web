@@ -60,8 +60,16 @@ El índice con buscador está en `jardinmalva.cl/cuidados/`.
 `datos/slugs-publicados.txt` las registra y el generador se detiene si falta alguna.
 
 Para añadir una planta: copia un bloque en `datos/cuidados.json` con un `slug` nuevo,
-pon la toxicidad solo si está en la ASPCA (con su enlace; si no, quita `mascotas`),
-ejecuta los dos scripts y sube los cambios.
+pon la toxicidad solo si está en la ASPCA (con su enlace), ejecuta los dos scripts y sube los cambios.
+Si la ASPCA no tiene ficha de la planta, usa `"toxica": null` con un texto que lo diga:
+la ficha muestra "Sin dato verificado" y la tarjeta "Toxicidad sin verificar".
+
+Lotes del inventario: `datos/lotes/*.json` (por ahora `tomo1-interior.json`, las plantas de
+interior del Tomo I con su código JM-T1). Cada lote puede definir `perfiles` (cuidados comunes,
+p. ej. calatheas o ficus) y plantas con `"base": "<perfil o ficha>"`, que heredan esos cuidados;
+lo que pongas en la planta manda sobre lo heredado (`consejos_extra` y `alertas_extra` se suman).
+`equivalencias` asigna un código del inventario a una ficha que ya existía. Cada lote genera
+`imprimibles/tarjetas-<lote>.pdf`, con una tarjeta por planta en orden de código.
 
 Cuando haya WhatsApp o enlace de reseñas de Google, ponlos en `contacto` de
 `datos/cuidados.json` y vuelve a generar. Mientras `whatsapp` esté vacío, el botón

@@ -7,6 +7,7 @@ Uso:  pip install reportlab segno pillow
 Crea en imprimibles/:
 - tarjetas-cuidados.pdf   Una hoja A4 por planta con 10 tarjetas iguales de 85 × 55 mm.
 - tarjetas-surtidas.pdf   Una tarjeta de cada planta (10 por hoja), para el mesón o para revisar.
+- tarjetas-<lote>.pdf     Una tarjeta de cada planta de un lote (p. ej. el Tomo I), en orden de código.
 - cartel-cuidados-A5.pdf  Cartel para la caja con el QR del índice de fichas.
 - qr/<planta>.svg y .png  Los códigos sueltos, por si se usan en otro diseño.
 
@@ -50,8 +51,12 @@ TW, TH = 85 * mm, 55 * mm          # tarjeta
 COLS, FILAS = 2, 5                 # 10 por A4
 
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import generar_cuidados  # noqa: E402  (misma carga, herencia y validación que la web)
+
+
 def cargar():
-    datos = json.loads((RAIZ / "datos" / "cuidados.json").read_text(encoding="utf-8"))
+    datos, _, _ = generar_cuidados.cargar()
     return datos
 
 
@@ -67,6 +72,8 @@ def texto_mascotas(p):
     m = p.get("mascotas")
     if m is None:
         return None
+    if m["toxica"] is None:
+        return "Toxicidad sin verificar"
     if m.get("corto", "").startswith("Levemente"):
         return "Levemente tóxica para mascotas"
     return "Tóxica para mascotas" if m["toxica"] else "No tóxica para mascotas"
@@ -231,8 +238,9 @@ def tarjeta(c, datos, p, x0, y0):
         lineas = partir(t, "DMSans", tamf, tw - s - 1.6 * mm)
         alto = 3.3 * mm * len(lineas)
         y -= 3.5 * mm
-        toxica = ic == "pata" and p.get("mascotas", {}).get("toxica")
-        col = MALVA if toxica else BOSQUE
+        toxica = ic == "pata" and p.get("mascotas", {}).get("toxica") is True
+        sindato = ic == "pata" and p.get("mascotas", {}).get("toxica") is None
+        col = MALVA if toxica else (OLIVA if sindato else BOSQUE)
         c.setStrokeColor(col)
         c.setFillColor(col)
         if ic == "sol":
@@ -241,12 +249,17 @@ def tarjeta(c, datos, p, x0, y0):
             ico_gota(c, tx, y - 0.55 * mm, s)
         else:
             ico_pata(c, tx, y - 0.55 * mm, s, True)
-        c.setFillColor(MALVA if toxica else CARBON)
+        c.setFillColor(MALVA if toxica else (OLIVA if sindato else CARBON))
         c.setFont("DMSansMd" if toxica else "DMSans", tamf)
         for i, l in enumerate(lineas):
             c.drawString(tx + s + 1.6 * mm, y - i * 2.9 * mm, l)
         y -= (len(lineas) - 1) * 2.9 * mm
 
+    # Código del inventario (Tomo I), para el equipo
+    if p.get("codigo"):
+        c.setFillColor(HexColor("#9A9A90"))
+        c.setFont("DMSans", 4.6)
+        c.drawString(5 * mm, 2.4 * mm, p["codigo"])
     # Pie de marca
     texto_espaciado(c, TW - 4.5 * mm, 4.6 * mm, "JARDÍN MALVA", "CormorantSB", 7.2, 0.9, BOSQUE, derecha=True)
     c.setFillColor(OLIVA)
@@ -321,6 +334,24 @@ def pdf_surtidas(datos):
     return ruta
 
 
+def pdf_lotes(datos):
+    rutas = []
+    por_slug = {p["slug"]: p for p in datos["plantas"]}
+    for clave, lote in datos.get("lotes", {}).items():
+        plantas = sorted((por_slug[s] for s in lote["slugs"]), key=lambda p: (p.get("codigo") or "~", p["nombre"]))
+        ruta = SALIDA / f"tarjetas-{clave}.pdf"
+        c = canvas.Canvas(str(ruta), pagesize=A4)
+        c.setTitle(f"Tarjetas de cuidados · {lote['nombre']} · Jardín Malva")
+        c.setAuthor("Jardín Malva")
+        paginas = [plantas[i:i + COLS * FILAS] for i in range(0, len(plantas), COLS * FILAS)]
+        for n, grupo in enumerate(paginas, 1):
+            hoja_tarjetas(c, datos, grupo, f"{lote['nombre']} {n}/{len(paginas)} · orden del Tomo I")
+            c.showPage()
+        c.save()
+        rutas.append(ruta)
+    return rutas
+
+
 # ---------------------------------------------------------------- cartel A5
 
 def pdf_cartel(datos):
@@ -385,7 +416,7 @@ def qr_sueltos(datos):
 def main():
     datos = cargar()
     SALIDA.mkdir(parents=True, exist_ok=True)
-    for f in (pdf_tarjetas(datos), pdf_surtidas(datos), pdf_cartel(datos)):
+    for f in (pdf_tarjetas(datos), pdf_surtidas(datos), *pdf_lotes(datos), pdf_cartel(datos)):
         print("OK:", f.relative_to(RAIZ))
     carpeta, n = qr_sueltos(datos)
     print(f"OK: {n} códigos QR en {carpeta.relative_to(RAIZ)}/")

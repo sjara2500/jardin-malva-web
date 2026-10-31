@@ -1,0 +1,493 @@
+{
+  "_nota": "Plantas de interior del Tomo I (Enciclopedia Botánica Jardín Malva, ago. 2026). Cada planta lleva su código del Tomo I. 'base' hereda los cuidados de un perfil de este archivo o de otra ficha; los campos de la planta mandan sobre los heredados. Excluidas por identificación pendiente: JM-T1-155 Aphelandra White Wash y JM-T1-157 Asplenium Nido Venus.",
+  "lote": "Tomo I · Plantas de interior",
+  "equivalencias": {
+    "JM-T1-185": "monstera",
+    "JM-T1-184": "maranta"
+  },
+  "perfiles": {
+    "calathea": {
+      "tipo": "interior",
+      "dificultad": 3,
+      "luz": {"corto": "Luz media, sin sol directo", "texto": "Luz media a brillante, siempre sin sol directo: el sol les destiñe y quema las hojas. Una ventana con cortina fina es ideal."},
+      "riego": {"corto": "Siempre levemente húmeda", "calor": "Cada 4 a 7 días", "frio": "Cada 7 a 10 días", "texto": "Mantén la tierra levemente húmeda, nunca encharcada ni seca del todo: riega cuando el primer centímetro esté seco. Son sensibles al cloro y a la cal: usa agua reposada de un día para otro, filtrada o de lluvia."},
+      "temperatura": {"corto": "Entre 18 y 27 °C", "texto": "Son friolentas: evita que baje de 15 °C, las corrientes de aire y el calor seco de la estufa."},
+      "abono": "Abono líquido a mitad de dosis cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada uno o dos años en primavera, en maceta ancha y con buen drenaje.",
+      "consejos": [
+        "Necesitan humedad en el aire: agrúpalas con otras plantas o pon la maceta sobre un plato con piedras y agua, sin que el agua toque la base.",
+        "Sus hojas se mueven durante el día y se levantan de noche. Es normal."
+      ],
+      "alertas": [
+        ["Bordes café y crujientes", "Aire seco, o cloro y sales del agua. Sube la humedad y cambia el agua de riego."],
+        ["Hojas enrolladas", "Sed o aire seco."],
+        ["Hojas desteñidas o con manchas claras", "Exceso de luz."],
+        ["Telitas finas bajo las hojas", "Arañita roja, típica del aire seco. Lava las hojas con agua y sube la humedad."]
+      ],
+      "mascotas": {"toxica": false, "texto": "La ASPCA clasifica las calatheas como no tóxicas para perros y gatos. Igual, cualquier planta puede caerles pesada al estómago si la mastican.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/calathea"}
+    },
+    "ficus-interior": {
+      "tipo": "interior",
+      "dificultad": 2,
+      "luz": {"corto": "Luz brillante", "texto": "Luz brillante cerca de una ventana; acepta sol suave de mañana. Con poca luz bota hojas y crece ralo. Los de hoja variegada necesitan todavía más luz."},
+      "riego": {"corto": "Cuando 3–5 cm estén secos", "calor": "Cada 7 a 10 días", "frio": "Cada 2 a 3 semanas", "texto": "Riega a fondo cuando los primeros 3 a 5 cm de tierra estén secos y bota el agua que quede en el plato. Mejor un riego constante que pasar de la sequía al encharcamiento."},
+      "temperatura": {"corto": "Entre 15 y 29 °C", "texto": "Evita que baje de 12 °C, las corrientes de aire y la cercanía de la estufa."},
+      "abono": "Abono líquido para plantas verdes cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada dos años en primavera, a una maceta 3 a 5 cm más ancha.",
+      "consejos": [
+        "Elige su lugar y no lo muevas: los cambios de luz y de sitio lo hacen botar hojas.",
+        "Si lo podas, hazlo en primavera y con guantes: suelta un látex blanco que irrita la piel."
+      ],
+      "alertas": [
+        ["Bota hojas de golpe", "Cambio de lugar, corriente de aire o riego irregular. Mantén todo estable y espera: rebrota."],
+        ["Hojas amarillas", "Exceso de riego."],
+        ["Motitas blancas algodonosas en tallos y hojas", "Cochinilla. Retírala con un algodón con alcohol y revisa cada semana."]
+      ],
+      "mascotas": {"toxica": true, "texto": "La ASPCA clasifica los ficus como tóxicos para perros y gatos: su savia irrita el estómago y la piel.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/weeping-fig"}
+    }
+  },
+  "plantas": [
+    {
+      "slug": "anthurium-crystallinum", "codigo": "JM-T1-153",
+      "nombre": "Anthurium crystallinum", "alias": ["Anturio de cristal"], "botanico": "Anthurium crystallinum",
+      "tipo": "interior", "dificultad": 3,
+      "resumen": "Hojas grandes y aterciopeladas con nervaduras plateadas. Una planta de colección que pide humedad y un sustrato muy aireado.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante y filtrada, sin sol directo: el sol le marca las hojas. Con poca luz las hojas nuevas salen más chicas."},
+      "riego": {"corto": "Cuando 2–3 cm estén secos", "calor": "Cada 5 a 7 días", "frio": "Cada 10 a 14 días", "texto": "Riega cuando los primeros 2 a 3 cm estén secos. Sus raíces necesitan aire: nunca la dejes encharcada."},
+      "temperatura": {"corto": "Entre 18 y 28 °C", "texto": "Evita que baje de 15 °C, las corrientes de aire y el calor seco de la estufa."},
+      "abono": "Abono líquido a mitad de dosis cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada uno o dos años en primavera, en mezcla muy aireada: corteza de pino, perlita y un poco de sustrato.",
+      "consejos": ["Necesita humedad alta: agrúpalo con otras plantas o usa un plato con piedras y agua bajo la maceta.", "No toques las hojas nuevas mientras se abren: son delicadas y se marcan con facilidad."],
+      "alertas": [["Bordes café y secos", "Aire seco. Sube la humedad y aléjalo de la estufa."], ["Hojas amarillas y sustrato mojado", "Exceso de riego o sustrato demasiado compacto."], ["Hoja nueva que no logra abrirse", "Le falta humedad en el aire."]],
+      "mascotas": {"toxica": true, "texto": "La ASPCA incluye los anturios (Anthurium spp.) entre las plantas con cristales de oxalato de calcio, tóxicas para perros y gatos: irritan la boca y pueden dar babeo y vómitos.", "url": "https://www.aspca.org/news/these-houseplants-can-cause-trouble-your-pets"}
+    },
+    {
+      "slug": "aphelandra", "codigo": "JM-T1-154",
+      "nombre": "Aphelandra", "alias": ["Planta cebra"], "botanico": "Aphelandra squarrosa",
+      "tipo": "interior", "dificultad": 2,
+      "resumen": "Hojas verde oscuro con nervaduras blancas y una espiga amarilla que dura semanas. No le gusta quedarse sin agua.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo. Con buena luz florece más y mantiene el contraste de sus hojas."},
+      "riego": {"corto": "Tierra siempre levemente húmeda", "calor": "Cada 4 a 6 días", "frio": "Cada 7 a 10 días", "texto": "Mantén la tierra levemente húmeda, sin encharcar. Si se seca del todo, se pone lacia y bota hojas."},
+      "temperatura": {"corto": "Entre 18 y 27 °C", "texto": "Evita que baje de 13 °C, las corrientes de aire y el calor de la estufa."},
+      "abono": "Abono líquido para plantas con flor cada 2 a 3 semanas, de septiembre a marzo.",
+      "trasplante": "Cada uno o dos años en primavera.",
+      "consejos": ["Cuando la espiga amarilla se marchite, córtala: así la planta guarda energía para hojas nuevas.", "Agradece la humedad en el aire: agrúpala con otras plantas."],
+      "alertas": [["Se pone lacia y bota hojas", "Se secó la tierra. Riega y no dejes que vuelva a pasar."], ["Bordes café", "Aire seco."], ["Tallo largo y pocas hojas abajo", "Le falta luz o necesita una poda en primavera."]],
+      "mascotas": {"toxica": false, "texto": "No tóxica para perros y gatos según la ASPCA. Igual, cualquier planta puede caerles pesada al estómago si la mastican.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/saffron-spike-zebra"}
+    },
+    {
+      "slug": "asplenium-osaka", "codigo": "JM-T1-156",
+      "nombre": "Asplenium 'Osaka'", "alias": ["Helecho nido de ave"], "botanico": "Asplenium antiquum 'Osaka'",
+      "tipo": "interior", "dificultad": 2,
+      "resumen": "Un helecho de hojas enteras y bordes ondulados que crecen en roseta. Más fácil que los helechos de hojitas.",
+      "luz": {"corto": "Luz media, sin sol directo", "texto": "Luz media a brillante, sin sol directo. Tolera rincones con menos luz, pero crece más lento."},
+      "riego": {"corto": "Húmedo, sin mojar el centro", "calor": "Cada 5 a 7 días", "frio": "Cada 10 a 14 días", "texto": "No dejes que el cepellón se seque del todo. Riega alrededor de la roseta, nunca en el centro: el agua estancada ahí pudre la planta."},
+      "temperatura": {"corto": "Entre 16 y 24 °C", "texto": "Evita que baje de 12 °C y el aire seco de la estufa."},
+      "abono": "Abono líquido suave cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada dos años en primavera; tiene raíces pequeñas y no necesita una maceta grande.",
+      "consejos": ["No toques las hojas nuevas del centro mientras se desenrollan: son muy delicadas.", "Un baño o cocina luminosos le sientan bien por la humedad."],
+      "alertas": [["Centro blando o café", "Agua acumulada en la roseta. Riega siempre por el borde."], ["Bordes café", "Aire seco o falta de riego."], ["Hojas pálidas o quemadas", "Exceso de luz o sol directo."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de esta especie. Otro helecho del mismo género (Asplenium bulbiferum) figura como no tóxico, pero no lo damos por hecho para esta planta."}
+    },
+    {
+      "slug": "begonia-black-magic", "codigo": "JM-T1-158", "base": "begonia",
+      "nombre": "Begonia Black Magic", "alias": ["Begonia rex"], "botanico": "Begonia rex (cultivar 'Black Magic')",
+      "resumen": "Una begonia rex de colección, elegida por el color y el dibujo de sus hojas. Le gusta la humedad, pero sin mojar sus hojas."
+    },
+    {
+      "slug": "begonia-rex-gris", "codigo": "JM-T1-159", "base": "begonia",
+      "nombre": "Begonia Rex gris", "alias": ["Begonia rex"], "botanico": "Begonia rex",
+      "resumen": "Una begonia rex de hojas en tonos grises. Le gusta la humedad, pero sin mojar sus hojas."
+    },
+    {
+      "slug": "calathea-makoyana", "codigo": "JM-T1-160", "base": "calathea",
+      "nombre": "Calathea makoyana", "alias": ["Pavo real", "Calathea pavo real"], "botanico": "Goeppertia makoyana (antes Calathea)",
+      "resumen": "Sus hojas parecen pintadas a pincel, como la cola de un pavo real, con el reverso morado. Pide humedad y constancia."
+    },
+    {
+      "slug": "calathea-silver-plate", "codigo": "JM-T1-161", "base": "calathea",
+      "nombre": "Calathea 'Silver Plate'", "alias": ["Calathea picturata"], "botanico": "Goeppertia (Calathea) 'Silver Plate'",
+      "resumen": "Hojas plateadas de gran efecto. Como todas las calatheas, pide humedad, agua sin cloro y nada de sol directo."
+    },
+    {
+      "slug": "calathea-star-gray", "codigo": "JM-T1-162", "base": "calathea",
+      "nombre": "Calathea Star Gray", "alias": ["Calathea"], "botanico": "Goeppertia sp. (Calathea)",
+      "resumen": "Una calathea de follaje dibujado. Como todas, pide humedad, agua sin cloro y nada de sol directo."
+    },
+    {
+      "slug": "calathea-zebrina", "codigo": "JM-T1-163", "base": "calathea",
+      "nombre": "Calathea zebrina", "alias": ["Calathea cebra"], "botanico": "Goeppertia zebrina (antes Calathea)",
+      "resumen": "Hojas grandes y aterciopeladas con franjas oscuras, como una cebra. Pide humedad, agua sin cloro y nada de sol directo."
+    },
+    {
+      "slug": "ctenanthe-lubbersiana", "codigo": "JM-T1-164", "base": "calathea",
+      "nombre": "Ctenanthe lubbersiana", "alias": ["Ctenanthe", "Bamburanta"], "botanico": "Ctenanthe lubbersiana",
+      "dificultad": 2,
+      "resumen": "Prima de las calatheas, con hojas verdes jaspeadas de amarillo crema. Algo más resistente que ellas, pero con gustos parecidos.",
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la Ctenanthe. Sus parientes cercanas, las calatheas y marantas, figuran como no tóxicas, pero no lo damos por hecho para esta planta."}
+    },
+    {
+      "slug": "ctenanthe-setosa", "codigo": "JM-T1-165", "base": "calathea",
+      "nombre": "Ctenanthe setosa", "alias": ["Ctenanthe"], "botanico": "Ctenanthe setosa",
+      "dificultad": 2,
+      "resumen": "Hojas plateadas con nervaduras verde oscuro y reverso morado. Prima de las calatheas y algo más resistente que ellas.",
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la Ctenanthe. Sus parientes cercanas, las calatheas y marantas, figuran como no tóxicas, pero no lo damos por hecho para esta planta."}
+    },
+    {
+      "slug": "cuerno-de-alce", "codigo": "JM-T1-166",
+      "nombre": "Cuerno de alce", "alias": ["Platycerium"], "botanico": "Platycerium bifurcatum",
+      "tipo": "interior", "dificultad": 2,
+      "resumen": "Un helecho escultural que en la naturaleza vive colgado de los árboles. Se puede montar en una tabla o tener en maceta.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo de mediodía. Con poca luz crece débil."},
+      "riego": {"corto": "Remojo cuando la base esté seca", "calor": "Cada 7 a 10 días", "frio": "Cada 2 a 3 semanas", "texto": "Cuando la base esté seca, remoja la maceta o la tabla en agua 10 a 15 minutos y deja escurrir bien. En verano agradece un rocío ligero de vez en cuando."},
+      "temperatura": {"corto": "Entre 15 y 27 °C", "texto": "Evita que baje de 10 °C y el aire seco de la estufa."},
+      "abono": "Abono líquido suave una vez al mes, de septiembre a marzo.",
+      "trasplante": "Casi no necesita. Si está montado, se fija de nuevo cuando el escudo cubre toda la tabla.",
+      "consejos": ["Las hojas planas y café de la base (los escudos) son normales: protegen las raíces. No las arranques.", "No limpies el polvillo blanco de sus hojas: la protege del sol y de la pérdida de agua."],
+      "alertas": [["Hojas negras desde la base", "Exceso de agua. Deja secar bien entre remojos."], ["Puntas secas y hojas arrugadas", "Le falta agua o el aire está muy seco."], ["Hojas pálidas o quemadas", "Sol directo fuerte."]],
+      "mascotas": {"toxica": false, "texto": "No tóxico para perros y gatos según la ASPCA. Igual, cualquier planta puede caerles pesada al estómago si la mastican.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/common-staghorn-fern"}
+    },
+    {
+      "slug": "dracena-palo-de-agua", "codigo": "JM-T1-167",
+      "nombre": "Drácena palo de agua", "alias": ["Palo de agua", "Palo de Brasil"], "botanico": "Dracaena fragrans",
+      "tipo": "interior", "dificultad": 1,
+      "resumen": "Un clásico resistente que se adapta a casi cualquier interior. Pide poca agua y algo de constancia.",
+      "luz": {"corto": "Luz media a brillante", "texto": "Luz media a brillante, sin sol directo fuerte. Tolera rincones con menos luz, pero crece más lento y las hojas pierden color."},
+      "riego": {"corto": "Con la mitad de la tierra seca", "calor": "Cada 10 a 14 días", "frio": "Cada 3 a 4 semanas", "texto": "Riega cuando la mitad superior de la tierra esté seca. Es mucho más fácil que sufra por exceso que por falta de agua."},
+      "temperatura": {"corto": "Entre 16 y 27 °C", "texto": "Evita que baje de 12 °C y las corrientes frías."},
+      "abono": "Abono líquido para plantas verdes cada 4 a 6 semanas, de septiembre a marzo.",
+      "trasplante": "Cada dos o tres años en primavera.",
+      "consejos": ["Que bote alguna hoja de abajo con el tiempo es normal.", "Si se pone muy alta, puedes cortar el tronco en primavera: rebrota bajo el corte."],
+      "alertas": [["Puntas café", "Sales o cloro del agua, o aire seco. Usa agua reposada."], ["Hojas amarillas y tierra húmeda", "Exceso de riego."], ["Tronco blando en la base", "Pudrición por exceso de agua. Deja secar y riega mucho menos."]],
+      "mascotas": {"toxica": true, "texto": "Tóxica para perros y gatos según la ASPCA. Contiene saponinas: puede dar vómitos, decaimiento y falta de apetito si la mastican.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/corn-plant"}
+    },
+    {
+      "slug": "epipremnum-pinnatum-variegado", "codigo": "JM-T1-168", "base": "pothos",
+      "nombre": "Epipremnum pinnatum variegado", "alias": ["Pothos pinnatum"], "botanico": "Epipremnum pinnatum 'Variegata'",
+      "resumen": "Pariente del pothos, de hojas jaspeadas que se abren con cortes cuando trepa y madura. Fácil y de crecimiento rápido.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo de la tarde. Por su variegado necesita más luz que un pothos verde; con poca luz pierde el jaspeado."},
+      "consejos_extra": ["Dale un tutor para trepar: así sus hojas crecen más y se abren con cortes."],
+      "mascotas": {"toxica": true, "texto": "La ASPCA advierte que los potos (Epipremnum y Scindapsus) irritan la boca y el estómago si se mastican, por sus cristales de oxalato de calcio.", "url": "https://www.aspca.org/nyc/recursos-para-personas-que-hablan-espanol/17-plantas-venenosas-comunes"}
+    },
+    {
+      "slug": "ficus-benjamina", "codigo": "JM-T1-169", "base": "ficus-interior",
+      "nombre": "Ficus benjamina", "alias": ["Benjamina"], "botanico": "Ficus benjamina",
+      "resumen": "Hojas pequeñas y brillantes en un arbolito elegante. Es famoso por botar hojas cuando lo cambian de lugar: elige su sitio y déjalo ahí.",
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA: su savia irrita el estómago y la piel.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/indian-rubber-plant"}
+    },
+    {
+      "slug": "ficus-elastica-burgundy", "codigo": "JM-T1-170", "base": "gomero",
+      "nombre": "Ficus elastica Burgundy", "alias": ["Gomero borgoña"], "botanico": "Ficus elastica 'Burgundy'",
+      "resumen": "Un gomero de hojas color burdeo casi negro, que salen de una vaina roja. Resistente y fácil.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante; acepta algo de sol de mañana. Por sus hojas oscuras tolera un poco menos de luz que los gomeros jaspeados, pero con buena luz brilla más."}
+    },
+    {
+      "slug": "ficus-espanol", "codigo": "JM-T1-171", "base": "ficus-interior",
+      "nombre": "Ficus español", "alias": ["Ficus"], "botanico": "Ficus sp.",
+      "resumen": "Un ficus de interior. Su especie exacta está por confirmar en el vivero; estos son los cuidados que comparten los ficus de interior."
+    },
+    {
+      "slug": "ficus-lyrata-bambino", "codigo": "JM-T1-172", "base": "ficus-lyrata",
+      "nombre": "Ficus lyrata 'Bambino'", "alias": ["Hoja de violín enana"], "botanico": "Ficus lyrata 'Bambino'",
+      "dificultad": 2,
+      "resumen": "La versión compacta del ficus hoja de violín: hojas más pequeñas y crecimiento más contenido. Pide mucha luz y constancia."
+    },
+    {
+      "slug": "ficus-trenzado", "codigo": "JM-T1-173", "base": "ficus-interior",
+      "nombre": "Ficus trenzado", "alias": ["Ficus"], "botanico": "Ficus sp. (tronco trenzado)",
+      "resumen": "Un ficus formado con sus troncos trenzados. Su especie exacta está por confirmar en el vivero; estos son los cuidados que comparten los ficus de interior.",
+      "consejos_extra": ["No deshagas el trenzado: con los años los troncos se unen solos."]
+    },
+    {
+      "slug": "ficus-umbellata", "codigo": "JM-T1-174", "base": "ficus-interior",
+      "nombre": "Ficus umbellata", "alias": ["Ficus"], "botanico": "Ficus umbellata",
+      "dificultad": 2,
+      "resumen": "Hojas grandes y delgadas en forma de corazón que dejan pasar la luz. Un ficus luminoso que pide su lugar fijo junto a la ventana."
+    },
+    {
+      "slug": "ficus-variegado", "codigo": "JM-T1-175", "base": "ficus-interior",
+      "nombre": "Ficus variegado", "alias": ["Ficus"], "botanico": "Ficus sp. (variegado)",
+      "resumen": "Un ficus de hojas jaspeadas. Su especie exacta está por confirmar en el vivero; por su variegado necesita más luz que un ficus verde.",
+      "luz": {"corto": "Mucha luz", "texto": "Mucha luz cerca de una ventana; acepta sol suave de mañana. Las partes claras de sus hojas no aprovechan la luz, así que con poca luz pierde el jaspeado y bota hojas."}
+    },
+    {
+      "slug": "flor-de-cera", "codigo": "JM-T1-176",
+      "nombre": "Flor de cera", "alias": ["Hoya", "Clepia"], "botanico": "Hoya carnosa",
+      "tipo": "interior", "dificultad": 1,
+      "resumen": "Trepadora o colgante de hojas carnosas que da racimos de flores perfumadas, como de cera. Pide luz y poca agua.",
+      "luz": {"corto": "Mucha luz", "texto": "Mucha luz; acepta sol suave de mañana. Sin buena luz no florece."},
+      "riego": {"corto": "Con la tierra casi seca", "calor": "Cada 10 a 14 días", "frio": "Cada 3 a 4 semanas", "texto": "Sus hojas guardan agua: riega cuando la tierra esté casi seca del todo. El exceso de agua es su principal enemigo."},
+      "temperatura": {"corto": "Entre 16 y 27 °C", "texto": "Evita que baje de 10 °C."},
+      "abono": "Abono para plantas con flor cada 3 a 4 semanas, de septiembre a marzo.",
+      "trasplante": "Le gusta la maceta justa: trasplántala solo cada dos o tres años, en sustrato muy drenante.",
+      "consejos": ["No cortes los tallitos donde nacieron las flores: vuelve a florecer en el mismo lugar.", "Cuando florece no la cambies de sitio ni la gires: puede botar los botones."],
+      "alertas": [["Hojas amarillas y blandas", "Exceso de riego."], ["Hojas arrugadas", "Tiene sed."], ["No florece", "Le falta luz o es aún joven."]],
+      "mascotas": {"toxica": false, "texto": "No tóxica para perros y gatos según la ASPCA. Igual, cualquier planta puede caerles pesada al estómago si la mastican.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/honey-plant"}
+    },
+    {
+      "slug": "gynura", "codigo": "JM-T1-177",
+      "nombre": "Gynura", "alias": ["Terciopelo morado", "Pasión púrpura"], "botanico": "Gynura aurantiaca",
+      "tipo": "interior", "dificultad": 2,
+      "resumen": "Hojas cubiertas de pelitos morados que brillan como terciopelo con la luz. Una planta llamativa y de crecimiento rápido.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante: es lo que mantiene el morado de sus hojas. Evita el sol fuerte de la tarde."},
+      "riego": {"corto": "Tierra levemente húmeda", "calor": "Cada 5 a 7 días", "frio": "Cada 10 a 14 días", "texto": "Mantén la tierra levemente húmeda, sin encharcar. Riega directo a la tierra: el agua sobre sus hojas peludas las mancha y pudre."},
+      "temperatura": {"corto": "Entre 16 y 27 °C", "texto": "Evita que baje de 12 °C."},
+      "abono": "Abono líquido suave cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada uno o dos años en primavera.",
+      "consejos": ["Despúntala seguido para que se mantenga tupida.", "Sus flores tienen un olor poco agradable: muchos prefieren quitar los botones.", "Con los años se alarga. Renuévala con esquejes, que enraízan fácil en agua."],
+      "alertas": [["Pierde el color morado", "Le falta luz."], ["Hojas manchadas o podridas", "Agua sobre las hojas o exceso de riego."], ["Tallos largos y pelados", "Falta de luz o de despunte."]],
+      "mascotas": {"toxica": false, "texto": "No tóxica para perros y gatos según la ASPCA. Igual, cualquier planta puede caerles pesada al estómago si la mastican.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/purple-passion-vine"}
+    },
+    {
+      "slug": "helecho-costilla-de-vaca", "codigo": "JM-T1-178",
+      "nombre": "Helecho costilla de vaca", "alias": ["Costilla de vaca"], "botanico": "Blechnum chilense / Parablechnum cordatum",
+      "tipo": "interior", "dificultad": 2,
+      "resumen": "Un helecho nativo de Chile, de frondas grandes y firmes. Le gusta la sombra luminosa y la humedad.",
+      "luz": {"corto": "Sombra luminosa", "texto": "Luz media sin sol directo. En interior, junto a una ventana luminosa; también vive muy bien afuera, a la sombra."},
+      "riego": {"corto": "Siempre húmedo", "calor": "2 o 3 veces por semana", "frio": "1 vez por semana", "texto": "No dejes que la tierra se seque: mantenla húmeda, sin encharcar."},
+      "temperatura": {"corto": "Fresca", "texto": "Prefiere ambientes frescos. Dentro de la casa sufre con la estufa: busca la pieza más fresca y húmeda."},
+      "abono": "Abono líquido suave cada 4 a 6 semanas, de septiembre a marzo.",
+      "trasplante": "Cada dos años en primavera, en tierra rica en materia orgánica.",
+      "consejos": ["Corta desde la base las frondas viejas que se sequen.", "En el jardín, plántalo a la sombra de árboles o muros, donde la tierra se mantenga húmeda."],
+      "alertas": [["Frondas secas y café", "Aire seco o falta de riego."], ["Hojas quemadas o pálidas", "Exceso de sol."], ["Frondas amarillas", "Exceso de agua con poco drenaje."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de este helecho."}
+    },
+    {
+      "slug": "hypoestes", "codigo": "JM-T1-179",
+      "nombre": "Hypoestes", "alias": ["Planta de las pecas"], "botanico": "Hypoestes phyllostachya",
+      "tipo": "interior", "dificultad": 1,
+      "resumen": "Hojas salpicadas de pecas rosadas, blancas o rojas. Pequeña, alegre y fácil.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo fuerte. Con poca luz pierde las pecas y se alarga."},
+      "riego": {"corto": "Tierra levemente húmeda", "calor": "Cada 4 a 6 días", "frio": "Cada 7 a 10 días", "texto": "Mantén la tierra levemente húmeda. Si se seca, se desmaya, pero se recupera rápido al regarla."},
+      "temperatura": {"corto": "Entre 16 y 27 °C", "texto": "Evita que baje de 12 °C."},
+      "abono": "Abono líquido suave cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada año en primavera, si llenó la maceta.",
+      "consejos": ["Despunta las puntas seguido para que se mantenga compacta.", "Quita las espigas de flores: después de florecer se alarga y decae."],
+      "alertas": [["Se desmaya", "Tiene sed. Riégala."], ["Pierde las pecas", "Le falta luz."], ["Tallos largos", "Falta de luz o de despunte."]],
+      "mascotas": {"toxica": false, "texto": "No tóxica para perros y gatos según la ASPCA, aunque comerla puede dar vómitos o diarrea leves.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/polka-dot-plant"}
+    },
+    {
+      "slug": "hypoestes-mix", "codigo": "JM-T1-180", "base": "hypoestes",
+      "nombre": "Hypoestes mix", "alias": ["Planta de las pecas"], "botanico": "Hypoestes phyllostachya",
+      "resumen": "Una mezcla de hypoestes de pecas rosadas, blancas y rojas. Pequeñas, alegres y fáciles."
+    },
+    {
+      "slug": "mala-madre", "codigo": "JM-T1-181",
+      "nombre": "Mala madre", "alias": ["Cinta", "Planta araña"], "botanico": "Chlorophytum comosum",
+      "tipo": "interior", "dificultad": 1,
+      "resumen": "De las plantas más fáciles que hay. Saca hijuelos colgantes que puedes plantar o regalar.",
+      "luz": {"corto": "Luz media a brillante", "texto": "Luz media a brillante, sin sol fuerte de la tarde. Con más luz saca más hijuelos."},
+      "riego": {"corto": "Cuando 2–3 cm estén secos", "calor": "Cada 5 a 7 días", "frio": "Cada 10 a 14 días", "texto": "Riega cuando los primeros 2 a 3 cm estén secos. Sus raíces gruesas guardan agua, así que perdona algún olvido."},
+      "temperatura": {"corto": "Entre 13 y 27 °C", "texto": "Tolera el frío suave, pero evita que baje de 5 °C."},
+      "abono": "Abono líquido para plantas verdes cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cuando las raíces llenen la maceta, en primavera.",
+      "consejos": ["Los hijuelos enraízan en un vaso con agua o directo en tierra.", "Corta las puntas secas con tijera, siguiendo la forma de la hoja."],
+      "alertas": [["Puntas café", "Sales o cloro del agua, o aire seco. Usa agua reposada."], ["Hojas pálidas", "Exceso de sol."], ["No saca hijuelos", "Le falta luz o la planta aún es joven."]],
+      "mascotas": {"toxica": false, "texto": "La ASPCA la clasifica como no tóxica para perros y gatos, aunque en uno de sus artículos advierte que comerla puede dar un malestar estomacal leve.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/spider-plant"}
+    },
+    {
+      "slug": "manto-de-eva", "codigo": "JM-T1-182",
+      "nombre": "Manto de Eva", "alias": ["Alocasia"], "botanico": "Alocasia sp.",
+      "tipo": "interior", "dificultad": 3,
+      "resumen": "Hojas grandes y escultóricas en forma de flecha. Pide luz, humedad y un riego cuidadoso.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo. Con poca luz las hojas nuevas salen pequeñas y con tallos débiles."},
+      "riego": {"corto": "Cuando 3–5 cm estén secos", "calor": "Cada 5 a 7 días", "frio": "Cada 2 a 3 semanas", "texto": "Riega cuando los primeros 3 a 5 cm estén secos. Su raíz se pudre con facilidad: nunca la dejes encharcada."},
+      "temperatura": {"corto": "Entre 18 y 27 °C", "texto": "Es friolenta: evita que baje de 15 °C, las corrientes y la estufa."},
+      "abono": "Abono líquido para plantas verdes cada 3 a 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada uno o dos años en primavera, en sustrato aireado y con buen drenaje.",
+      "consejos": ["Es normal que bote una hoja vieja cuando saca una nueva.", "En invierno puede perder hojas y quedar en reposo: riega poco y espera, rebrota en primavera."],
+      "alertas": [["Hojas amarillas y tallos blandos", "Exceso de riego o frío."], ["Telitas finas o puntitos bajo las hojas", "Arañita roja, típica del aire seco. Lava las hojas y sube la humedad."], ["Bordes café", "Aire seco."]],
+      "mascotas": {"toxica": true, "texto": "Tóxica para perros y gatos según la ASPCA. Contiene cristales de oxalato de calcio que irritan la boca: babeo, vómitos y dificultad para tragar si la mastican.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/alocasia"}
+    },
+    {
+      "slug": "maranta-lemon-lime", "codigo": "JM-T1-183", "base": "maranta",
+      "nombre": "Maranta Lemon Lime", "alias": ["Planta de la oración"], "botanico": "Maranta leuconeura 'Lemon Lime'",
+      "resumen": "Una maranta de hojas verde lima con nervaduras claras. De noche levanta y pliega sus hojas, como si rezara."
+    },
+    {
+      "slug": "monstera-adansonii", "codigo": "JM-T1-186", "base": "monstera",
+      "nombre": "Monstera adansonii", "alias": ["Monstera monkey"], "botanico": "Monstera adansonii",
+      "resumen": "La prima pequeña de la monstera: hojas llenas de agujeros, que trepa o cuelga. Fácil y de crecimiento rápido.",
+      "riego": {"corto": "Cuando 2–3 cm estén secos", "calor": "Cada 5 a 7 días", "frio": "Cada 10 a 14 días", "texto": "Sus hojas son más finas que las de la monstera grande: riega cuando los primeros 2 a 3 cm estén secos, sin encharcar."},
+      "trasplante": "Cada uno o dos años en primavera. Si la dejas trepar por un tutor, sus hojas crecen más.",
+      "mascotas": {"toxica": true, "texto": "La ASPCA incluye las monsteras (Monstera spp.) entre las plantas con cristales de oxalato de calcio, tóxicas para perros y gatos: irritan la boca y pueden dar babeo y vómitos.", "url": "https://www.aspca.org/news/these-houseplants-can-cause-trouble-your-pets"}
+    },
+    {
+      "slug": "peperomia-caperata", "codigo": "JM-T1-187", "base": "peperomia",
+      "nombre": "Peperomia caperata", "alias": ["Peperomia"], "botanico": "Peperomia caperata",
+      "resumen": "Hojas pequeñas y arrugadas que forman un cojín compacto. Ideal para escritorios y repisas.",
+      "consejos_extra": ["Riega por el borde, sin mojar el centro de la planta: ahí se pudre con facilidad."],
+      "mascotas": {"toxica": false, "texto": "No tóxica para perros y gatos según la ASPCA. Igual, cualquier planta puede caerles pesada al estómago si la mastican.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/emerald-ripple-peperomia"}
+    },
+    {
+      "slug": "peperomia-obtusifolia", "codigo": "JM-T1-188", "base": "peperomia",
+      "nombre": "Peperomia obtusifolia", "alias": ["Peperomia"], "botanico": "Peperomia obtusifolia",
+      "resumen": "Hojas redondas, gruesas y brillantes. Una de las peperomias más resistentes.",
+      "mascotas": {"toxica": false, "texto": "No tóxica para perros y gatos según la ASPCA. Igual, cualquier planta puede caerles pesada al estómago si la mastican.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/baby-rubber-plant"}
+    },
+    {
+      "slug": "philodendron-birkin", "codigo": "JM-T1-189", "base": "filodendro",
+      "nombre": "Philodendron Birkin", "alias": ["Filodendro Birkin"], "botanico": "Philodendron 'Birkin'",
+      "resumen": "Compacto, de hojas verde oscuro con finas rayas blancas. Crece en roseta y no necesita tutor.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo. Sus rayas blancas dependen de la luz: con poca luz salen hojas cada vez más verdes."}
+    },
+    {
+      "slug": "philodendron-brasil", "codigo": "JM-T1-190", "base": "filodendro",
+      "nombre": "Philodendron Brasil", "alias": ["Filodendro Brasil"], "botanico": "Philodendron hederaceum 'Brasil'",
+      "dificultad": 1,
+      "resumen": "Hojas en forma de corazón con una franja verde lima al centro. Colgante o trepador, y tan fácil como un pothos.",
+      "luz": {"corto": "Luz media a brillante", "texto": "Luz media a brillante, sin sol directo de la tarde. Con más luz mantiene mejor la franja clara de sus hojas."},
+      "consejos_extra": ["Para que se vea más tupido, corta las guías largas sobre un nudo. Los esquejes enraízan en agua."]
+    },
+    {
+      "slug": "philodendron-lemon-lime", "codigo": "JM-T1-191", "base": "filodendro",
+      "nombre": "Philodendron Lemon Lime", "alias": ["Philodendron cordatum 'Lemon Lime'"], "botanico": "Philodendron hederaceum 'Lemon Lime'",
+      "dificultad": 1,
+      "resumen": "Hojas en forma de corazón de un verde lima luminoso. Colgante o trepador, y muy fácil.",
+      "luz": {"corto": "Luz media a brillante", "texto": "Luz media a brillante, sin sol directo de la tarde. Con más luz su color lima es más intenso."},
+      "consejos_extra": ["Para que se vea más tupido, corta las guías largas sobre un nudo. Los esquejes enraízan en agua."]
+    },
+    {
+      "slug": "philodendron-florida", "codigo": "JM-T1-192", "base": "filodendro",
+      "nombre": "Philodendron Florida", "alias": ["Filodendro Florida"], "botanico": "Philodendron 'Florida'",
+      "resumen": "Un filodendro trepador de hojas lobuladas. Con un tutor crece más alto y con hojas más grandes."
+    },
+    {
+      "slug": "philodendron-imperial-golden", "codigo": "JM-T1-193", "base": "filodendro",
+      "nombre": "Philodendron Imperial Golden", "alias": ["Filodendro dorado"], "botanico": "Philodendron 'Imperial Golden'",
+      "dificultad": 1,
+      "resumen": "Hojas grandes de un amarillo dorado. Crece en roseta, sin tutor, y es de los filodendros más resistentes.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo: con buena luz mantiene su color dorado; con poca, se vuelve más verde."}
+    },
+    {
+      "slug": "philodendron-narrow-golden", "codigo": "JM-T1-194", "base": "filodendro",
+      "nombre": "Philodendron Narrow Golden", "alias": ["Filodendro"], "botanico": "Philodendron 'Narrow Golden'",
+      "resumen": "Un filodendro de tonos dorados. Con buena luz mantiene su color."
+    },
+    {
+      "slug": "philodendron-pink-princess", "codigo": "JM-T1-195", "base": "filodendro",
+      "nombre": "Philodendron Pink Princess", "alias": ["Filodendro Pink Princess"], "botanico": "Philodendron erubescens 'Pink Princess'",
+      "dificultad": 3,
+      "resumen": "Hojas oscuras con manchas rosadas, cada una distinta. Trepadora y de colección: pide mucha luz para mantener el rosado.",
+      "luz": {"corto": "Mucha luz indirecta", "texto": "Mucha luz sin sol directo de la tarde. El rosado depende de la luz: con poca, las hojas nuevas salen cada vez más verdes."},
+      "consejos_extra": ["Las hojas totalmente rosadas son bonitas pero débiles: no hacen fotosíntesis y suelen secarse. Es normal.", "Dale un tutor para trepar: sus hojas crecen más."]
+    },
+    {
+      "slug": "philodendron-pittieri", "codigo": "JM-T1-196", "base": "filodendro",
+      "nombre": "Philodendron Pittieri", "alias": ["Filodendro"], "botanico": "Philodendron 'Pittieri'",
+      "resumen": "Un filodendro de colección. Comparte los cuidados de la familia: luz brillante indirecta y riego cuando la tierra se seca arriba."
+    },
+    {
+      "slug": "philodendron-prince-of-orange", "codigo": "JM-T1-197", "base": "filodendro",
+      "nombre": "Philodendron Prince of Orange", "alias": ["Filodendro naranjo"], "botanico": "Philodendron 'Prince of Orange'",
+      "dificultad": 1,
+      "resumen": "Sus hojas nuevas salen naranjas y se vuelven verdes con los días: la planta luce varios colores a la vez. Crece en roseta, sin tutor.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo. Con buena luz las hojas nuevas salen de un naranjo más intenso."}
+    },
+    {
+      "slug": "philodendron-atom", "codigo": "JM-T1-198", "base": "filodendro",
+      "nombre": "Philodendron Selloum 'Atom'", "alias": ["Filodendro Atom"], "botanico": "Thaumatophyllum bipinnatifidum 'Atom' (antes Philodendron selloum)",
+      "dificultad": 1,
+      "resumen": "Compacto, de hojas onduladas y brillantes. Crece en roseta, sin tutor, y es muy resistente.",
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA (Philodendron selloum). Contiene cristales de oxalato de calcio que irritan la boca: babeo, vómitos y dificultad para tragar si lo mastican.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/tree-philodendron"}
+    },
+    {
+      "slug": "philodendron-silver-sword", "codigo": "JM-T1-199", "base": "filodendro",
+      "nombre": "Philodendron Silver Sword", "alias": ["Filodendro espada plateada"], "botanico": "Philodendron hastatum",
+      "resumen": "Hojas plateadas en forma de lanza que cambian de forma a medida que trepa. Elegante y fácil.",
+      "consejos_extra": ["Dale un tutor para trepar: sus hojas crecen más grandes y alargadas."]
+    },
+    {
+      "slug": "philodendron-white-wizard", "codigo": "JM-T1-200", "base": "filodendro",
+      "nombre": "Philodendron White Wizard", "alias": ["Filodendro White Wizard"], "botanico": "Philodendron 'White Wizard'",
+      "dificultad": 3,
+      "resumen": "Hojas verde oscuro con grandes manchas blancas. Trepador y de colección: pide mucha luz para mantener el blanco.",
+      "luz": {"corto": "Mucha luz indirecta", "texto": "Mucha luz sin sol directo: las partes blancas se queman con el sol y, con poca luz, las hojas nuevas salen cada vez más verdes."},
+      "consejos_extra": ["Las hojas casi totalmente blancas son débiles y suelen secarse. Es normal.", "Dale un tutor para trepar: sus hojas crecen más."]
+    },
+    {
+      "slug": "rhaphidophora-tetrasperma", "codigo": "JM-T1-201",
+      "nombre": "Rhaphidophora tetrasperma", "alias": ["Mini monstera"], "botanico": "Rhaphidophora tetrasperma",
+      "tipo": "interior", "dificultad": 1,
+      "resumen": "Parece una monstera en miniatura: hojas con cortes que se abren a medida que trepa. Crece rápido.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo fuerte. Con poca luz las hojas salen pequeñas y sin cortes."},
+      "riego": {"corto": "Cuando 3 cm estén secos", "calor": "Cada 5 a 8 días", "frio": "Cada 2 semanas", "texto": "Riega a fondo cuando los primeros 3 cm de tierra estén secos. No la dejes encharcada."},
+      "temperatura": {"corto": "Entre 16 y 27 °C", "texto": "Evita que baje de 12 °C y las corrientes frías."},
+      "abono": "Abono líquido para plantas verdes cada 3 a 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada uno o dos años en primavera.",
+      "consejos": ["Dale un tutor de fibra de coco para trepar: así sus hojas crecen más y se abren con cortes.", "Si se alarga, córtala sobre un nudo: los esquejes enraízan en agua."],
+      "alertas": [["Hojas amarillas", "Exceso de riego."], ["Hojas sin cortes", "Le falta luz o algo por donde trepar."], ["Puntas café", "Aire seco o falta de riego."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de esta especie. Es de la misma familia que la monstera y el pothos, que sí figuran como tóxicos por sus cristales de oxalato de calcio, así que trátala con la misma precaución."}
+    },
+    {
+      "slug": "scindapsus-golden", "codigo": "JM-T1-202", "base": "pothos",
+      "nombre": "Scindapsus Golden", "alias": ["Pothos dorado", "Potus"], "botanico": "Epipremnum / Scindapsus",
+      "resumen": "Hojas verdes con vetas doradas, colgante o trepador. De las plantas más fáciles que existen.",
+      "mascotas": {"toxica": true, "texto": "La ASPCA advierte que los potos (Epipremnum y Scindapsus) irritan la boca y el estómago si se mastican, por sus cristales de oxalato de calcio.", "url": "https://www.aspca.org/nyc/recursos-para-personas-que-hablan-espanol/17-plantas-venenosas-comunes"}
+    },
+    {
+      "slug": "scindapsus-njoy", "codigo": "JM-T1-203", "base": "pothos",
+      "nombre": "Scindapsus N'Joy", "alias": ["Pothos N'Joy", "Potus"], "botanico": "Epipremnum / Scindapsus 'N'Joy'",
+      "resumen": "Hojas pequeñas con manchas blancas muy marcadas. Más compacto y lento que el pothos verde.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo de la tarde. Por sus partes blancas necesita más luz que un pothos verde: con poca luz crece muy lento."},
+      "mascotas": {"toxica": true, "texto": "La ASPCA advierte que los potos (Epipremnum y Scindapsus) irritan la boca y el estómago si se mastican, por sus cristales de oxalato de calcio.", "url": "https://www.aspca.org/nyc/recursos-para-personas-que-hablan-espanol/17-plantas-venenosas-comunes"}
+    },
+    {
+      "slug": "scindapsus-pictus-exotica", "codigo": "JM-T1-204", "base": "pothos",
+      "nombre": "Scindapsus pictus 'Exotica'", "alias": ["Pothos satinado"], "botanico": "Scindapsus pictus 'Exotica'",
+      "resumen": "Hojas verde mate con grandes manchas plateadas que brillan como satín. Colgante y muy fácil.",
+      "riego": {"corto": "Cuando la tierra esté casi seca", "calor": "Cada 7 a 10 días", "frio": "Cada 2 a 3 semanas", "texto": "Prefiere secarse más que un pothos. Cuando tiene sed, sus hojas se curvan hacia adentro: es la señal para regar."},
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA. Contiene cristales de oxalato de calcio que irritan la boca: babeo, vómitos y dificultad para tragar si lo mastican.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/satin-pothos"}
+    },
+    {
+      "slug": "strobilanthes", "codigo": "JM-T1-205",
+      "nombre": "Strobilanthes", "alias": ["Escudo persa"], "botanico": "Strobilanthes dyerianus",
+      "tipo": "interior", "dificultad": 2,
+      "resumen": "Hojas de un morado metálico que cambia con la luz. Una de las plantas de follaje más llamativas.",
+      "luz": {"corto": "Luz brillante", "texto": "Luz brillante; acepta sol suave de mañana. Es lo que mantiene su brillo morado."},
+      "riego": {"corto": "Tierra levemente húmeda", "calor": "Cada 4 a 6 días", "frio": "Cada 7 a 10 días", "texto": "Mantén la tierra levemente húmeda, sin encharcar. Si se seca, se desmaya."},
+      "temperatura": {"corto": "Entre 16 y 27 °C", "texto": "Evita que baje de 10 °C y el aire seco de la estufa."},
+      "abono": "Abono líquido para plantas verdes cada 3 a 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada año en primavera, si llenó la maceta.",
+      "consejos": ["Despúntala seguido para que se mantenga tupida.", "Con los años se alarga. Renuévala con esquejes, que enraízan con facilidad."],
+      "alertas": [["Pierde el brillo morado", "Le falta luz."], ["Se desmaya", "Tiene sed."], ["Bordes secos", "Aire seco o sol fuerte de la tarde."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de esta planta."}
+    },
+    {
+      "slug": "stromanthe-triostar", "codigo": "JM-T1-206", "base": "calathea",
+      "nombre": "Stromanthe Triostar", "alias": ["Stromanthe"], "botanico": "Stromanthe sanguinea 'Triostar'",
+      "resumen": "Hojas verdes, crema y rosadas, con el reverso fucsia. Prima de las calatheas, igual de exigente con la humedad.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo: necesita un poco más de luz que una calathea para mantener el rosado y el crema."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la Stromanthe. Sus parientes cercanas, las calatheas y marantas, figuran como no tóxicas, pero no lo damos por hecho para esta planta."}
+    },
+    {
+      "slug": "syngonium-confetti", "codigo": "JM-T1-207", "base": "singonio",
+      "nombre": "Syngonium Confetti", "alias": ["Singonio Confetti"], "botanico": "Syngonium podophyllum 'Confetti'",
+      "resumen": "Hojas en forma de flecha salpicadas de rosado, como confeti. Fácil y de crecimiento rápido.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo: es lo que mantiene sus manchas rosadas."}
+    },
+    {
+      "slug": "syngonium-golden-allusion", "codigo": "JM-T1-208", "base": "singonio",
+      "nombre": "Syngonium Golden Allusion", "alias": ["Singonio"], "botanico": "Syngonium podophyllum 'Golden Allusion'",
+      "resumen": "Un singonio de colores claros. Fácil y de crecimiento rápido."
+    },
+    {
+      "slug": "syngonium-pink-perfection", "codigo": "JM-T1-209", "base": "singonio",
+      "nombre": "Syngonium Pink Perfection", "alias": ["Singonio rosado"], "botanico": "Syngonium podophyllum 'Pink Perfection'",
+      "resumen": "Un singonio de hojas rosadas. Necesita buena luz para mantener el color.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo: con poca luz las hojas nuevas pierden el rosado."}
+    },
+    {
+      "slug": "syngonium-starlite", "codigo": "JM-T1-210", "base": "singonio",
+      "nombre": "Syngonium Starlite", "alias": ["Singonio"], "botanico": "Syngonium podophyllum 'Starlite'",
+      "resumen": "Un singonio de hojas claras en forma de flecha. Fácil y de crecimiento rápido."
+    },
+    {
+      "slug": "syngonium-variegado", "codigo": "JM-T1-211", "base": "singonio",
+      "nombre": "Syngonium variegado", "alias": ["Singonio variegado"], "botanico": "Syngonium podophyllum (variegado)",
+      "resumen": "Hojas en forma de flecha con manchas blancas. Por su variegado pide más luz que un singonio verde.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo: las partes blancas se queman con el sol y, con poca luz, las hojas nuevas salen más verdes."},
+      "consejos_extra": ["Si un tallo saca hojas todas verdes, córtalo: así la planta conserva el variegado."]
+    }
+  ]
+}

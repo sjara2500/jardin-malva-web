@@ -117,6 +117,7 @@ p{margin:0}
 .pet.toxica{background:rgba(180,154,175,.15);border:1px solid rgba(126,98,121,.3)}
 .pet .estado{display:inline-flex;align-items:center;gap:8px;font-weight:500;color:var(--bosque)}
 .pet.toxica .estado{color:var(--malva-osc)}
+.pet.sindato{background:var(--blanco);border:1px dashed rgba(112,123,96,.55)}
 .pet .estado svg{width:20px;height:20px}
 .pet .fuente{font-size:.86rem;color:var(--oliva-osc)}
 .pasos{margin:0;padding:0;list-style:none;counter-reset:p;display:grid;gap:12px}

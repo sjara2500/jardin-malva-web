@@ -13,6 +13,7 @@ Reglas que el script hace cumplir:
   textos), pero nunca borres la ficha ni cambies su slug.
 - La toxicidad para mascotas solo se publica con su fuente (ASPCA).
 """
+import copy
 import hashlib
 import html
 import json
@@ -25,6 +26,7 @@ from urllib.parse import quote
 RAIZ = Path(__file__).resolve().parent.parent
 DATOS = RAIZ / "datos" / "cuidados.json"
 REGISTRO = RAIZ / "datos" / "slugs-publicados.txt"
+LOTES = RAIZ / "datos" / "lotes"
 SALIDA = RAIZ / "public" / "cuidados"
 
 DIFICULTAD = {1: "Fácil", 2: "Cuidado medio", 3: "Pide atención"}
@@ -42,11 +44,83 @@ def normalizar(texto):
 
 # ---------------------------------------------------------------- datos
 
+# Campos que identifican a una planta y nunca se heredan de su base
+IDENTIDAD = {"slug", "nombre", "alias", "botanico", "resumen", "codigo", "variedades", "base", "lote"}
+FUSIONABLES = {"luz", "riego", "temperatura", "mascotas"}
+
+
+def resolver(p, perfiles, por_slug, pila=()):
+    """Devuelve la planta con los cuidados heredados de su 'base' (perfil u otra ficha)."""
+    base_id = p.get("base")
+    if not base_id:
+        return dict(p)
+    if base_id in pila:
+        raise ValueError(f"{p.get('slug')}: herencia circular ({' → '.join(pila + (base_id,))})")
+    if base_id in perfiles:
+        base = dict(perfiles[base_id])
+    elif base_id in por_slug:
+        base = resolver(por_slug[base_id], perfiles, por_slug, pila + (base_id,))
+    else:
+        raise ValueError(f"{p.get('slug')}: la base '{base_id}' no existe")
+    r = {k: copy.deepcopy(v) for k, v in base.items() if k not in IDENTIDAD}
+    for k, v in p.items():
+        if k in FUSIONABLES and isinstance(v, dict) and isinstance(r.get(k), dict):
+            if k == "riego" and "estaciones" in v:
+                r[k] = {kk: vv for kk, vv in r[k].items() if kk not in ("calor", "frio")}
+            if k == "mascotas":
+                r[k] = dict(v)  # la toxicidad se reemplaza entera, nunca se mezcla
+            else:
+                r[k] = {**r[k], **v}
+        elif k == "consejos_extra":
+            r["consejos"] = list(v) + r.get("consejos", [])
+        elif k == "alertas_extra":
+            r["alertas"] = list(v) + r.get("alertas", [])
+        else:
+            r[k] = copy.deepcopy(v)
+    r.pop("consejos_extra", None)
+    r.pop("alertas_extra", None)
+    return r
+
+
 def cargar():
     datos = json.loads(DATOS.read_text(encoding="utf-8"))
     errores = []
-    vistos = set()
-    for i, p in enumerate(datos["plantas"]):
+    perfiles = dict(datos.get("perfiles", {}))
+    crudas = [dict(p, lote=None) for p in datos["plantas"]]
+    datos["equivalencias"] = {}
+    datos["lotes"] = {}
+    for f in sorted(LOTES.glob("*.json")):
+        lote = json.loads(f.read_text(encoding="utf-8"))
+        nombre_lote = lote.get("lote", f.stem)
+        datos["lotes"][f.stem] = {"nombre": nombre_lote, "slugs": []}
+        for k, v in lote.get("perfiles", {}).items():
+            if k in perfiles:
+                errores.append(f"{f.name}: perfil '{k}' repetido")
+            perfiles[k] = v
+        for p in lote.get("plantas", []):
+            crudas.append(dict(p, lote=f.stem))
+            datos["lotes"][f.stem]["slugs"].append(p.get("slug"))
+        for cod, slug in lote.get("equivalencias", {}).items():
+            datos["equivalencias"][cod] = slug
+            datos["lotes"][f.stem]["slugs"].append(slug)
+    por_slug = {p.get("slug"): p for p in crudas}
+    plantas = []
+    for p in crudas:
+        try:
+            plantas.append(resolver(p, perfiles, por_slug))
+        except ValueError as ex:
+            errores.append(str(ex))
+    datos["plantas"] = plantas
+    # códigos del Tomo I: los de las equivalencias se asignan a la ficha existente
+    for cod, slug in datos["equivalencias"].items():
+        if slug in por_slug:
+            for p in plantas:
+                if p["slug"] == slug:
+                    p.setdefault("codigo", cod)
+        else:
+            errores.append(f"equivalencia {cod}: la ficha '{slug}' no existe")
+    vistos, codigos = set(), set()
+    for i, p in enumerate(plantas):
         ref = p.get("slug", f"#{i}")
         for campo in ("slug", "nombre", "botanico", "tipo", "resumen", "dificultad",
                       "luz", "riego", "temperatura", "abono", "trasplante", "alertas"):
@@ -57,6 +131,10 @@ def cargar():
         if p.get("slug") in vistos:
             errores.append(f"{ref}: slug repetido")
         vistos.add(p.get("slug"))
+        if p.get("codigo"):
+            if p["codigo"] in codigos:
+                errores.append(f"{ref}: código {p['codigo']} repetido")
+            codigos.add(p["codigo"])
         if p.get("tipo") not in datos["grupos"]:
             errores.append(f"{ref}: tipo desconocido '{p.get('tipo')}'")
         if p.get("dificultad") not in DIFICULTAD:
@@ -64,12 +142,17 @@ def cargar():
         riego = p.get("riego", {})
         if "estaciones" not in riego and not ("calor" in riego and "frio" in riego):
             errores.append(f"{ref}: el riego necesita 'calor' y 'frio' o 'estaciones'")
+        for campo in ("luz", "riego", "temperatura"):
+            if not all(p.get(campo, {}).get(k) for k in ("corto", "texto")):
+                errores.append(f"{ref}: '{campo}' necesita 'corto' y 'texto'")
         m = p.get("mascotas")
         if m is not None:
-            if not str(m.get("url", "")).startswith("https://www.aspca.org/"):
+            if m.get("toxica") not in (True, False, None):
+                errores.append(f"{ref}: 'mascotas.toxica' debe ser true, false o null (sin dato)")
+            if m.get("toxica") is not None and not str(m.get("url", "")).startswith("https://www.aspca.org/"):
                 errores.append(f"{ref}: la toxicidad necesita su fuente de la ASPCA")
-            if not isinstance(m.get("toxica"), bool):
-                errores.append(f"{ref}: 'mascotas.toxica' debe ser true o false")
+            if not m.get("texto"):
+                errores.append(f"{ref}: 'mascotas' necesita 'texto'")
         for a in p.get("alertas", []):
             if len(a) != 2:
                 errores.append(f"{ref}: cada alerta es [señal, qué hacer]")
@@ -83,7 +166,7 @@ def cargar():
                        "apuntan a ellas; devuélvelas): " + ", ".join(faltan))
     if errores:
         sys.exit("No se generó nada:\n- " + "\n- ".join(errores))
-    nuevos = [p["slug"] for p in datos["plantas"] if p["slug"] not in publicados]
+    nuevos = [p["slug"] for p in plantas if p["slug"] not in publicados]
     return datos, publicados, nuevos
 
 
@@ -271,6 +354,7 @@ p{margin:0}
 .pet.toxica{background:rgba(180,154,175,.15);border:1px solid rgba(126,98,121,.3)}
 .pet .estado{display:inline-flex;align-items:center;gap:8px;font-weight:500;color:var(--bosque)}
 .pet.toxica .estado{color:var(--malva-osc)}
+.pet.sindato{background:var(--blanco);border:1px dashed rgba(112,123,96,.55)}
 .pet .estado svg{width:20px;height:20px}
 .pet .fuente{font-size:.86rem;color:var(--oliva-osc)}
 .pasos{margin:0;padding:0;list-style:none;counter-reset:p;display:grid;gap:12px}
@@ -440,6 +524,8 @@ def mascotas_corto(m):
         return None
     if m.get("corto"):
         return m["corto"]
+    if m["toxica"] is None:
+        return "Sin dato verificado"
     return "Tóxica: fuera de su alcance" if m["toxica"] else "No tóxica"
 
 
@@ -462,7 +548,7 @@ def pagina_planta(datos, p, v_css, v_js):
         ("temp", "Temperatura", p["temperatura"]["corto"], ""),
     ]
     if m is not None:
-        tiles.append(("pata", "Mascotas", mascotas_corto(m), " aviso" if m["toxica"] else ""))
+        tiles.append(("pata", "Mascotas", mascotas_corto(m), " aviso" if m["toxica"] is not False else ""))
     tiles_html = "\n".join(
         f'      <li class="tile{cl}"><span class="ico">{icono(ic)}</span><span class="lbl">{e(lb)}</span><span class="val">{e(v)}</span></li>'
         for ic, lb, v, cl in tiles)
@@ -493,11 +579,18 @@ def pagina_planta(datos, p, v_css, v_js):
 
     mascota_html = ""
     if m is not None:
-        cl = " toxica" if m["toxica"] else ""
-        estado = "Ojo con tus mascotas" if m["toxica"] else "Buena noticia para tus mascotas"
-        ic = "alerta" if m["toxica"] else "check"
-        extra = (" Mejor ubicarla fuera de su alcance y, si notas síntomas después de una mordida, llama a tu veterinario."
-                 if m["toxica"] else "")
+        tox = m["toxica"]
+        cl = " toxica" if tox else (" sindato" if tox is None else "")
+        estado = {True: "Ojo con tus mascotas", False: "Buena noticia para tus mascotas",
+                  None: "Sin dato verificado"}[tox]
+        ic = {True: "alerta", False: "check", None: "pata"}[tox]
+        extra = {True: " Mejor ubicarla fuera de su alcance y, si notas síntomas después de una mordida, llama a tu veterinario.",
+                 False: "",
+                 None: " Mientras no haya un dato verificado, mejor ubicarla fuera de su alcance."}[tox]
+        fuente = (f'<p class="fuente">Fuente: <a href="{e(m["url"])}" target="_blank" rel="noopener">ASPCA, '
+                  f'lista de plantas tóxicas y no tóxicas</a> (en inglés).</p>' if m.get("url") and "/nyc/" not in m["url"] else
+                  f'<p class="fuente">Fuente: <a href="{e(m["url"])}" target="_blank" rel="noopener">ASPCA</a>.</p>' if m.get("url") else
+                  '<p class="fuente">Consultamos la <a href="https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants" target="_blank" rel="noopener">lista de la ASPCA</a> (en inglés).</p>')
         mascota_html = f"""<section class="sec" aria-labelledby="t-pet">
   <div class="wrap">
     <div class="sec-t">{icono("pata")}<h2 id="t-pet">Si tienes mascotas</h2></div>
@@ -505,7 +598,7 @@ def pagina_planta(datos, p, v_css, v_js):
       <div>
         <p class="estado">{icono(ic)}{e(estado)}</p>
         <p>{e(m['texto'])}{e(extra)}</p>
-        <p class="fuente">Fuente: <a href="{e(m['url'])}" target="_blank" rel="noopener">ASPCA, lista de plantas tóxicas y no tóxicas</a> (en inglés).</p>
+        {fuente}
       </div>
       <img src="/assets/petunia-240.webp" width="240" height="588" loading="lazy" decoding="async" alt="Petunia, la anfitriona ilustrada de Jardín Malva">
     </div>
