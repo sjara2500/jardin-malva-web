@@ -24,12 +24,18 @@
 @font-face{font-family:"Cormorant Garamond";src:url(assets/fonts/cormorant.woff2) format("woff2");font-weight:400 600;font-style:normal;font-display:swap}
 @font-face{font-family:"DM Sans";src:url(assets/fonts/dmsans.woff2) format("woff2");font-weight:400 500;font-style:normal;font-display:swap}
 @font-face{font-family:"Parisienne";src:url(assets/fonts/parisienne.woff2) format("woff2");font-weight:400;font-style:normal;font-display:swap}
-/* European Garden Boutique: crema y blanco cálido, una banda verde bosque para la
-   historia, arcos de invernadero enmarcando la foto real y el emblema girando en el inicio. */
+/* European Garden Boutique: cada sección con su fondo plano de la paleta del brief
+   (tinte malva, tinte salvia, crema y bandas verde bosque), sin degradados. Arcos de
+   invernadero enmarcando la foto real, etiquetas malva y un pequeño adorno floral
+   bajo algunos títulos. El emblema gira en el inicio. */
 :root{
   --bosque:#263D32; --bosque-2:#2F4A3C; --oliva:#707B60; --oliva-osc:#5C6752;
   --salvia:#A8B5A0; --crema:#F5F0E6; --blanco:#FCFAF6; --carbon:#292D28;
   --malva:#B49AAF; --malva-osc:#7E6279; --malva-claro:#C9B6C4;
+  /* tintes planos de salvia y malva; --malva-txt es el malva para texto pequeño
+     (cumple contraste AA sobre todos los fondos claros) */
+  --t-salvia:#E3E9DE; --t-malva:#EEE4EC; --malva-txt:#6B5166;
+  --orn:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 132 24'%3E%3Cg fill='none' stroke='%23707B60' stroke-opacity='.55' stroke-width='1.3' stroke-linecap='round'%3E%3Cpath d='M2 12h40M90 12h40'/%3E%3C/g%3E%3Cg fill='%23707B60' fill-opacity='.45'%3E%3Cpath d='M57 12c-3-5-9-7-14-5 3 5 9 7 14 5Z'/%3E%3Cpath d='M75 12c3-5 9-7 14-5-3 5-9 7-14 5Z'/%3E%3C/g%3E%3Cg fill='%23B49AAF'%3E%3Ccircle cx='66' cy='8.2' r='2.9'/%3E%3Ccircle cx='69.6' cy='10.8' r='2.9'/%3E%3Ccircle cx='68.2' cy='15' r='2.9'/%3E%3Ccircle cx='63.8' cy='15' r='2.9'/%3E%3Ccircle cx='62.4' cy='10.8' r='2.9'/%3E%3C/g%3E%3Ccircle cx='66' cy='12' r='1.6' fill='%23F5F0E6'/%3E%3C/svg%3E");
   --linea:rgba(41,45,40,.14); --r:12px; --ease:cubic-bezier(.22,.7,.2,1);
   --f-display:"Cormorant Garamond","Cormorant",Georgia,"Times New Roman",serif;
   --f-body:"DM Sans","Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;
@@ -47,13 +53,19 @@ a{color:inherit}
 .band{padding-block:clamp(60px,9vw,112px)}
 .crema{background:var(--crema)}
 .blanco{background:var(--blanco)}
-.bosque{background:var(--bosque);color:var(--crema)}
+.bosque{background:var(--bosque);color:var(--crema);--orn:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 132 24'%3E%3Cg fill='none' stroke='%23A8B5A0' stroke-opacity='.6' stroke-width='1.3' stroke-linecap='round'%3E%3Cpath d='M2 12h40M90 12h40'/%3E%3C/g%3E%3Cg fill='%23A8B5A0' fill-opacity='.5'%3E%3Cpath d='M57 12c-3-5-9-7-14-5 3 5 9 7 14 5Z'/%3E%3Cpath d='M75 12c3-5 9-7 14-5-3 5-9 7-14 5Z'/%3E%3C/g%3E%3Cg fill='%23C9B6C4'%3E%3Ccircle cx='66' cy='8.2' r='2.9'/%3E%3Ccircle cx='69.6' cy='10.8' r='2.9'/%3E%3Ccircle cx='68.2' cy='15' r='2.9'/%3E%3Ccircle cx='63.8' cy='15' r='2.9'/%3E%3Ccircle cx='62.4' cy='10.8' r='2.9'/%3E%3C/g%3E%3Ccircle cx='66' cy='12' r='1.6' fill='%23263D32'/%3E%3C/svg%3E")}
 .bosque :focus-visible{outline-color:var(--malva-claro)}
+.t-salvia{background:var(--t-salvia)}
+.t-malva{background:var(--t-malva)}
+/* adorno floral bajo algunos títulos (decorativo) */
+.orn{display:block;width:132px;height:24px;background:var(--orn) no-repeat center/contain}
 [hidden]{display:none!important}
 
 /* Tipografía */
-.eyebrow{margin:0;text-wrap:balance;font:500 .76rem/1.4 var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--malva-osc)}
-.bosque .eyebrow{color:var(--malva-claro)}
+.eyebrow{margin:0;width:fit-content;max-width:100%;padding:5px 12px;border-radius:999px;background:var(--t-malva);text-wrap:balance;font:500 .76rem/1.4 var(--f-body);letter-spacing:.2em;text-transform:uppercase;color:var(--malva-txt)}
+.t-malva .eyebrow{background:var(--blanco)}
+.bosque .eyebrow{background:rgba(201,182,196,.1);color:var(--malva-claro)}
+.hero .eyebrow{padding:0;border-radius:0;background:none}
 .h1,.h2{margin:0;font-family:var(--f-display);font-weight:500;color:var(--bosque);text-wrap:balance;letter-spacing:.005em}
 .bosque .h1,.bosque .h2{color:var(--crema)}
 .h1{font-size:clamp(2.9rem,7vw,4.9rem);line-height:1.04}
@@ -74,6 +86,8 @@ p{margin:0}
 .btn-sec:hover{background:rgba(38,61,50,.07)}
 .bosque .btn-pri{background:var(--crema);color:var(--bosque)}
 .bosque .btn-pri:hover{background:#fff}
+.bosque .btn-sec{border-color:rgba(245,240,230,.6);color:var(--crema)}
+.bosque .btn-sec:hover{background:rgba(245,240,230,.08)}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
 
 /* Cabecera */
@@ -86,7 +100,7 @@ p{margin:0}
 .nav a:hover{color:var(--bosque)}
 .top .btn{min-height:42px;padding:0 1.1em;font-size:.92rem}
 @media (min-width:1000px){.nav{display:flex}}
-@media (max-width:359px){.brand span{display:none}}
+@media (max-width:359px){.top .brand span{display:none}}
 
 /* Inicio: emblema con anillo */
 .hero{padding-block:clamp(40px,6vw,76px) clamp(56px,8vw,96px)}
@@ -100,19 +114,21 @@ p{margin:0}
 .ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .ring .spin{transform-origin:200px 200px;animation:spin 46s linear infinite}
 .logo-pf{position:absolute;left:11%;top:11%;width:78%;height:78%;border-radius:50%;box-shadow:0 26px 54px rgba(38,61,50,.22)}
+.t-malva .ring circle{stroke:var(--malva)}
 @media (min-width:880px){.hero-grid{grid-template-columns:1.05fr .95fr}.emblema{justify-self:end}}
 @media (max-width:879px){.emblema{width:min(86%,360px)}}
 
 /* Categorías */
 .sec-head{display:grid;gap:12px;margin-bottom:clamp(32px,4.5vw,52px)}
 .cats{list-style:none;margin:0;padding:0;display:grid;gap:18px}
-.cats li{display:grid;grid-template-rows:auto 1fr;border-radius:var(--r);background:var(--blanco);border:1px solid var(--linea);overflow:hidden}
+.cats li{display:grid;grid-template-rows:auto 1fr;border-radius:var(--r);background:var(--blanco);box-shadow:0 10px 24px rgba(38,61,50,.08);overflow:hidden}
 .cats img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;background:var(--crema);transition:transform .5s var(--ease)}
 .cats li:hover img{transform:scale(1.04)}
 .cats .txt{display:grid;gap:6px;align-content:start;padding:18px 20px 22px}
 .cats p{color:var(--oliva-osc);font-size:.97rem}
-.cats .atelier .txt{background:rgba(180,154,175,.12)}
-.cats .atelier h3{color:var(--malva-osc)}
+.cats li:nth-child(3n+2) .txt{background:var(--crema)}
+.cats li:nth-child(3n) .txt{background:var(--t-malva)}
+.cats .atelier h3{color:var(--malva-txt)}
 @media (min-width:600px){.cats{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:980px){.cats{grid-template-columns:repeat(3,1fr)}}
 
@@ -121,11 +137,14 @@ p{margin:0}
 .paseo-media{justify-self:center;width:min(84%,340px)}
 .paseo-copy{display:grid;gap:18px;min-width:0}
 .paseo-copy>p:not(.eyebrow):not(.script){max-width:42ch;color:var(--oliva-osc)}
+.bosque .paseo-copy>p:not(.eyebrow):not(.script){color:var(--salvia)}
 @media (min-width:860px){.paseo-grid{grid-template-columns:.9fr 1.1fr}.paseo-media{justify-self:start}}
 
 /* Arcos y clips */
 .arch{position:relative;overflow:hidden;aspect-ratio:9/13;border-radius:999px 999px var(--r) var(--r);background:var(--crema);outline:1px solid var(--salvia);outline-offset:9px}
 .arch img{width:100%;height:100%;object-fit:cover}
+.t-salvia .arch{outline-color:var(--malva)}
+.bosque .arch{outline-color:var(--malva-claro);background:var(--bosque-2)}
 .clip img.poster,.clip video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .clip video{opacity:0;transition:opacity .8s ease}
 .clip.is-playing video{opacity:1}
@@ -174,6 +193,8 @@ p{margin:0}
 .info div{display:grid;grid-template-columns:minmax(108px,30%) 1fr;gap:16px;padding:15px 0;border-bottom:1px solid var(--linea)}
 .info dt{font:500 .76rem/1.7 var(--f-body);letter-spacing:.17em;text-transform:uppercase;color:var(--malva-osc)}
 .info dd{margin:0;font-size:1.05rem}
+.bosque .info,.bosque .info div{border-color:rgba(245,240,230,.18)}
+.bosque .info dt{color:var(--malva-claro)}
 @media (min-width:860px){.visit-grid{grid-template-columns:1.1fr .9fr}.visit-photo{order:2;justify-self:end;width:min(100%,370px)}}
 @media (max-width:480px){.info div{grid-template-columns:1fr;gap:3px}}
 
@@ -186,9 +207,9 @@ p{margin:0}
 .contact{list-style:none;margin:0;padding:0;border-top:1px solid var(--linea)}
 .contact li{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--linea)}
 .c-row{flex:1;min-width:0;display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:5px 18px;padding:20px 4px;text-decoration:none}
-.c-row .ico{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--crema);color:var(--bosque);grid-row:span 2;transition:background-color .25s,color .25s}
+.c-row .ico{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--t-malva);color:var(--malva-txt);grid-row:span 2;transition:background-color .25s,color .25s}
 .c-row .ico svg{width:22px;height:22px}
-.c-label{font:500 .76rem/1.3 var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--malva-osc)}
+.c-label{font:500 .76rem/1.3 var(--f-body);letter-spacing:.18em;text-transform:uppercase;color:var(--malva-txt)}
 .c-value{grid-column:2;font:500 clamp(1.3rem,3.2vw,1.8rem)/1.25 var(--f-display);color:var(--bosque);overflow-wrap:anywhere}
 [data-wa-text]{white-space:nowrap}
 .c-row .arrow{grid-row:1/span 2;grid-column:3;width:22px;height:22px;color:var(--oliva);transition:transform .25s var(--ease)}
@@ -249,7 +270,7 @@ p{margin:0}
 </header>
 
 <main id="inicio">
-  <section class="hero band blanco" aria-labelledby="titulo">
+  <section class="hero band t-malva" aria-labelledby="titulo">
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Vivero boutique · San Pedro de la Paz</p>
@@ -279,12 +300,13 @@ p{margin:0}
     </div>
   </section>
 
-  <section id="vivero" class="band crema" aria-labelledby="t-vivero">
+  <section id="vivero" class="band t-salvia" aria-labelledby="t-vivero">
     <div class="wrap">
       <header class="sec-head reveal">
         <p class="eyebrow">El vivero</p>
         <h2 class="h2" id="t-vivero">Lo que encontrarás</h2>
         <p class="script">naturaleza para cada rincón</p>
+        <span class="orn" aria-hidden="true"></span>
       </header>
 
       <ul class="cats">
@@ -316,7 +338,7 @@ p{margin:0}
     </div>
   </section>
 
-  <section id="paseo" class="band blanco" aria-labelledby="t-paseo">
+  <section id="paseo" class="band bosque" aria-labelledby="t-paseo">
     <div class="wrap paseo-grid">
       <div class="paseo-media reveal">
         <div class="arch clip" data-clip data-src="assets/paseo.mp4">
@@ -348,19 +370,20 @@ p{margin:0}
     </div>
   </section>
 
-  <section id="historia" class="band bosque" aria-labelledby="t-hist">
+  <section id="historia" class="band t-malva" aria-labelledby="t-hist">
     <div class="wrap hist">
       <img class="reveal" src="assets/logo-petfriendly-360.webp" srcset="assets/logo-petfriendly-360.webp 360w, assets/logo-petfriendly-640.webp 640w" sizes="(min-width:820px) 230px, 58vw" width="360" height="360" loading="lazy" decoding="async" alt="Emblema de Jardín Malva: una West Highland White Terrier blanca junto a la flor malva de cinco pétalos">
       <div class="hist-copy">
         <p class="eyebrow reveal">Nuestra historia</p>
         <h2 class="h2 reveal" id="t-hist">El nombre viene de ella</h2>
+        <span class="orn reveal" aria-hidden="true"></span>
         <p class="reveal">Jardín Malva nació como un homenaje a Malva, una querida perrita West Highland White Terrier. Su nombre quedó en la puerta y su figura, en el emblema de la casa.</p>
         <p class="muted reveal">De ahí viene también nuestra manera de recibir: con calma, sin apuro y con la puerta abierta a quienes llegan con su perro.</p>
       </div>
     </div>
   </section>
 
-  <section id="pet" class="band crema" aria-labelledby="t-pet">
+  <section id="pet" class="band t-salvia" aria-labelledby="t-pet">
     <div class="wrap pet-grid">
       <div class="pet-media reveal">
         <div class="arch clip" data-clip data-src="assets/perros.mp4">
@@ -394,7 +417,7 @@ p{margin:0}
     </div>
   </section>
 
-  <section id="visita" class="band blanco" aria-labelledby="t-visita">
+  <section id="visita" class="band bosque" aria-labelledby="t-visita">
     <div class="wrap visit-grid">
       <figure class="visit-photo reveal">
         <div class="arch"><img src="assets/fachada-480.webp" srcset="assets/fachada-480.webp 480w, assets/fachada-640.webp 640w, assets/fachada-800.webp 800w" sizes="(min-width:860px) 370px, 84vw" width="480" height="640" loading="lazy" decoding="async" alt="Entrada de Jardín Malva: reja negra con el logo de la flor malva"></div>
@@ -403,6 +426,7 @@ p{margin:0}
         <header class="sec-head reveal" style="margin:0">
           <p class="eyebrow">Visítanos</p>
           <h2 class="h2" id="t-visita">Te esperamos</h2>
+          <span class="orn" aria-hidden="true"></span>
         </header>
         <dl class="info reveal">
           <div><dt>Dirección</dt><dd>Ing. Ernesto Pinto Lagarrigue 793<br>San Pedro de la Paz, Biobío</dd></div>
@@ -428,7 +452,7 @@ p{margin:0}
     </div>
   </section>
 
-  <section class="band crema" aria-labelledby="t-ig">
+  <section class="band t-malva" aria-labelledby="t-ig">
     <div class="wrap ig">
       <p class="eyebrow reveal">Instagram</p>
       <h2 class="h2 reveal" id="t-ig">Lo que llega cada semana</h2>
@@ -441,11 +465,12 @@ p{margin:0}
     </div>
   </section>
 
-  <section id="contacto" class="band blanco" aria-labelledby="t-contacto">
+  <section id="contacto" class="band crema" aria-labelledby="t-contacto">
     <div class="wrap">
       <header class="sec-head reveal">
         <p class="eyebrow">Contacto</p>
         <h2 class="h2" id="t-contacto">Conversemos</h2>
+        <span class="orn" aria-hidden="true"></span>
         <p class="muted">Pregunta por una planta, por cómo cuidarla o por cómo llegar.</p>
       </header>
       <ul class="contact">
