@@ -75,7 +75,17 @@ Cuando haya WhatsApp o enlace de reseñas de Google, ponlos en `contacto` de
 `datos/cuidados.json` y vuelve a generar. Mientras `whatsapp` esté vacío, el botón
 lleva a los mensajes de Instagram, y la reseña al perfil de Google Maps.
 
-Las fichas llevan `noindex` mientras `"indexar": false`. Cámbialo a `true` cuando
+### Plantas para casas con mascotas (`/mascotas`)
+
+`public/mascotas.html` (jardinmalva.cl/mascotas) y el bloque "Plantas para casas con
+mascotas" de la sección Pet friendly de `public/sitio.html` los genera el mismo script a
+partir de las fichas: entran solo las plantas que la ASPCA clasifica como no tóxicas
+(`"toxica": false`); las tóxicas y las "sin dato" quedan fuera. Las variedades de una misma
+base se agrupan (p. ej. "Calatheas"). En `sitio.html` el bloque va entre las marcas
+`PLANTAS-MASCOTAS:INICIO` y `PLANTAS-MASCOTAS:FIN`: no lo edites a mano, se reescribe
+cada vez que se ejecuta el script. Si se rediseña `sitio.html`, conserva esas marcas.
+
+Las fichas llevan `noindex` mientras `"indexar": false` (también `/mascotas`). Cámbialo a `true` cuando
 estén revisadas para que aparezcan en Google.
 
 ## Imágenes

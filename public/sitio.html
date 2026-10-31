@@ -159,6 +159,12 @@ p{margin:0}
 .petunia div{display:grid;gap:6px;align-content:center;min-width:0}
 .petunia p{color:var(--oliva-osc);font-size:.97rem}
 @media (min-width:860px){.pet-grid{grid-template-columns:.85fr 1.15fr}.pet-media{justify-self:start}.petunia img{width:140px}}
+.pet-plantas{display:grid;gap:10px;margin-top:30px;padding-top:24px;border-top:1px solid var(--linea)}
+.pet-plantas p{color:var(--oliva-osc);font-size:.97rem}
+.pet-chips{list-style:none;margin:2px 0 6px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.pet-chips a{display:inline-flex;align-items:center;min-height:38px;padding:0 14px;border-radius:999px;border:1px solid var(--linea);background:var(--blanco);color:var(--bosque);font-size:.92rem;text-decoration:none;transition:border-color .2s}
+.pet-chips a:hover{border-color:var(--bosque)}
+.pet-plantas .btn{justify-self:start}
 
 /* Visítanos */
 .visit-grid{display:grid;gap:clamp(34px,5vw,64px);align-items:center}
@@ -376,6 +382,14 @@ p{margin:0}
             <p>Nuestra anfitriona. Siempre con delantal y lista para recibirte.</p>
           </div>
         </div>
+        <!-- PLANTAS-MASCOTAS:INICIO · lo genera herramientas/generar_cuidados.py, no editar a mano -->
+        <div class="pet-plantas reveal">
+          <h3>Plantas para casas con mascotas</h3>
+          <p>23 plantas que la ASPCA clasifica como no tóxicas para perros y gatos, con sus cuidados.</p>
+          <ul class="pet-chips"><li><a href="/mascotas#calathea">Calatheas</a></li><li><a href="/mascotas#peperomia">Peperomias</a></li><li><a href="/mascotas#hypoestes">Hypoestes</a></li><li><a href="/mascotas#maranta">Marantas</a></li><li><a href="/mascotas#aphelandra">Aphelandra</a></li><li><a href="/mascotas#cuerno-de-alce">Cuerno de alce</a></li><li><a href="/mascotas#flor-de-cera">Flor de cera</a></li><li><a href="/mascotas#gynura">Gynura</a></li></ul>
+          <a class="btn btn-sec" href="/mascotas">Ver la lista completa</a>
+        </div>
+        <!-- PLANTAS-MASCOTAS:FIN -->
       </div>
     </div>
   </section>

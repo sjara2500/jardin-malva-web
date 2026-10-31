@@ -27,6 +27,8 @@ RAIZ = Path(__file__).resolve().parent.parent
 DATOS = RAIZ / "datos" / "cuidados.json"
 REGISTRO = RAIZ / "datos" / "slugs-publicados.txt"
 LOTES = RAIZ / "datos" / "lotes"
+SITIO = RAIZ / "public" / "sitio.html"
+MASCOTAS = RAIZ / "public" / "mascotas.html"
 SALIDA = RAIZ / "public" / "cuidados"
 
 DIFICULTAD = {1: "Fácil", 2: "Cuidado medio", 3: "Pide atención"}
@@ -728,6 +730,238 @@ def pagina_indice(datos, v_css, v_js):
     return cabeza(datos, titulo, desc, "/cuidados/", v_css) + cuerpo + pie(datos, v_js)
 
 
+# ---------------------------------------------------------------- plantas para casas con mascotas
+
+# Nombre y nombre botánico de los grupos de variedades que comparten ficha base
+GRUPOS_LISTA = {
+    "calathea": ("Calatheas", "Goeppertia (antes Calathea)"),
+    "peperomia": ("Peperomias", "Peperomia spp."),
+    "maranta": ("Marantas", "Maranta leuconeura"),
+    "hypoestes": ("Hypoestes", "Hypoestes phyllostachya"),
+}
+MARCA_INI = "<!-- PLANTAS-MASCOTAS:INICIO · lo genera herramientas/generar_cuidados.py, no editar a mano -->"
+MARCA_FIN = "<!-- PLANTAS-MASCOTAS:FIN -->"
+
+
+def familias_no_toxicas(datos):
+    """Agrupa las plantas no tóxicas (ASPCA) por su ficha o perfil raíz. Devuelve {tipo: [familia]}."""
+    por_slug = {p["slug"]: p for p in datos["plantas"]}
+
+    def raiz(p):
+        vistos = set()
+        while p.get("base") and p["base"] in por_slug and p["slug"] not in vistos:
+            vistos.add(p["slug"])
+            p = por_slug[p["base"]]
+        return p.get("base") or p["slug"]
+
+    familias = {}
+    for p in datos["plantas"]:
+        m = p.get("mascotas")
+        if not m or m.get("toxica") is not False:
+            continue
+        familias.setdefault(raiz(p), []).append(p)
+    salida = {}
+    for clave, miembros in familias.items():
+        miembros.sort(key=lambda p: (p.get("base") is not None, normalizar(p["nombre"])))
+        if len(miembros) > 1:
+            titulo, bot = GRUPOS_LISTA.get(clave, (por_slug.get(clave, miembros[0])["nombre"], miembros[0]["botanico"]))
+        else:
+            titulo, bot = miembros[0]["nombre"], miembros[0]["botanico"]
+        tipo = miembros[0]["tipo"]
+        salida.setdefault(tipo, []).append({"id": clave, "titulo": titulo, "botanico": bot,
+                                            "miembros": miembros, "luz": miembros[0]["luz"]["corto"]})
+    for tipo in salida:
+        salida[tipo].sort(key=lambda f: normalizar(f["titulo"]))
+    return salida
+
+
+def contar(familias):
+    return sum(len(f["miembros"]) for fs in familias.values() for f in fs)
+
+
+CSS_MASCOTAS = r"""
+.m-hero{background:var(--crema);padding:clamp(30px,7vw,64px) 0}
+.m-hero .wrap{display:grid;gap:clamp(28px,5vw,56px);align-items:center}
+.m-hero-txt{display:grid;gap:12px;min-width:0}
+.m-hero .lead{max-width:40ch}
+.m-hero figure{margin:0;justify-self:center;width:min(78%,300px)}
+.m-hero figure img{width:100%;height:auto;aspect-ratio:360/560;object-fit:cover;border-radius:999px 999px var(--r) var(--r);box-shadow:0 22px 48px rgba(38,61,50,.18)}
+.m-hero figcaption{margin-top:10px;font-size:.88rem;color:var(--oliva-osc);text-align:center}
+@media (min-width:820px){.m-hero .wrap{grid-template-columns:1.2fr .8fr}.m-hero figure{justify-self:end}}
+.criterios{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.criterios li{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:16px;border-radius:var(--r);background:var(--blanco);border:1px solid var(--linea)}
+.criterios svg{width:24px;height:24px;color:var(--malva-osc);margin-top:2px}
+.criterios b{display:block;font:500 1.15rem/1.3 var(--f-display);color:var(--bosque);margin-bottom:2px}
+.criterios span{font-size:.97rem}
+@media (min-width:820px){.criterios{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.familias{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+@media (min-width:640px){.familias{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (min-width:980px){.familias{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.fam{display:grid;gap:6px;align-content:start;padding:18px;border-radius:var(--r);background:var(--blanco);border:1px solid var(--linea);scroll-margin-top:80px}
+.fam:target{border-color:var(--malva-osc);box-shadow:0 0 0 3px rgba(180,154,175,.25)}
+.fam h3{font-size:1.35rem}
+.fam h3 a{text-decoration:none}
+.fam h3 a:hover{text-decoration:underline}
+.fam .b{font:italic 500 1.02rem/1.3 var(--f-display);color:var(--oliva-osc)}
+.fam .l{display:flex;align-items:center;gap:6px;font-size:.88rem;color:var(--oliva-osc)}
+.fam .l svg{width:16px;height:16px;flex:none}
+.fam .ok{display:inline-flex;align-items:center;gap:6px;justify-self:start;margin-top:4px;padding:3px 10px;border-radius:999px;background:rgba(168,181,160,.28);font-size:.8rem;color:var(--bosque)}
+.fam .ok svg{width:14px;height:14px}
+.vars{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.vars a{display:inline-flex;align-items:center;min-height:34px;padding:0 12px;border-radius:999px;border:1px solid var(--linea);font-size:.88rem;color:var(--bosque);text-decoration:none}
+.vars a:hover{border-color:var(--bosque)}
+.fam>.ver{justify-self:start;margin-top:6px;font-size:.92rem;color:var(--bosque)}
+.nota-fuente{font-size:.9rem;color:var(--oliva-osc)}
+"""
+
+
+def pagina_mascotas(datos, v_css, v_js):
+    fams = familias_no_toxicas(datos)
+    n = contar(fams)
+    titulo = "Plantas para casas con perros y gatos · Jardín Malva"
+    desc = (f"{n} plantas de Jardín Malva que la ASPCA clasifica como no tóxicas para perros y gatos. "
+            "Vivero pet friendly en San Pedro de la Paz.")
+    c = datos["contacto"]
+    href, etiqueta, ico = enlace_contacto(datos)
+    grupos_html = []
+    for tipo, nombre_grupo in datos["grupos"].items():
+        if tipo not in fams:
+            continue
+        tarjetas = []
+        for f in fams[tipo]:
+            ms = f["miembros"]
+            if len(ms) == 1:
+                cuerpo = (f'<h3><a href="/cuidados/{e(ms[0]["slug"])}">{e(f["titulo"])}</a></h3>'
+                          f'<p class="b">{e(f["botanico"])}</p>'
+                          f'<p class="l">{icono("luz")}{e(f["luz"])}</p>'
+                          f'<p class="ok">{icono("check")}No tóxica · ASPCA</p>'
+                          f'<a class="ver" href="/cuidados/{e(ms[0]["slug"])}">Cómo cuidarla</a>')
+            else:
+                vars_html = "".join(f'<li><a href="/cuidados/{e(m["slug"])}">{e(m["nombre"])}</a></li>' for m in ms)
+                cuerpo = (f'<h3>{e(f["titulo"])}</h3>'
+                          f'<p class="b">{e(f["botanico"])}</p>'
+                          f'<p class="l">{icono("luz")}{e(f["luz"])}</p>'
+                          f'<p class="ok">{icono("check")}No tóxicas · ASPCA</p>'
+                          f'<ul class="vars" aria-label="Variedades de {e(f["titulo"])}">{vars_html}</ul>')
+            tarjetas.append(f'      <li class="fam" id="{e(f["id"])}">{cuerpo}</li>')
+        grupos_html.append(f"""  <div class="grupo">
+    <h2>{e(nombre_grupo)}</h2>
+    <ul class="familias">
+{chr(10).join(tarjetas)}
+    </ul>
+  </div>""")
+    robots = "" if datos.get("indexar") else '\n<meta name="robots" content="noindex">'
+    cuerpo = f"""<!doctype html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{e(titulo)}</title>
+<meta name="description" content="{e(desc)}">{robots}
+<meta name="theme-color" content="#263D32">
+<link rel="canonical" href="{e(datos['sitio'])}/mascotas">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_CL">
+<meta property="og:site_name" content="Jardín Malva">
+<meta property="og:url" content="{e(datos['sitio'])}/mascotas">
+<meta property="og:title" content="{e(titulo)}">
+<meta property="og:description" content="{e(desc)}">
+<meta property="og:image" content="{e(datos['sitio'])}/assets/og.jpg">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/dmsans.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/cuidados/cuidados.css?v={v_css}">
+<style>{CSS_MASCOTAS.strip()}</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Jardín Malva, inicio"><img src="/assets/logo-128.webp" width="38" height="38" alt=""><span>Jardín Malva</span></a>
+    <a class="top-link" href="/cuidados/">{icono("hoja")}Fichas de cuidado</a>
+  </div>
+</header>
+<main>
+<section class="m-hero" aria-labelledby="t-masc">
+  <div class="wrap">
+    <div class="m-hero-txt">
+      <p class="eyebrow">Pet friendly</p>
+      <h1 id="t-masc">Plantas para casas con perros y gatos</h1>
+      <p class="script">ellos también viven aquí</p>
+      <p class="lead">En Jardín Malva los perros son parte del equipo. Estas son las {n} plantas de nuestras fichas de cuidado que la ASPCA clasifica como no tóxicas para perros y gatos.</p>
+      <p class="nota-fuente">La disponibilidad cambia con la temporada: pregúntanos antes de venir.</p>
+    </div>
+    <figure>
+      <img src="/assets/perros-poster.webp" width="360" height="646" decoding="async" alt="Uno de los perros del vivero corriendo entre los mesones de plantas">
+      <figcaption>Uno de los dueños de casa, de ronda por el vivero.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="t-crit">
+  <div class="wrap">
+    <h2 id="t-crit">Cómo armamos esta lista</h2>
+    <ul class="criterios">
+      <li>{icono("check")}<span><b>Solo con fuente</b>Cada planta figura como no tóxica para perros y gatos en la lista de la ASPCA, la principal referencia en intoxicaciones de mascotas de Estados Unidos.</span></li>
+      <li>{icono("pata")}<span><b>No tóxica no es comestible</b>Si la mastican, cualquier planta puede caerles pesada al estómago. Mejor que no se la coman.</span></li>
+      <li>{icono("alerta")}<span><b>Sin dato, no entra</b>Las plantas que la ASPCA no ha evaluado no aparecen aquí, aunque parezcan inofensivas.</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec" aria-label="Plantas no tóxicas para perros y gatos">
+  <div class="wrap">
+{chr(10).join(grupos_html)}
+    <p class="nota-fuente">Fuente: <a href="https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants" target="_blank" rel="noopener">ASPCA, lista de plantas tóxicas y no tóxicas</a> (en inglés). ¿Tu planta no está aquí? <a href="/cuidados/">Busca su ficha de cuidados</a>: cada una dice si es tóxica, no tóxica o si no hay dato.</p>
+  </div>
+</section>
+</main>
+
+<section class="cierre" aria-labelledby="t-cierre">
+  <div class="wrap">
+    <h2 id="t-cierre">Ven con tu perro</h2>
+    <p>En el vivero son bienvenidos. Te ayudamos a elegir plantas para tu casa y tus mascotas.</p>
+    <div class="acciones">
+      <a class="btn btn-pri" href="{e(c['maps'])}" target="_blank" rel="noopener">{icono("mapa")}Cómo llegar</a>
+      <a class="btn btn-sec" href="{e(href)}" target="_blank" rel="noopener">{icono(ico)}{e(etiqueta)}</a>
+    </div>
+  </div>
+</section>
+"""
+    return cuerpo + pie(datos, v_js)
+
+
+def bloque_sitio(datos):
+    fams = familias_no_toxicas(datos)
+    n = contar(fams)
+    # primero las del inventario actual (con código), luego las de más variedades
+    todas = sorted((f for fs in fams.values() for f in fs),
+                   key=lambda f: (not any(m.get("codigo") for m in f["miembros"]), -len(f["miembros"]), normalizar(f["titulo"])))
+    chips = "".join(f'<li><a href="/mascotas#{e(f["id"])}">{e(f["titulo"])}</a></li>' for f in todas[:8])
+    return (f'{MARCA_INI}\n'
+            f'        <div class="pet-plantas reveal">\n'
+            f'          <h3>Plantas para casas con mascotas</h3>\n'
+            f'          <p>{n} plantas que la ASPCA clasifica como no tóxicas para perros y gatos, con sus cuidados.</p>\n'
+            f'          <ul class="pet-chips">{chips}</ul>\n'
+            f'          <a class="btn btn-sec" href="/mascotas">Ver la lista completa</a>\n'
+            f'        </div>\n'
+            f'        {MARCA_FIN}')
+
+
+def actualizar_sitio(datos):
+    if not SITIO.exists():
+        return "no existe sitio.html"
+    html_sitio = SITIO.read_text(encoding="utf-8")
+    i, f = html_sitio.find(MARCA_INI), html_sitio.find(MARCA_FIN)
+    if i < 0 or f < 0:
+        return "sitio.html no tiene las marcas PLANTAS-MASCOTAS (no se tocó)"
+    nuevo = html_sitio[:i] + bloque_sitio(datos) + html_sitio[f + len(MARCA_FIN):]
+    if nuevo != html_sitio:
+        SITIO.write_text(nuevo, encoding="utf-8")
+        return "bloque de mascotas actualizado"
+    return "bloque de mascotas sin cambios"
+
+
 # ---------------------------------------------------------------- principal
 
 def main():
@@ -743,6 +977,8 @@ def main():
         (SALIDA / f"{p['slug']}.html").write_text(pagina_planta(datos, p, v_css, v_js), encoding="utf-8")
         esperados.add(f"{p['slug']}.html")
     (SALIDA / "index.html").write_text(pagina_indice(datos, v_css, v_js), encoding="utf-8")
+    MASCOTAS.write_text(pagina_mascotas(datos, v_css, v_js), encoding="utf-8")
+    estado_sitio = actualizar_sitio(datos)
     sobrantes = [f.name for f in SALIDA.iterdir() if f.name not in esperados]
     if nuevos:
         cab = "" if REGISTRO.exists() else ("# Fichas publicadas en jardinmalva.cl/cuidados/<slug>.\n"
@@ -754,6 +990,7 @@ def main():
         print("Nuevas fichas registradas:", ", ".join(nuevos))
     if sobrantes:
         print("Aviso: archivos en public/cuidados/ que no genera este script:", ", ".join(sobrantes))
+    print(f"OK: /mascotas con {contar(familias_no_toxicas(datos))} plantas no tóxicas · sitio.html: {estado_sitio}")
     print("Indexación en buscadores:", "sí" if datos.get("indexar") else "no (noindex)")
 
 
