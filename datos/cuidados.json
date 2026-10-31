@@ -1,0 +1,790 @@
+{
+  "_nota": "Fuente de las fichas de cuidado de jardinmalva.cl/cuidados. Tras editar, ejecuta: python3 herramientas/generar_cuidados.py. Nunca borres una ficha ni cambies su slug: hay QR impresos que apuntan a ella.",
+  "sitio": "https://jardinmalva.cl",
+  "indexar": false,
+  "contacto": {
+    "whatsapp": "",
+    "resena": "",
+    "instagram": "jardin.malva",
+    "maps": "https://www.google.com/maps/search/?api=1&query=Jard%C3%ADn%20Malva%2C%20Ernesto%20Pinto%20Lagarrigue%20793%2C%20San%20Pedro%20de%20la%20Paz",
+    "direccion": "Ing. Ernesto Pinto Lagarrigue 793, San Pedro de la Paz"
+  },
+  "grupos": {
+    "interior": "Plantas de interior",
+    "exterior": "Flores y exterior"
+  },
+  "primeros_dias": {
+    "interior": [
+      "Dale un par de semanas para acostumbrarse: pasar del vivero a tu casa la estresa y puede botar alguna hoja. Es normal.",
+      "Déjala en su maceta plástica con agujeros, dentro del macetero. Si el macetero no tiene drenaje, bota el agua que quede en el fondo después de regar.",
+      "Espera al menos un mes para trasplantarla o abonarla.",
+      "En invierno, déjala a un metro de la estufa y no pegada al vidrio: el calor seco y el vidrio frío de la noche la dañan."
+    ],
+    "exterior": [
+      "Si va al jardín, plántala temprano o al atardecer y riega bien justo después.",
+      "Las primeras dos o tres semanas necesita riego más seguido, hasta que sus raíces se afirmen.",
+      "Si se queda en maceta, que tenga agujeros y no dejes agua acumulada en el plato.",
+      "Espera un mes para abonarla."
+    ]
+  },
+  "plantas": [
+    {
+      "slug": "monstera",
+      "nombre": "Monstera",
+      "alias": ["Costilla de Adán"],
+      "botanico": "Monstera deliciosa",
+      "tipo": "interior",
+      "resumen": "Agradecida y de crecimiento rápido. Con buena luz te regala hojas grandes y cada vez más abiertas.",
+      "dificultad": 1,
+      "luz": {
+        "corto": "Mucha luz, sin sol fuerte",
+        "texto": "Ubícala cerca de una ventana luminosa. Acepta un poco de sol suave de mañana, pero el sol fuerte de la tarde le quema las hojas. Con poca luz crece lenta y las hojas nuevas salen sin cortes."
+      },
+      "riego": {
+        "corto": "Cuando 3–5 cm estén secos",
+        "calor": "Cada 7 a 10 días",
+        "frio": "Cada 2 a 3 semanas",
+        "texto": "Riega a fondo cuando los primeros 3 a 5 cm de tierra estén secos, hasta que el agua salga por abajo. Prefiere quedarse un poco seca antes que encharcada."
+      },
+      "temperatura": {"corto": "Entre 18 y 27 °C", "texto": "Le acomoda la temperatura de una casa. Evita que baje de 12 °C y aléjala de corrientes frías."},
+      "abono": "Abono líquido para plantas verdes cada 3 a 4 semanas, de septiembre a marzo. En otoño e invierno, nada.",
+      "trasplante": "Cada dos años en primavera, a una maceta 3 a 5 cm más ancha. Un tutor de fibra de coco o musgo la ayuda a trepar y a dar hojas más grandes.",
+      "consejos": [
+        "Limpia las hojas con un paño húmedo una vez al mes: respiran mejor y lucen más.",
+        "Las raíces aéreas que salen del tallo son normales. Puedes guiarlas hacia la tierra o el tutor."
+      ],
+      "alertas": [
+        ["Hojas amarillas y tierra húmeda", "Exceso de riego. Deja secar más entre riegos y revisa que la maceta drene."],
+        ["Puntas o bordes café y secos", "Aire seco o falta de agua. Aléjala de la estufa y riega apenas toque."],
+        ["Hojas nuevas pequeñas y sin cortes", "Le falta luz. Acércala a la ventana."]
+      ],
+      "mascotas": {
+        "toxica": true,
+        "texto": "Tóxica para perros y gatos según la ASPCA. Contiene cristales de oxalato de calcio que irritan la boca: babeo, vómitos y dificultad para tragar si la mastican.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/cutleaf-philodendron"
+      }
+    },
+    {
+      "slug": "pothos",
+      "nombre": "Pothos",
+      "alias": ["Potus", "Scindapsus"],
+      "botanico": "Epipremnum aureum",
+      "tipo": "interior",
+      "resumen": "Una de las plantas más fáciles que existen. Cuelga o trepa y perdona olvidos.",
+      "dificultad": 1,
+      "luz": {
+        "corto": "Luz media a brillante",
+        "texto": "Vive bien con luz media y crece más con luz brillante indirecta. Tolera rincones con poca luz, pero ahí pierde las manchas claras de sus hojas y crece más lenta. Evita el sol directo de la tarde."
+      },
+      "riego": {
+        "corto": "Cuando 2–3 cm estén secos",
+        "calor": "Cada 7 a 10 días",
+        "frio": "Cada 2 a 3 semanas",
+        "texto": "Riega cuando los primeros 2 a 3 cm estén secos. Si sus hojas se ponen lacias y la tierra está seca, tiene sed: se recupera a las pocas horas de regarla."
+      },
+      "temperatura": {"corto": "Entre 15 y 29 °C", "texto": "Le acomoda la temperatura de una casa. Evita que baje de 10 °C."},
+      "abono": "Abono líquido para plantas verdes cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cuando las raíces salgan por los agujeros, en primavera, a una maceta 2 a 4 cm más ancha.",
+      "consejos": [
+        "Para que se vea más tupida, corta las guías largas justo sobre un nudo (donde nace la hoja).",
+        "Los trozos que cortes enraízan en un vaso con agua y puedes volver a plantarlos en la misma maceta."
+      ],
+      "alertas": [
+        ["Hojas amarillas", "Casi siempre es exceso de riego. Deja secar más la tierra."],
+        ["Pierde las manchas claras", "Le falta luz."],
+        ["Tallos largos con pocas hojas", "Le falta luz. Acércala a una ventana y pódala."]
+      ],
+      "variedades": "Golden, Marble Queen, N'Joy y Neón: todas se cuidan igual. Las más blancas piden un poco más de luz.",
+      "mascotas": {
+        "toxica": true,
+        "texto": "Tóxica para perros y gatos según la ASPCA. Contiene cristales de oxalato de calcio que irritan la boca: babeo, vómitos y dificultad para tragar si la mastican.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/golden-pothos"
+      }
+    },
+    {
+      "slug": "spathiphyllum",
+      "nombre": "Spathiphyllum",
+      "alias": ["Lirio de la paz", "Cuna de Moisés"],
+      "botanico": "Spathiphyllum spp.",
+      "tipo": "interior",
+      "resumen": "Hojas verde intenso y flores blancas. Te avisa cuando tiene sed: se pone lacia.",
+      "dificultad": 1,
+      "luz": {
+        "corto": "Luz media, sin sol directo",
+        "texto": "Vive bien con luz media y tolera rincones con menos luz. Con más luz (sin sol directo) florece más. El sol directo le quema las hojas."
+      },
+      "riego": {
+        "corto": "Tierra apenas húmeda",
+        "calor": "1 o 2 veces por semana",
+        "frio": "Cada 7 a 12 días",
+        "texto": "Le gusta la tierra apenas húmeda, nunca encharcada. Riega cuando el primer par de centímetros esté seco. Si se pone lacia, riégala: se levanta en unas horas, pero no la dejes llegar a ese punto seguido."
+      },
+      "temperatura": {"corto": "Entre 16 y 27 °C", "texto": "Evita que baje de 12 °C, las corrientes frías y el aire de la estufa."},
+      "abono": "Abono líquido para plantas con flor, en dosis suave, cada 4 a 6 semanas de septiembre a marzo.",
+      "trasplante": "Cada uno o dos años en primavera, cuando las raíces llenen la maceta.",
+      "consejos": [
+        "Cuando una flor se ponga verde o café, corta su tallo desde la base.",
+        "Si las puntas se ponen café, prueba con agua que haya reposado una noche."
+      ],
+      "alertas": [
+        ["Puntas café", "Aire seco, exceso de abono o sales del agua."],
+        ["Hojas amarillas", "Exceso de riego, o simplemente una hoja vieja si es solo una de abajo."],
+        ["No florece", "Le falta luz. Acércala a una ventana luminosa, sin sol directo."]
+      ],
+      "mascotas": {
+        "toxica": true,
+        "texto": "Tóxica para perros y gatos según la ASPCA. Contiene cristales de oxalato de calcio que irritan la boca y el estómago si la mastican.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/peace-lily"
+      }
+    },
+    {
+      "slug": "sansevieria",
+      "nombre": "Sansevieria",
+      "alias": ["Lengua de suegra"],
+      "botanico": "Dracaena trifasciata (antes Sansevieria trifasciata)",
+      "tipo": "interior",
+      "resumen": "Casi indestructible. Su único enemigo es el exceso de agua.",
+      "dificultad": 1,
+      "luz": {
+        "corto": "Poca o mucha luz",
+        "texto": "Se adapta a casi todo: desde rincones con poca luz hasta ventanas muy luminosas, e incluso algo de sol. Con más luz crece más rápido y mantiene mejor sus colores."
+      },
+      "riego": {
+        "corto": "Solo con la tierra seca",
+        "calor": "Cada 2 a 3 semanas",
+        "frio": "Cada 4 a 6 semanas",
+        "texto": "Riega solo cuando la tierra esté seca por completo, y no dejes agua en el centro de la planta. Ante la duda, espera una semana más."
+      },
+      "temperatura": {"corto": "Entre 15 y 29 °C", "texto": "Evita que baje de 10 °C. Con frío, riega todavía menos."},
+      "abono": "Dos o tres veces en primavera y verano, con abono para cactus o plantas verdes en dosis suave.",
+      "trasplante": "Solo cuando las raíces deformen o rompan la maceta, en primavera, con sustrato para cactus y suculentas.",
+      "consejos": [
+        "Una maceta de cerámica sin esmaltar o de greda ayuda a que la tierra se seque más rápido.",
+        "Le gustan las macetas justas: no la pases a una mucho más grande."
+      ],
+      "alertas": [
+        ["Hojas blandas, amarillas o base podrida", "Exceso de riego, la causa más común. Deja secar del todo y riega mucho menos."],
+        ["Hojas arrugadas o finas", "Tiene sed."],
+        ["Hojas que se doblan o caen", "Le falta luz o tiene exceso de agua."]
+      ],
+      "mascotas": {
+        "toxica": true,
+        "texto": "Tóxica para perros y gatos según la ASPCA. Contiene saponinas: puede dar náuseas, vómitos y diarrea si la mastican.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/snake-plant"
+      }
+    },
+    {
+      "slug": "singonio",
+      "nombre": "Singonio",
+      "alias": ["Syngonium", "Planta punta de flecha"],
+      "botanico": "Syngonium podophyllum",
+      "tipo": "interior",
+      "resumen": "Hojas en forma de flecha, verdes, rosadas o jaspeadas. Crece rápido y es fácil.",
+      "dificultad": 1,
+      "luz": {
+        "corto": "Luz brillante indirecta",
+        "texto": "Luz brillante sin sol directo. Las variedades rosadas y jaspeadas necesitan más luz para mantener el color; las verdes toleran luz media."
+      },
+      "riego": {
+        "corto": "Cuando 2 cm estén secos",
+        "calor": "Cada 5 a 8 días",
+        "frio": "Cada 10 a 14 días",
+        "texto": "Le gusta la tierra levemente húmeda en primavera y verano. Riega cuando los primeros 2 cm estén secos; en invierno deja secar un poco más."
+      },
+      "temperatura": {"corto": "Entre 16 y 27 °C", "texto": "Evita que baje de 12 °C y el aire de la estufa."},
+      "abono": "Abono líquido para plantas verdes cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada uno o dos años en primavera.",
+      "consejos": [
+        "Con el tiempo empieza a trepar. Si la prefieres compacta, corta las guías largas sobre un nudo.",
+        "Agradece la humedad: agruparla con otras plantas ayuda."
+      ],
+      "alertas": [
+        ["Puntas café", "Aire seco o riego irregular."],
+        ["Pierde el color rosado", "Le falta luz."],
+        ["Hojas amarillas", "Exceso de riego."]
+      ],
+      "variedades": "Neón o rosado, Confetti, Batik y jaspeados: mismos cuidados; los de color piden más luz.",
+      "mascotas": {
+        "toxica": true,
+        "texto": "Tóxica para perros y gatos según la ASPCA. Contiene cristales de oxalato de calcio que irritan la boca: babeo, vómitos y dificultad para tragar si la mastican.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/arrow-head-vine"
+      }
+    },
+    {
+      "slug": "filodendro",
+      "nombre": "Filodendro",
+      "alias": ["Philodendron", "Birkin", "Pink Princess", "Erubescens"],
+      "botanico": "Philodendron spp.",
+      "tipo": "interior",
+      "resumen": "Una familia enorme de hojas elegantes. Todas comparten cuidados parecidos.",
+      "dificultad": 2,
+      "luz": {
+        "corto": "Luz brillante indirecta",
+        "texto": "Luz brillante sin sol directo. Las variedades con rayas o manchas (Birkin, Pink Princess) necesitan más luz para no perderlas; las verdes toleran luz media."
+      },
+      "riego": {
+        "corto": "Cuando 3 cm estén secos",
+        "calor": "Cada 7 a 10 días",
+        "frio": "Cada 2 a 3 semanas",
+        "texto": "Riega a fondo cuando los primeros 3 cm de tierra estén secos. No la dejes encharcada."
+      },
+      "temperatura": {"corto": "Entre 16 y 27 °C", "texto": "Evita que baje de 13 °C, las corrientes frías y el aire de la estufa."},
+      "abono": "Abono líquido para plantas verdes cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada uno o dos años en primavera. Las trepadoras, como el erubescens o la Pink Princess, agradecen un tutor.",
+      "consejos": [
+        "Limpia las hojas con un paño húmedo para que respiren y brillen.",
+        "Si un tallo saca hojas todas verdes o todas blancas, córtalo sobre el último nudo con buen dibujo."
+      ],
+      "alertas": [
+        ["Hojas amarillas", "Exceso de riego."],
+        ["Pierde las rayas o el rosado", "Le falta luz."],
+        ["Puntas café", "Aire seco o falta de riego."]
+      ],
+      "variedades": "Birkin, Pink Princess, erubescens, Zebra y los de hoja de corazón se cuidan igual.",
+      "mascotas": {
+        "toxica": true,
+        "texto": "Los filodendros son tóxicos para perros y gatos según la ASPCA. Contienen cristales de oxalato de calcio que irritan la boca: babeo, vómitos y dificultad para tragar si los mastican.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/philodendron-pertusum"
+      }
+    },
+    {
+      "slug": "peperomia",
+      "nombre": "Peperomia",
+      "alias": ["Cucharita", "Peperomia obtusifolia"],
+      "botanico": "Peperomia spp.",
+      "tipo": "interior",
+      "resumen": "Pequeña, de hojas carnosas y muy fácil. Ideal para escritorios y repisas.",
+      "dificultad": 1,
+      "luz": {
+        "corto": "Luz media a brillante",
+        "texto": "Luz media a brillante, sin sol directo fuerte. Tolera bien la luz de oficina."
+      },
+      "riego": {
+        "corto": "Con la tierra casi seca",
+        "calor": "Cada 10 a 14 días",
+        "frio": "Cada 3 semanas",
+        "texto": "Sus hojas guardan agua, así que riega cuando la tierra esté casi seca. Es mucho más probable que sufra por exceso que por falta de agua."
+      },
+      "temperatura": {"corto": "Entre 16 y 26 °C", "texto": "Evita que baje de 10 °C."},
+      "abono": "Abono líquido suave cada 6 semanas, de septiembre a marzo.",
+      "trasplante": "Tiene raíces pequeñas: cada dos o tres años basta, a una maceta apenas más grande.",
+      "consejos": [
+        "Las macetas pequeñas con buen drenaje le sientan mejor que las grandes."
+      ],
+      "alertas": [
+        ["Tallo blando u hojas que se caen con la tierra húmeda", "Exceso de riego. Deja secar bien."],
+        ["Hojas arrugadas", "Tiene sed."],
+        ["Tallos estirados", "Le falta luz."]
+      ],
+      "mascotas": {
+        "toxica": false,
+        "texto": "La ASPCA clasifica como no tóxicas para perros y gatos las peperomias más comunes, como P. obtusifolia, P. caperata y P. argyreia. Igual, cualquier planta puede caerles pesada al estómago si la mastican.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/baby-rubber-plant"
+      }
+    },
+    {
+      "slug": "pilea",
+      "nombre": "Pilea",
+      "alias": ["Planta china del dinero", "Planta de la amistad"],
+      "botanico": "Pilea peperomioides",
+      "tipo": "interior",
+      "resumen": "Hojas redondas como monedas. Saca hijuelos que puedes regalar.",
+      "dificultad": 1,
+      "luz": {
+        "corto": "Luz brillante indirecta",
+        "texto": "Luz brillante sin sol directo fuerte. Se inclina hacia la ventana: gira la maceta un cuarto de vuelta cada semana para que crezca derecha."
+      },
+      "riego": {
+        "corto": "Con la mitad de la tierra seca",
+        "calor": "Cada 7 a 10 días",
+        "frio": "Cada 2 a 3 semanas",
+        "texto": "Riega cuando la mitad superior de la tierra esté seca. No le gusta estar encharcada."
+      },
+      "temperatura": {"corto": "Entre 13 y 27 °C", "texto": "Evita que baje de 10 °C."},
+      "abono": "Abono líquido para plantas verdes cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada uno o dos años en primavera.",
+      "consejos": [
+        "Cuando un hijuelo tenga unos 5 cm, sepáralo con un poco de raíz y plántalo en su propia maceta.",
+        "Que bote una o dos hojas de abajo de vez en cuando es normal."
+      ],
+      "alertas": [
+        ["Varias hojas amarillas abajo", "Exceso de riego."],
+        ["Manchas café secas", "Sol directo fuerte."],
+        ["Tallo largo con hojas pequeñas", "Le falta luz."]
+      ],
+      "mascotas": {
+        "toxica": false,
+        "texto": "La ASPCA la incluye entre las plantas no tóxicas para mascotas. Igual, cualquier planta puede caerles pesada al estómago si la mastican.",
+        "url": "https://www.aspca.org/news/are-succulents-safe-have-around-pets"
+      }
+    },
+    {
+      "slug": "ficus-lyrata",
+      "nombre": "Ficus lyrata",
+      "alias": ["Hoja de violín", "Panduriforme"],
+      "botanico": "Ficus lyrata",
+      "tipo": "interior",
+      "resumen": "Hojas grandes y escultóricas. Pide mucha luz y constancia; a cambio, es un árbol de interior espectacular.",
+      "dificultad": 3,
+      "luz": {
+        "corto": "Mucha luz, junto a la ventana",
+        "texto": "La luz es la clave. Ubícalo junto a una ventana muy luminosa; acepta sol suave de mañana. Lejos de la ventana bota hojas."
+      },
+      "riego": {
+        "corto": "Cuando 5 cm estén secos",
+        "calor": "Cada 7 a 10 días",
+        "frio": "Cada 2 a 3 semanas",
+        "texto": "Riega a fondo cuando los primeros 5 cm estén secos y bota el agua que quede en el plato. Agradece la constancia: mismo lugar, riego regular."
+      },
+      "temperatura": {"corto": "Entre 16 y 27 °C", "texto": "Evita que baje de 12 °C. No lo pongas en corrientes de aire ni cerca de la estufa."},
+      "abono": "Abono líquido para plantas verdes cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada dos años en primavera, a una maceta 3 a 5 cm más ancha.",
+      "consejos": [
+        "Elige su lugar y no lo muevas: los cambios lo hacen botar hojas.",
+        "Limpia las hojas con un paño húmedo para que aprovechen la luz."
+      ],
+      "alertas": [
+        ["Bota hojas al llegar a casa", "Es su forma de adaptarse al cambio. Mantén luz y riego estables y espera."],
+        ["Manchas café en las hojas con la tierra húmeda", "Exceso de riego."],
+        ["Bordes café y secos", "Falta de riego o aire seco."]
+      ],
+      "mascotas": {
+        "toxica": true,
+        "corto": "Levemente tóxica",
+        "texto": "La ASPCA lo considera levemente tóxico para perros y gatos: puede dar vómitos y diarrea si lo mastican, y su savia irrita la piel.",
+        "url": "https://www.aspca.org/news/houseplant-safe-your-pets"
+      }
+    },
+    {
+      "slug": "gomero",
+      "nombre": "Gomero",
+      "alias": ["Ficus elastica", "Ficus de goma"],
+      "botanico": "Ficus elastica",
+      "tipo": "interior",
+      "resumen": "Hojas brillantes y firmes. Resistente y de crecimiento vertical.",
+      "dificultad": 1,
+      "luz": {
+        "corto": "Luz brillante indirecta",
+        "texto": "Luz brillante; acepta algo de sol de mañana. Los de hoja oscura (Burgundy) toleran un poco menos de luz; los jaspeados (Tineke, Ruby) necesitan más."
+      },
+      "riego": {
+        "corto": "Cuando 3–5 cm estén secos",
+        "calor": "Cada 7 a 10 días",
+        "frio": "Cada 2 a 4 semanas",
+        "texto": "Riega a fondo cuando los primeros 3 a 5 cm estén secos. En invierno, bastante menos."
+      },
+      "temperatura": {"corto": "Entre 15 y 29 °C", "texto": "Evita que baje de 10 °C y las corrientes frías."},
+      "abono": "Abono líquido para plantas verdes cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada dos años en primavera.",
+      "consejos": [
+        "Limpia las hojas con un paño húmedo: brillan y respiran mejor.",
+        "Si lo podas para que ramifique, hazlo en primavera y con guantes: suelta un látex blanco que irrita la piel."
+      ],
+      "alertas": [
+        ["Se le caen las hojas de abajo", "Riego irregular (por exceso o por falta) o falta de luz."],
+        ["Bota hojas al llegar a casa", "Adaptación al cambio. Mantén luz y riego estables."],
+        ["Tallo largo con pocas hojas", "Le falta luz."]
+      ],
+      "mascotas": {
+        "toxica": true,
+        "texto": "La ASPCA clasifica los ficus como tóxicos para perros y gatos: su savia irrita el estómago y la piel.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/weeping-fig"
+      }
+    },
+    {
+      "slug": "palmera-chamaedorea",
+      "nombre": "Palmera Chamaedorea",
+      "alias": ["Palmera de salón", "Camedorea"],
+      "botanico": "Chamaedorea elegans",
+      "tipo": "interior",
+      "resumen": "Una palmera pequeña y elegante que tolera interiores con poca luz.",
+      "dificultad": 1,
+      "luz": {
+        "corto": "Luz media, tolera poca",
+        "texto": "Vive bien con luz media y tolera rincones con poca luz. El sol directo le quema las hojas."
+      },
+      "riego": {
+        "corto": "Cuando 2–3 cm estén secos",
+        "calor": "Cada 5 a 8 días",
+        "frio": "Cada 10 a 15 días",
+        "texto": "Riega cuando los primeros 2 a 3 cm estén secos; en verano le gusta la tierra levemente húmeda. Nunca la dejes encharcada."
+      },
+      "temperatura": {"corto": "Entre 16 y 27 °C", "texto": "Evita que baje de 10 °C. El aire de la estufa le seca las puntas."},
+      "abono": "Abono líquido suave cada 4 a 6 semanas, de septiembre a marzo.",
+      "trasplante": "Sus raíces son delicadas: trasplántala solo cuando sea necesario, en primavera.",
+      "consejos": [
+        "Corta las hojas secas desde la base. Que se seque alguna de abajo es normal.",
+        "Agradece la humedad: lejos de la estufa y, si puedes, junto a otras plantas."
+      ],
+      "alertas": [
+        ["Puntas café", "Aire seco o sales del agua o del abono."],
+        ["Telitas finas bajo las hojas", "Arañita roja, típica del aire seco. Lava las hojas con agua y sube la humedad."],
+        ["Hojas amarillas en la base", "Hojas viejas, o exceso de riego si son muchas."]
+      ],
+      "mascotas": {
+        "toxica": false,
+        "texto": "No tóxica para perros y gatos según la ASPCA. Igual, cualquier planta puede caerles pesada al estómago si la mastican.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/parlor-palm"
+      }
+    },
+    {
+      "slug": "orquidea",
+      "nombre": "Orquídea Phalaenopsis",
+      "alias": ["Orquídea", "Orquídea mariposa"],
+      "botanico": "Phalaenopsis spp.",
+      "tipo": "interior",
+      "resumen": "Sus flores duran semanas, a veces meses. Se riega distinto al resto: por inmersión.",
+      "dificultad": 2,
+      "luz": {
+        "corto": "Luz brillante indirecta",
+        "texto": "Junto a una ventana luminosa, sin sol directo de mediodía. Sus hojas te guían: verde claro es luz correcta, verde muy oscuro es falta de luz y amarillento o rojizo es exceso."
+      },
+      "riego": {
+        "corto": "Inmersión con raíces plateadas",
+        "calor": "Cada 7 a 10 días",
+        "frio": "Cada 2 semanas",
+        "texto": "Cuando las raíces se vean plateadas y la corteza esté seca, sumerge la maceta en agua 10 a 15 minutos y déjala escurrir bien. No dejes agua en el centro de las hojas."
+      },
+      "temperatura": {"corto": "Entre 18 y 28 °C", "texto": "Le gusta la temperatura de una casa. Para que vuelva a florecer ayudan unas semanas de noches más frescas en otoño."},
+      "abono": "Abono para orquídeas, diluido, cada dos o tres riegos mientras saca hojas o raíces.",
+      "trasplante": "Cada dos años, cuando la corteza se deshaga. Siempre en corteza para orquídeas, nunca en tierra.",
+      "consejos": [
+        "Cuando terminen las flores, corta la vara sobre el segundo o tercer nudo bajo la última flor: a veces rebrota. Si la vara se seca, córtala en la base.",
+        "Las raíces que salen de la maceta son normales: no las cortes."
+      ],
+      "alertas": [
+        ["Raíces café y blandas", "Exceso de riego. Espaciar las inmersiones."],
+        ["Hojas arrugadas y raíces secas", "Le falta agua."],
+        ["Se caen los botones", "Cambios bruscos de temperatura, corrientes de aire o falta de luz."]
+      ],
+      "mascotas": {
+        "toxica": false,
+        "texto": "No tóxica para perros y gatos según la ASPCA. Igual, cualquier planta puede caerles pesada al estómago si la mastican.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/phalaenopsis-orchid"
+      }
+    },
+    {
+      "slug": "helecho",
+      "nombre": "Helecho de Boston",
+      "alias": ["Helecho", "Nephrolepis"],
+      "botanico": "Nephrolepis exaltata",
+      "tipo": "interior",
+      "resumen": "Frondoso y fresco. Pide humedad constante, pero es muy agradecido.",
+      "dificultad": 2,
+      "luz": {
+        "corto": "Luz media, sin sol directo",
+        "texto": "Luz media a brillante, siempre sin sol directo. Un baño o una cocina luminosa son ideales por la humedad."
+      },
+      "riego": {
+        "corto": "Siempre levemente húmedo",
+        "calor": "2 o 3 veces por semana",
+        "frio": "1 vez por semana",
+        "texto": "No dejes que la tierra se seque del todo: mantenla levemente húmeda, sin encharcar."
+      },
+      "temperatura": {"corto": "Entre 16 y 24 °C", "texto": "Evita que baje de 10 °C. El aire de la estufa lo seca rápido."},
+      "abono": "Abono líquido suave cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada uno o dos años en primavera, cuando llene la maceta.",
+      "consejos": [
+        "También puede vivir en un corredor o terraza a la sombra, protegido de las heladas.",
+        "Agrupado con otras plantas aguanta mejor el aire seco."
+      ],
+      "alertas": [
+        ["Se le caen las hojitas y se secan", "Aire seco o falta de riego."],
+        ["Frondes amarillas", "Exceso de agua o falta de luz."],
+        ["Hojas quemadas", "Sol directo."]
+      ],
+      "mascotas": {
+        "toxica": false,
+        "texto": "No tóxico para perros y gatos según la ASPCA. Igual, cualquier planta puede caerles pesada al estómago si la mastican.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/boston-fern"
+      }
+    },
+    {
+      "slug": "begonia",
+      "nombre": "Begonia",
+      "alias": ["Begonia rex", "Begonia Escargot"],
+      "botanico": "Begonia spp.",
+      "tipo": "interior",
+      "resumen": "Hojas con dibujos y colores únicos. Le gusta la humedad, pero sin mojar sus hojas.",
+      "dificultad": 2,
+      "luz": {
+        "corto": "Luz brillante indirecta",
+        "texto": "Luz brillante sin sol directo. El sol le quema las hojas y la poca luz le apaga los colores."
+      },
+      "riego": {
+        "corto": "Cuando 2 cm estén secos",
+        "calor": "Cada 5 a 7 días",
+        "frio": "Cada 10 a 14 días",
+        "texto": "Riega cuando los primeros 2 cm estén secos, directo a la tierra y sin mojar las hojas, para evitar hongos."
+      },
+      "temperatura": {"corto": "Entre 16 y 24 °C", "texto": "Es friolenta: evita que baje de 13 °C y los vidrios fríos de la noche."},
+      "abono": "Abono líquido suave cada 3 a 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada uno o dos años en primavera, en maceta poco profunda: sus raíces son superficiales.",
+      "consejos": [
+        "Agradece la humedad, pero no la rocíes: el agua sobre las hojas trae hongos.",
+        "Necesita buena ventilación, sin corrientes de aire frío."
+      ],
+      "alertas": [
+        ["Polvo blanco en las hojas", "Oídio, un hongo. Retira las hojas afectadas y mejora la ventilación."],
+        ["Tallos o base blandos", "Exceso de riego."],
+        ["Bordes secos", "Aire seco o falta de riego."]
+      ],
+      "mascotas": {
+        "toxica": true,
+        "texto": "Tóxica para perros y gatos según la ASPCA. Contiene oxalatos solubles: puede dar vómitos y babeo. La parte más tóxica está bajo tierra.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/begonia"
+      }
+    },
+    {
+      "slug": "maranta",
+      "nombre": "Maranta",
+      "alias": ["Planta de la oración"],
+      "botanico": "Maranta leuconeura",
+      "tipo": "interior",
+      "resumen": "De noche levanta y pliega sus hojas, como si rezara. Pide humedad y riego constante.",
+      "dificultad": 3,
+      "luz": {
+        "corto": "Luz media indirecta",
+        "texto": "Luz media, sin sol directo: el sol le destiñe y quema las hojas."
+      },
+      "riego": {
+        "corto": "Siempre levemente húmeda",
+        "calor": "Cada 4 a 7 días",
+        "frio": "Cada 7 a 10 días",
+        "texto": "Mantén la tierra levemente húmeda, sin encharcar: riega cuando el primer centímetro esté seco. Es sensible al cloro: usa agua reposada de un día para otro o filtrada."
+      },
+      "temperatura": {"corto": "Entre 18 y 27 °C", "texto": "Es friolenta: evita que baje de 15 °C, las corrientes y el aire de la estufa."},
+      "abono": "Abono líquido suave cada 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada uno o dos años en primavera, en maceta ancha y poco profunda.",
+      "consejos": [
+        "Que pliegue las hojas de noche es normal y es señal de que está sana.",
+        "Para subir la humedad, pon la maceta sobre un plato con piedras y agua, sin que el agua toque la base."
+      ],
+      "alertas": [
+        ["Bordes café y crujientes", "Aire seco o cloro y sales del agua."],
+        ["Hojas enrolladas", "Sed o aire seco."],
+        ["Hojas desteñidas", "Exceso de luz."]
+      ],
+      "mascotas": {
+        "toxica": false,
+        "texto": "No tóxica para perros y gatos según la ASPCA (ficha «Maranta, Prayer Plant»). Igual, cualquier planta puede caerles pesada al estómago si la mastican.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/red-veined-prayer"
+      }
+    },
+    {
+      "slug": "violeta-de-los-alpes",
+      "nombre": "Violeta de los Alpes",
+      "alias": ["Cyclamen", "Ciclamen"],
+      "botanico": "Cyclamen persicum",
+      "tipo": "exterior",
+      "resumen": "Flor de los meses frescos. Vive en interior luminoso o en una terraza protegida.",
+      "dificultad": 2,
+      "luz": {
+        "corto": "Mucha luz y lugar fresco",
+        "texto": "Mucha luz sin sol fuerte. En casa, junto a una ventana luminosa en la pieza más fresca; afuera, en semisombra y protegida de las heladas."
+      },
+      "riego": {
+        "corto": "Por el plato, sin mojar el centro",
+        "estaciones": [["Mientras florece (otoño a primavera)", "Cada 5 a 7 días"], ["En su descanso de verano", "Muy poco, solo para que no se seque del todo"]],
+        "texto": "Riega por abajo: llena el plato, espera 20 minutos y bota el sobrante. Hazlo cuando la superficie esté seca. Nunca mojes el centro de la planta ni las flores."
+      },
+      "temperatura": {"corto": "Fresca, de 10 a 18 °C", "texto": "Le gusta el fresco. Con calor o cerca de la estufa sus flores duran poco. Protégela de las heladas."},
+      "abono": "Abono líquido para plantas con flor cada 2 a 3 semanas mientras florece.",
+      "trasplante": "Solo al terminar su descanso, en otoño, sin enterrar el tubérculo: la mitad de arriba debe quedar a la vista.",
+      "consejos": [
+        "Para quitar flores y hojas secas, gira el tallo y tira desde la base. No dejes tocones: se pudren.",
+        "Con el calor del verano descansa y pierde las hojas. Es normal: riega muy poco, déjala en un lugar fresco y sombreado, y retoma el riego en otoño cuando salgan hojas nuevas."
+      ],
+      "alertas": [
+        ["Hojas amarillas en plena temporada", "Mucho calor o exceso de riego."],
+        ["Centro blando", "Agua sobre el tubérculo. Riega siempre por el plato."],
+        ["Flores que duran poco", "Está en un lugar demasiado cálido."]
+      ],
+      "mascotas": {
+        "toxica": true,
+        "texto": "Tóxica para perros y gatos según la ASPCA. Contiene saponinas, sobre todo en el tubérculo: puede dar babeo, vómitos y diarrea, y es más grave si comen el tubérculo.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/cyclamen"
+      }
+    },
+    {
+      "slug": "rosa",
+      "nombre": "Rosal",
+      "alias": ["Rosa", "Rosas"],
+      "botanico": "Rosa spp.",
+      "tipo": "exterior",
+      "resumen": "Con sol y un poco de constancia, florece de primavera a otoño.",
+      "dificultad": 2,
+      "luz": {
+        "corto": "Sol directo, 6 h o más",
+        "texto": "Necesita sol directo al menos seis horas al día. Más sol significa más flores y menos hongos."
+      },
+      "riego": {
+        "corto": "Profundo, al pie y de mañana",
+        "calor": "En tierra, 2 o 3 veces por semana; en maceta, casi a diario",
+        "frio": "La lluvia suele bastar",
+        "texto": "Riega en profundidad y espaciado, al pie de la planta y de mañana, sin mojar las hojas. En primavera y otoño, una o dos veces por semana."
+      },
+      "temperatura": {"corto": "Aguanta el invierno", "texto": "Resiste bien el invierno de la zona. En maceta, protege las raíces de las heladas fuertes."},
+      "abono": "Abono para rosales cada 4 a 6 semanas, de septiembre a febrero.",
+      "trasplante": "Si va en maceta, que tenga al menos 30 a 40 cm de ancho y de fondo. Al plantarlo en tierra, mezcla compost en el hoyo.",
+      "consejos": [
+        "Corta las flores marchitas sobre la primera hoja de cinco hojitas: así vuelve a florecer antes.",
+        "La poda fuerte se hace a fines del invierno (julio o agosto): deja tres a cinco ramas sanas y corta sobre una yema que mire hacia afuera."
+      ],
+      "alertas": [
+        ["Manchas negras en las hojas", "Mancha negra, un hongo común con humedad. Retira las hojas afectadas y riega al pie."],
+        ["Polvo blanco en hojas y brotes", "Oídio. Mejora la ventilación y evita mojar las hojas."],
+        ["Bichitos verdes en los brotes", "Pulgón. Un chorro de agua o jabón potásico."]
+      ],
+      "mascotas": {
+        "toxica": false,
+        "texto": "No tóxico para perros y gatos según la ASPCA. Ojo con las espinas, que pueden lastimarles la boca o las patas.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/rose"
+      }
+    },
+    {
+      "slug": "lavanda",
+      "nombre": "Lavanda",
+      "alias": ["Lavanda francesa", "Lavanda inglesa"],
+      "botanico": "Lavandula spp.",
+      "tipo": "exterior",
+      "resumen": "Aroma, flores y abejas. Pide sol y poca agua; lo que más la daña es el exceso de riego.",
+      "dificultad": 1,
+      "luz": {
+        "corto": "Pleno sol",
+        "texto": "Pleno sol, al menos seis horas al día. A la sombra florece poco y se abre."
+      },
+      "riego": {
+        "corto": "Poco: deja secar entre riegos",
+        "calor": "En tierra, cada 10 a 15 días; en maceta, 1 o 2 veces por semana",
+        "frio": "Casi nada: la lluvia basta",
+        "texto": "El primer mes, riega cuando la tierra se seque. Una vez afirmada, aguanta la sequía: riega poco y deja secar entre riegos."
+      },
+      "temperatura": {"corto": "Aguanta el invierno", "texto": "Tolera bien el frío de la zona. Lo que la daña en invierno es la tierra empapada por las lluvias."},
+      "abono": "Casi no necesita. El exceso de abono le quita aroma y flores.",
+      "trasplante": "En tierra muy bien drenada; si tu suelo es pesado o se encharca, plántala en alto o mezcla arena gruesa. En maceta, con agujeros y sustrato con arena.",
+      "consejos": [
+        "Después de la floración, corta las varas y un tercio del follaje, sin llegar a la madera vieja sin hojas, porque no rebrota.",
+        "Las flores cortadas se secan colgadas boca abajo a la sombra."
+      ],
+      "alertas": [
+        ["Se pone gris y se seca desde la base", "Exceso de agua o mal drenaje."],
+        ["Se abre y queda pelada al centro", "Le falta poda."],
+        ["Pocas flores", "Le falta sol."]
+      ],
+      "mascotas": {
+        "toxica": true,
+        "texto": "La ASPCA clasifica la lavanda (Lavandula angustifolia) como tóxica para perros y gatos: puede dar náuseas y vómitos si la comen.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/lavender"
+      }
+    },
+    {
+      "slug": "cardenal",
+      "nombre": "Cardenal",
+      "alias": ["Geranio", "Pelargonio"],
+      "botanico": "Pelargonium spp.",
+      "tipo": "exterior",
+      "resumen": "Florece casi todo el año con sol. Resistente, generoso y fácil de multiplicar.",
+      "dificultad": 1,
+      "luz": {
+        "corto": "Sol directo, 5–6 h",
+        "texto": "Sol directo al menos cinco o seis horas al día. En casa, solo en una ventana muy soleada."
+      },
+      "riego": {
+        "corto": "Deja secar la superficie",
+        "calor": "En maceta, cada 2 o 3 días",
+        "frio": "Poco, cuando esté seca",
+        "texto": "Deja secar la superficie entre riegos: no tolera el encharcamiento. En primavera y otoño, una o dos veces por semana."
+      },
+      "temperatura": {"corto": "Resiste frío suave", "texto": "Aguanta el frío suave, pero protégelo de las heladas fuertes."},
+      "abono": "Abono para plantas con flor cada 2 a 3 semanas, de septiembre a marzo.",
+      "trasplante": "En primavera, a una maceta un poco más grande, con buen drenaje.",
+      "consejos": [
+        "Quita las flores secas para que siga floreciendo.",
+        "Despúntalo a fines del invierno para que ramifique. Las puntas que cortes enraízan fácil en tierra."
+      ],
+      "alertas": [
+        ["Hojas amarillas y tallo negro en la base", "Exceso de agua."],
+        ["Tallos largos y pocas flores", "Le falta sol."],
+        ["Bichitos blancos bajo las hojas", "Mosca blanca o pulgón. Jabón potásico."]
+      ],
+      "mascotas": {
+        "toxica": true,
+        "texto": "Tóxico para perros y gatos según la ASPCA: puede dar vómitos, falta de apetito, decaimiento e irritación de la piel.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/geranium"
+      }
+    },
+    {
+      "slug": "camelia",
+      "nombre": "Camelia",
+      "alias": ["Camellia"],
+      "botanico": "Camellia japonica",
+      "tipo": "exterior",
+      "resumen": "Arbusto de hoja brillante que florece en pleno invierno. Le gusta la semisombra y la tierra ácida.",
+      "dificultad": 2,
+      "luz": {
+        "corto": "Semisombra",
+        "texto": "Sol de mañana y sombra en la tarde. El sol fuerte de las tardes de verano le quema las hojas."
+      },
+      "riego": {
+        "corto": "Regular, sin encharcar",
+        "calor": "2 o 3 veces por semana",
+        "frio": "La lluvia suele bastar",
+        "texto": "Mantén la tierra húmeda sin encharcar, sobre todo de fines de verano a otoño, cuando forma los botones. Si puedes, usa agua de lluvia: la cal del agua la amarillea."
+      },
+      "temperatura": {"corto": "Aguanta el invierno", "texto": "Tolera bien el frío de la zona. Protege los botones de las heladas fuertes."},
+      "abono": "Abono para plantas acidófilas después de la floración y hasta el verano (septiembre a enero).",
+      "trasplante": "En tierra ácida y suelta (tierra de hoja o para acidófilas), con buen drenaje.",
+      "consejos": [
+        "Cubre la base con corteza para conservar la humedad y el frescor de las raíces.",
+        "Si quieres darle forma, pódala apenas termine de florecer."
+      ],
+      "alertas": [
+        ["Se caen los botones sin abrir", "Riego irregular a fines del verano o en otoño."],
+        ["Hojas amarillas con nervios verdes", "Clorosis por cal en la tierra o el agua. Abono para acidófilas con hierro."],
+        ["Hojas quemadas", "Sol fuerte de la tarde."]
+      ],
+      "mascotas": {
+        "toxica": false,
+        "texto": "No tóxica para perros y gatos según la ASPCA. Igual, cualquier planta puede caerles pesada al estómago si la mastican.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/camellia"
+      }
+    },
+    {
+      "slug": "petunia",
+      "nombre": "Petunia",
+      "alias": ["Petunias"],
+      "botanico": "Petunia × hybrida",
+      "tipo": "exterior",
+      "resumen": "Sí, como nuestra Petunia. Flor de temporada que llena de color maceteros y jardineras de primavera a otoño.",
+      "dificultad": 1,
+      "luz": {
+        "corto": "Pleno sol",
+        "texto": "Pleno sol, al menos seis horas al día. Con poca luz se alarga y florece poco."
+      },
+      "riego": {
+        "corto": "Frecuente en verano",
+        "calor": "En maceta, a diario o día por medio",
+        "frio": "Cuando esté seca",
+        "texto": "Riega cuando el primer centímetro esté seco; en maceta y con calor puede ser a diario. No mojes las flores."
+      },
+      "temperatura": {"corto": "Primavera a otoño", "texto": "Es de temporada cálida y no tolera las heladas."},
+      "abono": "Abono líquido para flores cada 1 a 2 semanas mientras florece: es de las que más lo agradecen.",
+      "trasplante": "Si la pasas a una jardinera, deja unos 20 cm entre plantas.",
+      "consejos": [
+        "Quita las flores marchitas para que saque más.",
+        "Si a mitad del verano se ve larga y floja, córtala un tercio: rebrota más tupida en dos o tres semanas."
+      ],
+      "alertas": [
+        ["Tallos largos con flores solo en la punta", "Le falta sol o necesita un despunte."],
+        ["Hojas amarillentas", "Le falta abono o tiene exceso de riego."],
+        ["Bichitos en los brotes", "Pulgón. Un chorro de agua o jabón potásico."]
+      ],
+      "mascotas": {
+        "toxica": false,
+        "texto": "No tóxica para perros y gatos según la ASPCA. Igual, cualquier planta puede caerles pesada al estómago si la mastican.",
+        "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/petunia"
+      }
+    }
+  ]
+}

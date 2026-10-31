@@ -41,6 +41,35 @@ horario: "Lunes a sábado · 9:30 a 18:30",
 Mientras `whatsapp` esté vacío, en la página de espera no aparece el botón de
 WhatsApp y en la web completa los botones llevan a Instagram.
 
+## Fichas de cuidado con QR (`/cuidados`)
+
+Cada planta tiene su ficha en `jardinmalva.cl/cuidados/<planta>` (luz, riego por
+estación, abono, señales de alerta y toxicidad para mascotas con fuente ASPCA).
+El cliente la abre escaneando el QR de la tarjeta que se entrega con la planta.
+El índice con buscador está en `jardinmalva.cl/cuidados/`.
+
+- `datos/cuidados.json` — los textos de todas las fichas y los datos de contacto.
+- `herramientas/generar_cuidados.py` — crea `public/cuidados/` (solo Python 3).
+- `herramientas/generar_tarjetas.py` — crea los PDF y los QR de `imprimibles/`
+  (`pip install reportlab segno pillow`).
+- `imprimibles/tarjetas-cuidados.pdf` — una hoja A4 por planta con 10 tarjetas de 85 × 55 mm.
+  `tarjetas-surtidas.pdf` — una de cada planta. `cartel-cuidados-A5.pdf` — cartel para la caja.
+  Imprimir al 100 % (tamaño real), en cartulina, y cortar por las marcas.
+
+**Regla de oro: nunca borrar ni renombrar una ficha.** Hay QR impresos que apuntan a ella.
+`datos/slugs-publicados.txt` las registra y el generador se detiene si falta alguna.
+
+Para añadir una planta: copia un bloque en `datos/cuidados.json` con un `slug` nuevo,
+pon la toxicidad solo si está en la ASPCA (con su enlace; si no, quita `mascotas`),
+ejecuta los dos scripts y sube los cambios.
+
+Cuando haya WhatsApp o enlace de reseñas de Google, ponlos en `contacto` de
+`datos/cuidados.json` y vuelve a generar. Mientras `whatsapp` esté vacío, el botón
+lleva a los mensajes de Instagram, y la reseña al perfil de Google Maps.
+
+Las fichas llevan `noindex` mientras `"indexar": false`. Cámbialo a `true` cuando
+estén revisadas para que aparezcan en Google.
+
 ## Imágenes
 
 Van en `public/assets/`, en `.webp` y en dos o tres anchos cuando se usan con

@@ -1,0 +1,23 @@
+# Fichas publicadas en jardinmalva.cl/cuidados/<slug>.
+# Hay QR impresos que apuntan a ellas: no las borres ni las renombres.
+monstera
+pothos
+spathiphyllum
+sansevieria
+singonio
+filodendro
+peperomia
+pilea
+ficus-lyrata
+gomero
+palmera-chamaedorea
+orquidea
+helecho
+begonia
+maranta
+violeta-de-los-alpes
+rosa
+lavanda
+cardenal
+camelia
+petunia
