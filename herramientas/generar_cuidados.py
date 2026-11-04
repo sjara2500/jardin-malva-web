@@ -717,6 +717,10 @@ def pagina_planta(datos, p, v_css, v_js):
     tiles_html = "\n".join(tiles)
 
     r = p["riego"]
+    nota_riego = ("Frecuencias orientativas: dependen de la luz, la maceta y la temperatura de tu casa. "
+                  "Antes de regar, haz siempre la prueba del dedo." if p["tipo"] == "interior" else
+                  "Frecuencias orientativas: dependen del sol, del suelo, del viento y de si está en maceta o en "
+                  "el jardín. Antes de regar, haz siempre la prueba del dedo.")
     est = r.get("estaciones") or [["Primavera y verano", r["calor"]], ["Otoño e invierno", r["frio"]]]
     est_html = "\n".join(f'      <div class="est"><b>{e(a)}</b><span>{e(b)}</span></div>' for a, b in est)
 
@@ -802,7 +806,7 @@ def pagina_planta(datos, p, v_css, v_js):
     <div class="estaciones">
 {est_html}
     </div>
-    <p class="nota">Frecuencias orientativas: dependen de la luz, la maceta y la temperatura de tu casa. Antes de regar, haz siempre la prueba del dedo.</p>
+    <p class="nota">{e(nota_riego)}</p>
     <div class="dedo">{icono("dedo")}<p><strong>La prueba del dedo.</strong> Mete el dedo en la tierra unos 3 cm. Si sale seco, riega hasta que el agua salga por los agujeros de abajo y bota la que quede en el plato. Si sale húmedo, espera.</p></div>
   </div>
 </section>
