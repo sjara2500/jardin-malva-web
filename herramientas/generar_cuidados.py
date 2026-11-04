@@ -32,6 +32,56 @@ MASCOTAS = RAIZ / "public" / "mascotas.html"
 SALIDA = RAIZ / "public" / "cuidados"
 
 DIFICULTAD = {1: "Fácil", 2: "Cuidado medio", 3: "Pide atención"}
+
+# Intensidad del color de los cuadros de "Lo esencial": cuánta luz, agua o calor
+# necesita la planta (1 poca · 2 media · 3 mucha). Se deduce del texto corto de la
+# ficha; si una ficha nueva trae un texto que no está aquí, el generador se detiene
+# y pide añadirlo (o poner "nivel": 1, 2 o 3 dentro de luz, riego o temperatura).
+NIVEL_TXT = {1: "baja", 2: "media", 3: "alta"}
+NIVELES = {
+    "luz": {
+        1: ["Luz media, sin sol directo", "Luz media indirecta", "Luz media, tolera poca",
+            "Poca o mucha luz", "Semisombra", "Sombra luminosa"],
+        2: ["Luz brillante indirecta", "Luz media a brillante", "Mucha luz indirecta",
+            "Mucha luz, sin sol fuerte", "Mucha luz y lugar fresco"],
+        3: ["Luz brillante", "Mucha luz", "Mucha luz, junto a la ventana", "Pleno sol",
+            "Sol directo, 6 h o más", "Sol directo, 5–6 h"],
+    },
+    "riego": {
+        1: ["Cuando 3–5 cm estén secos", "Cuando 5 cm estén secos", "Con la tierra casi seca",
+            "Cuando la tierra esté casi seca", "Con la mitad de la tierra seca",
+            "Solo con la tierra seca", "Poco: deja secar entre riegos",
+            "Inmersión con raíces plateadas"],
+        2: ["Cuando 3 cm estén secos", "Cuando 2–3 cm estén secos", "Cuando 2 cm estén secos",
+            "Deja secar la superficie", "Regular, sin encharcar", "Por el plato, sin mojar el centro",
+            "Profundo, al pie y de mañana", "Remojo cuando la base esté seca"],
+        3: ["Siempre levemente húmeda", "Siempre levemente húmedo", "Tierra levemente húmeda",
+            "Tierra siempre levemente húmeda", "Tierra apenas húmeda", "Siempre húmedo",
+            "Húmedo, sin mojar el centro", "Frecuente en verano"],
+    },
+    # temperatura: "Entre X y Y °C" se resuelve por la mínima (≤13 → 1, 14–16 → 2, ≥17 → 3)
+    "temperatura": {
+        1: ["Aguanta el invierno", "Resiste frío suave", "Fresca", "Fresca, de 10 a 18 °C"],
+        2: ["Primavera a otoño"],
+        3: [],
+    },
+}
+NIVEL_DE = {campo: {txt: n for n, lista in tabla.items() for txt in lista}
+            for campo, tabla in NIVELES.items()}
+
+
+def nivel(p, campo):
+    """1, 2 o 3 según cuánta luz, agua o calor necesita la planta; None si no se sabe."""
+    d = p.get(campo, {})
+    if d.get("nivel") in (1, 2, 3):
+        return d["nivel"]
+    corto = d.get("corto", "")
+    if campo == "temperatura":
+        m = re.fullmatch(r"Entre (\d+) y (\d+) °C", corto)
+        if m:
+            minima = int(m.group(1))
+            return 1 if minima <= 13 else (2 if minima <= 16 else 3)
+    return NIVEL_DE[campo].get(corto)
 TIPO_TEXTO = {"interior": "Planta de interior", "exterior": "Flor y exterior"}
 
 
@@ -147,6 +197,10 @@ def cargar():
         for campo in ("luz", "riego", "temperatura"):
             if not all(p.get(campo, {}).get(k) for k in ("corto", "texto")):
                 errores.append(f"{ref}: '{campo}' necesita 'corto' y 'texto'")
+            elif nivel(p, campo) is None:
+                errores.append(f"{ref}: no sé qué intensidad de color darle a {campo} "
+                               f"«{p[campo]['corto']}»: añádelo a NIVELES en este script o pon "
+                               f"\"nivel\": 1, 2 o 3 dentro de '{campo}'")
         m = p.get("mascotas")
         if m is not None:
             if m.get("toxica") not in (True, False, None):
@@ -244,7 +298,7 @@ CSS = r"""
 :root{
   --bosque:#263D32;--bosque-2:#2F4A3C;--oliva:#707B60;--oliva-osc:#5C6752;
   --salvia:#A8B5A0;--crema:#F5F0E6;--blanco:#FCFAF6;--carbon:#292D28;
-  --malva:#B49AAF;--malva-osc:#7E6279;--malva-claro:#C9B6C4;
+  --malva:#B49AAF;--malva-osc:#7E6279;--malva-claro:#C9B6C4;--malva-txt:#6B5166;
   --linea:rgba(41,45,40,.14);--r:12px;--ease:cubic-bezier(.22,.7,.2,1);
   --f-display:"Cormorant Garamond","Cormorant",Georgia,"Times New Roman",serif;
   --f-body:"DM Sans","Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;
@@ -312,13 +366,28 @@ p{margin:0}
 /* Lo esencial */
 .esencial{padding:26px 0 8px}
 .tiles{list-style:none;margin:14px 0 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
-.tile{display:grid;gap:6px;align-content:start;padding:16px 14px;border-radius:var(--r);background:var(--blanco);border:1px solid var(--linea)}
-.tile .ico{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--crema);color:var(--bosque);margin-bottom:4px}
+.tile{position:relative;display:grid;gap:6px;align-content:start;padding:16px 14px;border-radius:var(--r);background:var(--blanco);border:1px solid var(--linea)}
+.tile .ico{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:rgba(252,250,246,.72);color:var(--bosque);margin-bottom:4px}
 .tile .ico svg{width:21px;height:21px}
-.tile .lbl{font:500 .7rem/1.3 var(--f-body);letter-spacing:.17em;text-transform:uppercase;color:var(--malva-osc)}
+.tile .lbl{font:500 .7rem/1.3 var(--f-body);letter-spacing:.17em;text-transform:uppercase;color:var(--malva-txt)}
 .tile .val{font:500 1.2rem/1.22 var(--f-display);color:var(--bosque);overflow-wrap:anywhere}
-.tile.aviso{background:rgba(180,154,175,.12);border-color:rgba(126,98,121,.3)}
-.tile.aviso .ico{background:rgba(180,154,175,.28);color:var(--malva-osc)}
+/* Intensidad según cuánta luz, agua o calor necesita (n1 poca · n2 media · n3 mucha) */
+.nv{display:inline-flex;gap:4px}
+.nv i{width:7px;height:7px;border-radius:50%;background:rgba(38,61,50,.16)}
+.tile .nv{position:absolute;top:18px;right:14px}
+.luz{--tono:#9A7428}.luz.n1{background:#FAF3DE;border-color:#EFE2BA}.luz.n2{background:#F6EBCB;border-color:#EADBAE}.luz.n3{background:#F0DEAA;border-color:#E3CE90}
+.riego{--tono:#4F7D96}.riego.n1{background:#EEF4F6;border-color:#DAE6EB}.riego.n2{background:#DFEBF1;border-color:#C8DCE6}.riego.n3{background:#CCDFEA;border-color:#B4CEDD}
+.temperatura{--tono:#9C5A3E}.temperatura.n1{background:#F9F0EA;border-color:#EEDFD5}.temperatura.n2{background:#F4E2D6;border-color:#E8CFBF}.temperatura.n3{background:#EDD0BE;border-color:#E0BCA6}
+.tile .nv i.on{background:var(--tono)}
+.leyenda{display:flex;align-items:center;gap:10px;margin-top:12px;font-size:.86rem;color:var(--oliva-osc)}
+.leyenda .nv i.on{background:var(--oliva)}
+/* Mascotas: verde suave si la ASPCA la da como no tóxica, rojo suave si es tóxica, neutro sin dato */
+.tile.pet-ok{background:#E3EFDE;border-color:#C5D9BC}
+.tile.pet-ok .ico{color:#2F5A2E}
+.tile.pet-tox{background:#F7E2DF;border-color:#EAC6C0}
+.tile.pet-tox .ico{color:#8A3A33}
+.tile.pet-sd{background:var(--crema);border:1px dashed rgba(112,123,96,.55)}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media (min-width:760px){.tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
 
 /* Secciones */
@@ -353,9 +422,11 @@ p{margin:0}
 .pet img{grid-column:2;grid-row:1/span 2;align-self:end;width:72px;height:auto;margin-bottom:-24px}
 .pet div{display:grid;gap:8px;padding-bottom:18px;align-self:center}
 @media (min-width:640px){.pet img{width:96px}}
-.pet.toxica{background:rgba(180,154,175,.15);border:1px solid rgba(126,98,121,.3)}
-.pet .estado{display:inline-flex;align-items:center;gap:8px;font-weight:500;color:var(--bosque)}
-.pet.toxica .estado{color:var(--malva-osc)}
+.pet:not(.toxica):not(.sindato){background:#E3EFDE;border:1px solid #C5D9BC}
+.pet.toxica{background:#F7E2DF;border:1px solid #EAC6C0}
+.pet .estado{display:inline-flex;align-items:center;gap:8px;font-weight:500;color:#2F5A2E}
+.pet.toxica .estado{color:#8A3A33}
+.pet.sindato .estado{color:var(--bosque)}
 .pet.sindato{background:var(--blanco);border:1px dashed rgba(112,123,96,.55)}
 .pet .estado svg{width:20px;height:20px}
 .pet .fuente{font-size:.86rem;color:var(--oliva-osc)}
@@ -544,16 +615,22 @@ def pagina_planta(datos, p, v_css, v_js):
         alias = f'\n    <p class="alias">Otros nombres: {e(", ".join(p["alias"]))}</p>'
     dots = "".join(f'<i class="on"></i>' if i < p["dificultad"] else "<i></i>" for i in range(3))
 
-    tiles = [
-        ("luz", "Luz", p["luz"]["corto"], ""),
-        ("riego", "Riego", p["riego"]["corto"], ""),
-        ("temp", "Temperatura", p["temperatura"]["corto"], ""),
-    ]
+    def tile_nivel(ic, campo, lb, que):
+        n = nivel(p, campo)
+        puntos = "".join('<i class="on"></i>' if i < n else "<i></i>" for i in range(3))
+        return (f'      <li class="tile {campo} n{n}"><span class="ico">{icono(ic)}</span>'
+                f'<span class="nv" aria-hidden="true">{puntos}</span>'
+                f'<span class="lbl">{e(lb)}</span><span class="val">{e(p[campo]["corto"])}</span>'
+                f'<span class="vh">Necesidad de {que}: {NIVEL_TXT[n]}.</span></li>')
+
+    tiles = [tile_nivel("luz", "luz", "Luz", "luz"),
+             tile_nivel("riego", "riego", "Riego", "agua"),
+             tile_nivel("temp", "temperatura", "Temperatura", "calor")]
     if m is not None:
-        tiles.append(("pata", "Mascotas", mascotas_corto(m), " aviso" if m["toxica"] is not False else ""))
-    tiles_html = "\n".join(
-        f'      <li class="tile{cl}"><span class="ico">{icono(ic)}</span><span class="lbl">{e(lb)}</span><span class="val">{e(v)}</span></li>'
-        for ic, lb, v, cl in tiles)
+        cl = {True: "pet-tox", False: "pet-ok", None: "pet-sd"}[m["toxica"]]
+        tiles.append(f'      <li class="tile {cl}"><span class="ico">{icono("pata")}</span>'
+                     f'<span class="lbl">Mascotas</span><span class="val">{e(mascotas_corto(m))}</span></li>')
+    tiles_html = "\n".join(tiles)
 
     r = p["riego"]
     est = r.get("estaciones") or [["Primavera y verano", r["calor"]], ["Otoño e invierno", r["frio"]]]
@@ -629,6 +706,7 @@ def pagina_planta(datos, p, v_css, v_js):
     <ul class="tiles">
 {tiles_html}
     </ul>
+    <p class="leyenda"><span class="nv" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>Cuanto más intenso el color, más luz, agua o calor necesita.</p>
   </div>
 </section>
 

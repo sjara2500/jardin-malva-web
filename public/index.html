@@ -40,7 +40,7 @@ a{color:inherit}
 :focus-visible{outline:2px solid var(--malva-osc);outline-offset:3px;border-radius:6px}
 
 .pagina{min-height:100%;display:grid;align-content:center;justify-items:center;gap:clamp(16px,2.8vh,30px);text-align:center;
-  padding-block:clamp(28px,4.5vh,60px);
+  padding-block:clamp(24px,4vh,56px);
   padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
 
 /* Emblema con anillo */
@@ -72,7 +72,12 @@ p{margin:0}
 .btn-sec{border-color:var(--bosque);color:var(--bosque);background:transparent}
 .btn-sec:hover{background:rgba(38,61,50,.07)}
 
-.pie{margin-top:6px;font-size:.88rem;color:var(--oliva);animation:fade 1s .6s var(--ease) both}
+.herb{display:inline-flex;align-items:center;gap:12px;margin-top:calc(-1 * clamp(4px,1vh,10px));max-width:100%;padding:9px 18px 9px 12px;border-radius:999px;border:1px solid var(--linea);background:var(--blanco);color:var(--bosque);font-size:.95rem;line-height:1.3;text-align:left;text-decoration:none;transition:border-color .25s var(--ease);animation:fade 1s .52s var(--ease) both}
+.herb:hover{border-color:var(--bosque)}
+.herb img{width:26px;height:auto;flex:none}
+.herb b{font-weight:500}
+.herb .flecha{width:16px;height:16px;flex:none;color:var(--oliva)}
+.pie{margin-top:6px;font-size:.88rem;color:var(--oliva-osc);animation:fade 1s .6s var(--ease) both}
 
 @keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 @keyframes spin{to{transform:rotate(360deg)}}
@@ -122,6 +127,8 @@ p{margin:0}
       WhatsApp
     </a>
   </div>
+
+  <a class="herb" href="/cuidados/"><img src="assets/herbario-emblema.svg" width="26" height="35" alt=""><span><b>Herbario</b> · cómo cuidar tu planta</span><svg class="flecha" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 
   <p class="pie">© <span data-year>2026</span> Jardín Malva · Vivero boutique</p>
 </main>

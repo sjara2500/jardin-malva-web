@@ -88,6 +88,27 @@ cada vez que se ejecuta el script. Si se rediseña `sitio.html`, conserva esas m
 Las fichas llevan `noindex` mientras `"indexar": false` (también `/mascotas`). Cámbialo a `true` cuando
 estén revisadas para que aparezcan en Google.
 
+### Colores de "Lo esencial"
+
+Los cuadros de luz, riego y temperatura tienen tres intensidades según cuánta luz, agua o
+calor necesita la planta (1 poca · 2 media · 3 mucha): paja para la luz, azul grisáceo para
+el riego y terracota para la temperatura. El nivel sale del texto corto de la ficha
+(tabla `NIVELES` en `generar_cuidados.py`; la temperatura "Entre X y Y °C" va por la
+mínima). Si una ficha nueva trae un texto que no está en la tabla, el script se detiene y
+lo dice: añádelo a la tabla o pon `"nivel": 1`, `2` o `3` dentro de `luz`, `riego` o
+`temperatura`. El cuadro de mascotas va en verde suave si la ASPCA la da como no tóxica,
+rojo suave si es tóxica y neutro si no hay dato.
+
+### Logo del herbario
+
+`herramientas/generar_logo_herbario.py` dibuja el logo de la guía (arco de invernadero con
+una fronda y la flor malva, más el nombre y "JARDÍN MALVA") y lo guarda en
+`public/assets/herbario-*.svg`. Es una submarca: no toca el logo oficial. Si cambia el
+nombre de la guía, basta con `python3 herramientas/generar_logo_herbario.py "Otro nombre"`
+y cambiar el texto "Herbario" en `sitio.html` (menú, bloque y pie) y en `index.html`.
+La web enlaza a la guía desde el bloque "Cuida lo que te llevas" (tras "Lo que
+encontrarás"), el menú y el pie; la página de espera, con un botón bajo los demás.
+
 ## Imágenes
 
 Van en `public/assets/`, en `.webp` y en dos o tres anchos cuando se usan con

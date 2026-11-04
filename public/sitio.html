@@ -95,11 +95,11 @@ p{margin:0}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:500 1.12rem/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:var(--bosque);white-space:nowrap}
 .brand img{width:40px;height:40px}
-.nav{display:none;gap:26px}
-.nav a{text-decoration:none;font-size:.95rem;color:var(--oliva-osc);transition:color .2s}
+.nav{display:none;gap:22px}
+.nav a{text-decoration:none;font-size:.95rem;color:var(--oliva-osc);white-space:nowrap;transition:color .2s}
 .nav a:hover{color:var(--bosque)}
 .top .btn{min-height:42px;padding:0 1.1em;font-size:.92rem}
-@media (min-width:1000px){.nav{display:flex}}
+@media (min-width:1100px){.nav{display:flex}}
 @media (max-width:359px){.top .brand span{display:none}}
 
 /* Inicio: emblema con anillo */
@@ -131,6 +131,15 @@ p{margin:0}
 .cats .atelier h3{color:var(--malva-txt)}
 @media (min-width:600px){.cats{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:980px){.cats{grid-template-columns:repeat(3,1fr)}}
+
+/* Herbario: acceso a la guía de cuidados */
+.herb{display:grid;gap:clamp(28px,5vw,64px);align-items:center;justify-items:center;text-align:center}
+.herb-logo{width:min(66%,230px);height:auto}
+.herb-copy{display:grid;gap:16px;justify-items:center;max-width:46ch}
+.herb-copy>p:not(.eyebrow):not(.script){color:var(--oliva-osc)}
+.herb-copy .btn{margin-top:4px}
+.herb-copy .nota{font-size:.94rem}
+@media (min-width:820px){.herb{grid-template-columns:auto 1fr;justify-items:start;text-align:left;column-gap:clamp(48px,7vw,96px)}.herb-copy{justify-items:start}.herb-logo{width:260px}}
 
 /* Paseo por el vivero */
 .paseo-grid{display:grid;gap:clamp(34px,5vw,64px);align-items:center}
@@ -259,6 +268,7 @@ p{margin:0}
       <a href="#paseo">Un paseo</a>
       <a href="#historia">Nuestra historia</a>
       <a href="#pet">Pet friendly</a>
+      <a href="/cuidados/">Herbario</a>
       <a href="#visita">Visítanos</a>
       <a href="#contacto">Contacto</a>
     </nav>
@@ -335,6 +345,23 @@ p{margin:0}
           <div class="txt"><h3>Malva Atelier</h3><p>Nuestra línea propia: maceteros de diseño y piezas exclusivas.</p></div>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <section id="herbario" class="band crema" aria-labelledby="t-herbario">
+    <div class="wrap herb">
+      <img class="herb-logo reveal" src="assets/herbario-logo.svg" width="202" height="183" loading="lazy" decoding="async" alt="Herbario, de Jardín Malva">
+      <div class="herb-copy">
+        <p class="eyebrow reveal">Guía de cuidados</p>
+        <h2 class="h2 reveal" id="t-herbario">Cuida lo que te llevas</h2>
+        <p class="script reveal">planta por planta</p>
+        <p class="reveal">Luz, riego, temperatura y si convive bien con tus mascotas: lo que tu planta necesita, en una ficha.</p>
+        <a class="btn btn-pri reveal" href="/cuidados/">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21c0-9 5-15 15-16-1 10-7 15-15 16Z"/><path d="M5 21 14 12"/></svg>
+          Abrir el herbario
+        </a>
+        <p class="nota muted reveal">¿Perdiste la tarjeta con el QR? En el herbario encuentras tu planta por su nombre.</p>
+      </div>
     </div>
   </section>
 
@@ -510,6 +537,7 @@ p{margin:0}
     <a class="brand" href="#inicio"><img src="assets/logo-128.webp" width="40" height="40" alt="" loading="lazy"><span>Jardín Malva</span></a>
     <p class="script">detalles que hacen florecer tus espacios</p>
     <p>Vivero boutique · Ing. Ernesto Pinto Lagarrigue 793, San Pedro de la Paz · <a href="https://www.instagram.com/jardin.malva/" target="_blank" rel="noopener">@jardin.malva</a></p>
+    <p><a href="/cuidados/">Herbario: guía de cuidados</a> · <a href="/mascotas">Plantas para casas con mascotas</a></p>
     <p>© <span data-year>2026</span> Jardín Malva</p>
   </div>
 </footer>
