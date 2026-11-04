@@ -45,7 +45,7 @@
 *,*::before,*::after{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--blanco);color:var(--carbon);font:400 1.0625rem/1.68 var(--f-body);-webkit-font-smoothing:antialiased;overflow-x:clip}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--blanco)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bosque)}
 img,video{max-width:100%;display:block}
 a{color:inherit}
 :focus-visible{outline:2px solid var(--malva-osc);outline-offset:3px;border-radius:6px}
@@ -91,13 +91,13 @@ p{margin:0}
 .ctas{display:flex;flex-wrap:wrap;gap:12px}
 
 /* Cabecera */
-.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(252,250,246,.92);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--linea)}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(38,61,50,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid rgba(245,240,230,.14)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:66px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:500 1.12rem/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:var(--bosque);white-space:nowrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:500 1.12rem/1 var(--f-display);letter-spacing:.14em;text-transform:uppercase;color:var(--crema);white-space:nowrap}
 .brand img{width:40px;height:40px}
 .nav{display:none;gap:22px}
-.nav a{text-decoration:none;font-size:.95rem;color:var(--oliva-osc);white-space:nowrap;transition:color .2s}
-.nav a:hover{color:var(--bosque)}
+.nav a{text-decoration:none;font-size:.95rem;color:var(--salvia);white-space:nowrap;transition:color .2s}
+.nav a:hover{color:var(--crema)}
 .top .btn{min-height:42px;padding:0 1.1em;font-size:.92rem}
 @media (min-width:1100px){.nav{display:flex}}
 @media (max-width:359px){.top .brand span{display:none}}
@@ -106,15 +106,17 @@ p{margin:0}
 .hero{padding-block:clamp(40px,6vw,76px) clamp(56px,8vw,96px)}
 .hero-grid{display:grid;gap:clamp(40px,6vw,72px);align-items:center}
 .hero-copy{display:grid;gap:20px;min-width:0;animation:fade .9s var(--ease) both}
-.hero-copy .lead{max-width:36ch;font-size:clamp(1.08rem,1.5vw,1.2rem);color:var(--oliva-osc)}
-.facts{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:.95rem;color:var(--oliva-osc)}
+.hero-copy .lead{max-width:36ch;font-size:clamp(1.08rem,1.5vw,1.2rem);color:rgba(245,240,230,.88)}
+.facts{list-style:none;margin:4px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:10px 26px;font-size:.95rem;color:var(--salvia)}
 .facts li{display:flex;align-items:center;gap:8px}
-.facts svg{width:18px;height:18px;color:var(--oliva);flex:none}
+.facts svg{width:18px;height:18px;color:var(--malva-claro);flex:none}
 .emblema{position:relative;margin:0;justify-self:center;width:min(100%,420px);aspect-ratio:1/1;animation:fade 1s .1s var(--ease) both}
 .ring{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .ring .spin{transform-origin:200px 200px;animation:spin 46s linear infinite}
-.logo-pf{position:absolute;left:11%;top:11%;width:78%;height:78%;border-radius:50%;box-shadow:0 26px 54px rgba(38,61,50,.22)}
+.logo-pf{position:absolute;left:11%;top:11%;width:78%;height:78%;border-radius:50%;box-shadow:0 26px 54px rgba(0,0,0,.34)}
 .t-malva .ring circle{stroke:var(--malva)}
+.bosque .ring circle{stroke:var(--salvia);stroke-opacity:.45}
+.bosque .ring text{fill:var(--malva-claro)}
 @media (min-width:880px){.hero-grid{grid-template-columns:1.05fr .95fr}.emblema{justify-self:end}}
 @media (max-width:879px){.emblema{width:min(86%,360px)}}
 
@@ -260,7 +262,7 @@ p{margin:0}
 </style>
 </head>
 <body>
-<header class="top">
+<header class="top bosque">
   <div class="wrap">
     <a class="brand" href="#inicio" aria-label="Jardín Malva, inicio"><img src="assets/logo-128.webp" width="40" height="40" alt=""><span>Jardín Malva</span></a>
     <nav class="nav" aria-label="Secciones">
@@ -280,7 +282,7 @@ p{margin:0}
 </header>
 
 <main id="inicio">
-  <section class="hero band t-malva" aria-labelledby="titulo">
+  <section class="hero band bosque" aria-labelledby="titulo">
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <p class="eyebrow">Vivero boutique · San Pedro de la Paz</p>
