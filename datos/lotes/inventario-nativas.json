@@ -1,0 +1,122 @@
+{
+  "_nota": "Plantas nativas de Chile del inventario de noviembre de 2026. Una ficha por especie. La ASPCA no tiene fichas de estas especies (consultada el 04-11-2026): quedan como 'sin dato'.",
+  "lote": "Inventario 2026 · Nativas de Chile",
+  "perfiles": {
+    "nativa": {
+      "tipo": "exterior", "categoria": "nativas", "dificultad": 1,
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra. De joven agradece algo de sombra, como en el bosque."},
+      "riego": {"corto": "Profundo y espaciado", "calor": "Un riego profundo a la semana; el primer verano, 2 veces", "frio": "Solo si no llueve", "texto": "Riega en profundidad y espaciado. Los dos primeros veranos son los más importantes; después se adapta a las lluvias de la zona."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Adaptado al clima del centro y sur de Chile: aguanta las heladas."},
+      "abono": "Casi no necesita: compost o tierra de hoja al pie a fines de invierno.",
+      "trasplante": "Plántalo en otoño o invierno, con las lluvias, en un hoyo amplio con tierra de hoja. Ponle un tutor el primer año.",
+      "consejos": ["Al ser nativo, atrae aves e insectos polinizadores del lugar."],
+      "alertas": [
+        ["Hojas secas en verano", "Falta de riego profundo, sobre todo en sus primeros años."],
+        ["Crece lento", "Es normal los primeros años: está armando sus raíces."]
+      ]
+    }
+  },
+  "plantas": [
+    {
+      "slug": "arrayan", "base": "nativa",
+      "nombre": "Arrayán", "alias": ["Luma apiculata", "Quetri", "Palo colorado"], "botanico": "Luma apiculata",
+      "resumen": "Un árbol nativo de corteza color canela que se descascara, flores blancas en verano y frutos negros comestibles. Precioso en jardines.",
+      "riego": {"texto": "Le gusta el suelo fresco y húmedo: en la naturaleza crece cerca de ríos y lagos. En verano, riega en profundidad."},
+      "consejos_extra": ["Acepta bien la poda: sirve como árbol, como arbusto o como cerco."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del arrayán."}
+    },
+    {
+      "slug": "canelo", "base": "nativa",
+      "nombre": "Canelo", "alias": ["Drimys winteri", "Foye", "Canelo chileno"], "botanico": "Drimys winteri",
+      "resumen": "El árbol sagrado mapuche, siempre verde, de hojas grandes y flores blancas perfumadas. Crece rápido con humedad.",
+      "riego": {"corto": "Tierra levemente húmeda", "texto": "Le gusta el suelo húmedo: en verano, no dejes que se seque."},
+      "consejos_extra": ["Prefiere lugares protegidos del viento seco y del sol fuerte de la tarde."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del canelo."}
+    },
+    {
+      "slug": "coihue", "base": "nativa",
+      "nombre": "Coihue", "alias": ["Nothofagus dombeyi", "Coigüe", "Coigue"], "botanico": "Nothofagus dombeyi",
+      "resumen": "Un gran árbol nativo siempre verde, de hojitas brillantes y ramas en capas horizontales. Crece rápido para ser nativo.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol o semisombra."},
+      "consejos_extra": ["Necesita espacio: de adulto es un árbol grande."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del coihue."}
+    },
+    {
+      "slug": "chilco", "base": "nativa",
+      "nombre": "Chilco", "alias": ["Fuchsia magellanica", "Fucsia nativa"], "botanico": "Fuchsia magellanica",
+      "resumen": "La fucsia nativa: un arbusto de flores colgantes rojas y moradas, de primavera a otoño, que atrae picaflores.",
+      "luz": {"corto": "Semisombra", "texto": "Semisombra o sol de mañana."},
+      "riego": {"corto": "Tierra levemente húmeda", "calor": "2 o 3 veces por semana", "frio": "Solo si no llueve", "texto": "Le gusta la tierra húmeda: crece en orillas de ríos y quebradas."},
+      "trasplante": "Plántalo en otoño o invierno, en un lugar fresco. Pódalo a fines de invierno para que brote tupido.",
+      "consejos": ["Es de los favoritos de los picaflores: plántalo donde puedas verlos."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del chilco. Da como no tóxica a otra fucsia, la Fuchsia triphylla."}
+    },
+    {
+      "slug": "maiten", "base": "nativa",
+      "nombre": "Maitén", "alias": ["Maytenus boaria", "Maiten"], "botanico": "Maytenus boaria",
+      "resumen": "Un árbol nativo de ramas colgantes y hojitas finas, siempre verde y muy elegante. Resiste la sequía y el frío.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol o semisombra."},
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana los primeros veranos", "frio": "No necesita", "texto": "Una vez afirmado, aguanta la sequía."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del maitén."}
+    },
+    {
+      "slug": "murta", "base": "nativa",
+      "nombre": "Murta", "alias": ["Ugni molinae", "Murtilla", "Mirto murta", "Uñi"], "botanico": "Ugni molinae",
+      "resumen": "Un arbusto nativo de hojitas brillantes, flores como campanitas y frutos rojos y aromáticos, perfectos para mermeladas y para el murtado.",
+      "riego": {"corto": "Tierra levemente húmeda", "texto": "Le gusta el suelo fresco y algo húmedo, sobre todo mientras forma sus frutos."},
+      "trasplante": "Plántala en otoño o invierno, en tierra ácida y suelta. También va bien en maceta.",
+      "consejos": ["Sus frutos maduran a fines de verano y en otoño."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la murta."}
+    },
+    {
+      "slug": "myrceugenia", "base": "nativa",
+      "nombre": "Myrceugenia", "alias": [], "botanico": "Myrceugenia spp.",
+      "resumen": "Árboles y arbustos nativos de la familia del arrayán, siempre verdes, de hojitas aromáticas y flores blancas. Buenos para cercos naturales.",
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la Myrceugenia."}
+    },
+    {
+      "slug": "peumo", "base": "nativa",
+      "nombre": "Peumo", "alias": ["Cryptocarya alba"], "botanico": "Cryptocarya alba",
+      "resumen": "Un árbol nativo siempre verde, de hojas aromáticas y frutos rojos. Da una sombra densa y fresca.",
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del peumo."}
+    },
+    {
+      "slug": "quillay", "base": "nativa",
+      "nombre": "Quillay", "alias": ["Quillaja saponaria", "Quillai"], "botanico": "Quillaja saponaria",
+      "resumen": "Un árbol nativo siempre verde y muy resistente a la sequía, de hojas brillantes y flores estrelladas. Su corteza se usaba como jabón.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol."},
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana los primeros veranos; después, casi nada", "frio": "No necesita", "texto": "Muy resistente a la sequía una vez afirmado. No tolera el encharcamiento."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del quillay. Su corteza es rica en saponinas, que pueden irritar el estómago."}
+    },
+    {
+      "slug": "rauli", "base": "nativa",
+      "nombre": "Raulí", "alias": ["Nothofagus alpina", "Nothofagus nervosa", "Rauli"], "botanico": "Nothofagus alpina (N. nervosa)",
+      "resumen": "Un gran árbol nativo de hojas con nervaduras marcadas, que en otoño se ponen doradas y rojizas. De crecimiento rápido.",
+      "consejos_extra": ["Bota sus hojas en invierno: es normal."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del raulí."}
+    },
+    {
+      "slug": "lleuque", "base": "nativa",
+      "nombre": "Lleuque", "alias": ["Prumnopitys andina", "Lleuqui", "Uva de la cordillera"], "botanico": "Prumnopitys andina",
+      "resumen": "Una conífera nativa de hojas planas y blandas y frutos amarillos comestibles. Crece lento y es muy elegante.",
+      "temperatura": {"texto": "Muy resistente al frío y a las heladas."},
+      "consejos_extra": ["Acepta bien la poda: sirve como árbol o como cerco."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del lleuque."}
+    },
+    {
+      "slug": "corcolen", "base": "nativa",
+      "nombre": "Corcolén", "alias": ["Azara", "Azara dentata", "Azara serrata", "Carcolene"], "botanico": "Azara spp.",
+      "resumen": "Un arbusto nativo de hojas brillantes que a fines de invierno y en primavera se llena de florcitas amarillas con aroma a vainilla.",
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del corcolén."}
+    },
+    {
+      "slug": "escallonia", "base": "arbusto-sol",
+      "categoria": "nativas",
+      "nombre": "Escallonia", "alias": ["Escallonia rubra", "Siete camisas", "Ñipa"], "botanico": "Escallonia rubra",
+      "resumen": "Un arbusto nativo de hojas brillantes y florcitas rojas o rosadas, de primavera a otoño. Muy bueno para cercos, incluso cerca del mar.",
+      "temperatura": {"texto": "Aguanta el frío y el viento costero."},
+      "consejos": ["Recórtala después de la floración para mantener el cerco tupido.", "Al ser nativa, atrae picaflores e insectos polinizadores."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la escallonia."}
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+{
+  "_nota": "Frutales, árboles ornamentales y coníferas del inventario de noviembre de 2026. Una ficha por especie (o por grupo de especies que se cuidan igual); las variedades van en 'variedades' y en 'alias'. De las variedades solo se dicen datos conocidos (p. ej. polinización del cerezo); del resto, nada que no esté verificado. Toxicidad solo con la lista de la ASPCA (perros y gatos, consultada el 04-11-2026).",
+  "lote": "Inventario 2026 · Frutales, árboles y coníferas",
+  "perfiles": {
+    "frutal": {
+      "tipo": "exterior", "categoria": "frutales", "dificultad": 2,
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol: más sol significa más fruta y más dulce."},
+      "riego": {"corto": "Profundo y espaciado", "calor": "Un riego profundo cada 5 a 7 días; el primer verano, 2 veces por semana", "frio": "Solo si no llueve", "texto": "Riega en profundidad y espaciado, en la zona de las raíces y no pegado al tronco. Lo más importante es que no le falte agua desde la floración hasta la cosecha."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Aguanta el invierno, y el frío le ayuda a florecer bien. Las heladas en plena floración pueden quemar las flores."},
+      "abono": "Compost o guano descompuesto a fines de invierno y un abono para frutales en primavera.",
+      "trasplante": "Plántalo en invierno (junio a agosto), sin hojas, a pleno sol y en suelo profundo con buen drenaje. Deja el injerto por sobre el nivel del suelo y ponle un tutor el primer año.",
+      "consejos": ["La poda de formación se hace en invierno: los primeros años, define tres o cuatro ramas principales bien repartidas."],
+      "alertas": [
+        ["Hojas enrolladas y pegajosas", "Pulgón: jabón potásico al inicio de la primavera."],
+        ["Frutos con manchas o podridos", "Hongos por humedad: retira los afectados y haz un tratamiento de invierno con cobre."]
+      ]
+    },
+    "arbol-ornamental": {
+      "tipo": "exterior", "categoria": "arboles", "dificultad": 1,
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol."},
+      "riego": {"corto": "Profundo y espaciado", "calor": "Un riego profundo a la semana; el primer verano, 2 veces", "frio": "Solo si no llueve", "texto": "Riega en profundidad y espaciado para que sus raíces bajen. Los dos primeros veranos son los más importantes."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Aguanta el invierno de la zona."},
+      "abono": "Compost al pie a fines de invierno los primeros años; después casi no necesita.",
+      "trasplante": "Plántalo en otoño o invierno, en un hoyo del doble de ancho que el pan de tierra, con un tutor el primer año. Piensa en el tamaño que tendrá de adulto.",
+      "consejos": ["Pon una capa de mulch alrededor del tronco, sin tocarlo: conserva la humedad y frena las malezas."],
+      "alertas": [
+        ["Hojas que se secan en verano", "Falta de riego profundo."],
+        ["Ramas secas", "Sácalas en invierno."]
+      ]
+    },
+    "conifera": {
+      "tipo": "exterior", "categoria": "coniferas", "dificultad": 1,
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol o semisombra luminosa. Con mucha sombra se ralea."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "Una o dos veces por semana; en maceta, 2 o 3", "frio": "Solo si no llueve", "texto": "Riega a fondo y deja secar la superficie. En maceta no dejes que se seque del todo: una conífera que se secó rara vez se recupera."},
+      "temperatura": {"corto": "Resiste heladas fuertes", "texto": "Muy resistente al frío."},
+      "abono": "Abono para coníferas o de liberación lenta en primavera.",
+      "trasplante": "Plántala en otoño o a fines de invierno, en suelo con buen drenaje. En maceta, que sea grande y pesada.",
+      "consejos": ["Recorta solo los brotes nuevos y verdes: la mayoría de las coníferas no rebrota desde la madera vieja sin hojas."],
+      "alertas": [
+        ["Se pone café por dentro", "En otoño es normal que caigan hojas viejas del interior; si es mucho, falta de agua o raíces encharcadas."],
+        ["Puntas secas", "Sequía, viento salino o heladas fuertes."]
+      ]
+    }
+  },
+  "plantas": [
+    {
+      "slug": "cerezo", "base": "frutal",
+      "nombre": "Cerezo", "alias": ["Prunus avium", "Cerezas", "Cerezo Bing", "Cerezo Lapins", "Cerezo corazón de paloma", "Bing", "Lapins", "Corazón de paloma"], "botanico": "Prunus avium",
+      "resumen": "Un frutal de flores blancas en primavera y cerezas a inicios del verano. Necesita frío en invierno y pleno sol.",
+      "variedades": "Bing: fruto grande y oscuro; necesita otro cerezo cerca para polinizarse, como Lapins. Lapins: autofértil, da fruta sola y además poliniza a Bing. Corazón de paloma: variedad tradicional de fruto con forma de corazón.",
+      "consejos_extra": ["Pon una malla antipájaros cuando las cerezas empiecen a tomar color."],
+      "alertas_extra": [["Frutos partidos", "Lluvia o riego abundante cuando ya están maduros: riega parejo."]],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA: tallos, hojas y carozos contienen compuestos que liberan cianuro.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/sweet-cherry"}
+    },
+    {
+      "slug": "durazno", "base": "frutal",
+      "nombre": "Durazno", "alias": ["Duraznero", "Prunus persica", "Durazno betarraga", "Durazno Fortuna", "Durazno plátano"], "botanico": "Prunus persica",
+      "resumen": "Florece en rosado a fines de invierno y da duraznos en verano. Agradece una buena poda cada invierno.",
+      "variedades": "Betarraga, Fortuna y plátano: cambian el color de la pulpa y la época de cosecha; se cuidan igual.",
+      "consejos_extra": ["Da fruta en las ramas del año anterior: pódalo cada invierno para que renueve ramas.", "Para prevenir la cloca (hojas que se arrugan y enrojecen en primavera), aplica cobre al caer las hojas y otra vez cuando empiezan a hincharse las yemas."],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA: tallos, hojas y carozos contienen compuestos que liberan cianuro.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/peach"}
+    },
+    {
+      "slug": "ciruelo", "base": "frutal",
+      "nombre": "Ciruelo", "alias": ["Prunus salicina", "Ciruelas", "Ciruelo Angeleno", "Angeleno"], "botanico": "Prunus salicina (ciruelo japonés)",
+      "resumen": "Flores blancas a fines de invierno y ciruelas en verano. Rústico y productivo.",
+      "variedades": "Angeleno: ciruela de piel oscura y pulpa amarilla, de cosecha tardía y que se guarda bien.",
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA: tallos, hojas y carozos contienen compuestos que liberan cianuro.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/plum"}
+    },
+    {
+      "slug": "damasco", "base": "frutal",
+      "nombre": "Damasco", "alias": ["Prunus armeniaca", "Damasquero", "Albaricoque", "Damasco Dina"], "botanico": "Prunus armeniaca",
+      "resumen": "Uno de los primeros frutales en florecer, con flores blancas y rosadas, y damascos a inicios del verano.",
+      "variedades": "Dina y las demás variedades se cuidan igual.",
+      "temperatura": {"texto": "Aguanta el invierno, pero florece temprano: donde hay heladas tardías, plántalo en un lugar abrigado."},
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA: tallos, hojas y carozos contienen compuestos que liberan cianuro.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/apricot"}
+    },
+    {
+      "slug": "almendro", "base": "frutal",
+      "nombre": "Almendro", "alias": ["Prunus dulcis", "Almendras"], "botanico": "Prunus dulcis",
+      "resumen": "El primero en florecer, a fines de invierno, cubierto de flores blancas o rosadas. Da almendras en verano y prefiere un clima más seco.",
+      "riego": {"texto": "Una vez afirmado, aguanta mejor la sequía que otros frutales, pero da más y mejores almendras con riego en verano."},
+      "consejos_extra": ["Muchas variedades necesitan otro almendro cerca para dar fruto: pregúntanos por la tuya."],
+      "mascotas": {"toxica": true, "texto": "La ASPCA registra el género Prunus (cerezos, duraznos, ciruelos y damascos) como tóxico para perros y gatos: hojas, tallos y carozos contienen compuestos que liberan cianuro.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/cherry"}
+    },
+    {
+      "slug": "manzano", "base": "frutal",
+      "nombre": "Manzano", "alias": ["Malus domestica", "Manzanas", "Manzano Fuji", "Manzano Pink Lady", "Fuji", "Pink Lady"], "botanico": "Malus domestica",
+      "resumen": "Florece en blanco y rosado en primavera y da manzanas en otoño. Longevo y agradecido.",
+      "variedades": "Fuji (dulce y crujiente) y Pink Lady (de piel rosada, dulce y ácida, de cosecha tardía). Las dos dan más y mejor fruta con otro manzano cerca que florezca al mismo tiempo.",
+      "temperatura": {"texto": "Aguanta muy bien el frío, y lo necesita para florecer."},
+      "consejos_extra": ["Ralea los frutos cuando tengan el tamaño de una nuez, dejando uno cada 15 cm: las manzanas salen más grandes."],
+      "alertas_extra": [["Frutos con gusanos", "Polilla de la manzana: trampas de feromonas en primavera y retira los frutos caídos."]],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA: hojas, tallos y semillas contienen compuestos que liberan cianuro.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/apple"}
+    },
+    {
+      "slug": "peral", "base": "frutal",
+      "nombre": "Peral", "alias": ["Pyrus communis", "Peras", "Peral Bartlett", "Bartlett", "Summer Bartlett", "Packham's Triumph", "Packham"], "botanico": "Pyrus communis",
+      "resumen": "Flores blancas en primavera y peras a fines de verano y en otoño. Muy longevo y de crecimiento ordenado.",
+      "variedades": "Bartlett, Summer Bartlett y Packham's Triumph: se cuidan igual. Dan más fruta con otro peral de otra variedad cerca que florezca al mismo tiempo.",
+      "temperatura": {"texto": "Muy resistente al frío."},
+      "consejos_extra": ["Cosecha las peras cuando aún están firmes y déjalas madurar unos días en casa: así no se ponen harinosas."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del peral. Como en el manzano, sus semillas contienen compuestos que liberan cianuro."}
+    },
+    {
+      "slug": "membrillo", "base": "frutal",
+      "nombre": "Membrillo", "alias": ["Cydonia oblonga", "Membrillero", "Membrillo Champion", "Membrillo lúcumo"], "botanico": "Cydonia oblonga",
+      "resumen": "Flores grandes y rosadas en primavera, y membrillos perfumados en otoño para dulces y jaleas. Muy rústico.",
+      "variedades": "Champion y lúcumo: mismos cuidados.",
+      "consejos_extra": ["Casi no necesita poda: en invierno, solo limpia las ramas secas o cruzadas."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del membrillo."}
+    },
+    {
+      "slug": "limonero",
+      "nombre": "Limonero", "alias": ["Limón", "Limones", "Citrus limon"], "botanico": "Citrus × limon",
+      "tipo": "exterior", "categoria": "frutales", "dificultad": 2,
+      "resumen": "Siempre verde, con flores de azahar perfumadas y limones casi todo el año. En maceta o en el jardín, en un lugar soleado y abrigado.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol, protegido del viento frío."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "1 o 2 veces por semana en tierra; en maceta, 2 o 3", "frio": "Cada 10 a 15 días si no llueve", "texto": "Riega a fondo y deja secar la superficie. No tolera el encharcamiento: sus raíces se asfixian."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta heladas suaves; las fuertes queman brotes y frutos. Los primeros inviernos, cúbrelo con una manta térmica en las noches de helada."},
+      "abono": "Abono para cítricos en primavera, verano y otoño.",
+      "trasplante": "Plántalo en primavera, en un lugar soleado y abrigado, con muy buen drenaje. En maceta, de al menos 50 cm.",
+      "consejos": ["Saca los brotes que salen en el tronco bajo el injerto.", "Si las hojas amarillean con los nervios verdes, necesita abono para cítricos con hierro y magnesio."],
+      "alertas": [["Hojas enrolladas y pegajosas", "Pulgón o conchuela: jabón potásico."], ["Hojas amarillas", "Falta de abono, frío o exceso de agua."], ["Bota frutos pequeños", "Es normal que suelte una parte; si son muchos, revisa el riego."]],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA: sus aceites esenciales pueden dar vómitos, diarrea e irritar la piel.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/lemon"}
+    },
+    {
+      "slug": "kumquat", "base": "limonero",
+      "nombre": "Kumquat", "alias": ["Citrus japonica", "Fortunella", "Quinoto", "Naranjo enano"], "botanico": "Citrus japonica (antes Fortunella)",
+      "resumen": "Un cítrico pequeño y ornamental, de frutos naranjos del tamaño de una aceituna que se comen con cáscara. Ideal para maceta.",
+      "temperatura": {"corto": "Heladas suaves", "texto": "Es de los cítricos más resistentes al frío, pero protégelo de las heladas fuertes."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del kumquat, pero sí registra como tóxicos a otros cítricos (limón, naranjo y lima)."}
+    },
+    {
+      "slug": "abedul", "base": "arbol-ornamental",
+      "nombre": "Abedul", "alias": ["Betula pendula", "Abedul plateado", "Betula"], "botanico": "Betula pendula",
+      "resumen": "Un árbol esbelto de corteza blanca y hojas que tiemblan con el viento, doradas en otoño. Crece rápido.",
+      "riego": {"texto": "Le gusta el suelo fresco: no tolera bien las sequías largas, sobre todo los primeros años."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del abedul."}
+    },
+    {
+      "slug": "arce-japones",
+      "nombre": "Arce japonés", "alias": ["Acer palmatum", "Arce", "Acer"], "botanico": "Acer palmatum",
+      "tipo": "exterior", "categoria": "arboles", "dificultad": 2,
+      "resumen": "Hojas finamente recortadas, verdes o rojas, que en otoño se encienden. Un árbol pequeño y elegante, ideal para patios y macetas.",
+      "luz": {"corto": "Sol de mañana, sombra de tarde", "texto": "Sol de mañana y sombra en la tarde, o semisombra luminosa. El sol fuerte y el viento le queman los bordes de las hojas."},
+      "riego": {"corto": "Tierra levemente húmeda", "calor": "2 veces por semana; en maceta, más seguido", "frio": "Solo si no llueve", "texto": "Le gusta la tierra fresca y húmeda, sin encharcar. En verano no dejes que se seque."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Muy resistente al frío; las heladas tardías pueden quemar los brotes nuevos."},
+      "abono": "Compost o abono de liberación lenta a fines de invierno, sin excesos.",
+      "trasplante": "En otoño o invierno, en tierra suelta y algo ácida, protegido del viento. En maceta, que sea ancha y con buen drenaje.",
+      "consejos": ["Casi no necesita poda: en invierno, solo saca ramas secas o cruzadas.", "Una capa de corteza de pino al pie mantiene la humedad y la acidez."],
+      "alertas": [["Bordes de las hojas quemados", "Sol fuerte, viento o falta de agua."], ["Hojas verdes en un arce rojo", "Demasiada sombra."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del arce japonés. Otros arces figuran como no tóxicos para perros y gatos."}
+    },
+    {
+      "slug": "cerezo-de-flor", "base": "arbol-ornamental",
+      "nombre": "Cerezo de flor", "alias": ["Sakura", "Cerezo japonés", "Cerezo péndulo", "Cerezo llorón", "Prunus serrulata", "Prunus subhirtella Pendula"], "botanico": "Prunus serrulata y Prunus subhirtella 'Pendula'",
+      "resumen": "En primavera se cubre de flores rosadas o blancas: el famoso sakura. Es ornamental y no da cerezas para comer.",
+      "variedades": "Sakura (Prunus serrulata, de flores rosadas, a veces dobles) y péndulo o llorón (Prunus subhirtella 'Pendula', de ramas colgantes): mismos cuidados.",
+      "consejos": ["Pódalo solo si hace falta y después de florecer: los cortes grandes en invierno lo exponen a hongos."],
+      "mascotas": {"toxica": true, "texto": "La ASPCA registra los cerezos (Prunus) como tóxicos para perros y gatos: hojas, tallos y carozos contienen compuestos que liberan cianuro.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/cherry"}
+    },
+    {
+      "slug": "cornus-capitata", "base": "arbol-ornamental",
+      "nombre": "Cornus capitata", "alias": ["Cornejo", "Cornejo del Himalaya", "Cornus"], "botanico": "Cornus capitata",
+      "resumen": "Un árbol pequeño y siempre verde que se cubre de grandes brácteas amarillo crema a inicios del verano, seguidas de frutos como frutillas.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta heladas suaves; de joven agradece protección del frío fuerte."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del Cornus capitata."}
+    },
+    {
+      "slug": "crespon", "base": "arbol-ornamental",
+      "nombre": "Crespón", "alias": ["Lagerstroemia indica", "Lagerstroemia", "Árbol de Júpiter", "Lila de las Indias"], "botanico": "Lagerstroemia indica",
+      "resumen": "Un árbol pequeño de corteza lisa y manchada que en verano se llena de flores rizadas, rosadas, lilas, rojas o blancas.",
+      "consejos": ["Florece en las ramas del año: pódalo a fines de invierno, acortando las ramas del año anterior.", "Necesita calor y sol para florecer bien: elige el lugar más soleado."],
+      "alertas_extra": [["Polvo blanco en las hojas", "Oídio: elige un lugar ventilado y no mojes el follaje."]],
+      "mascotas": {"toxica": false, "texto": "La ASPCA clasifica el crespón (Lagerstroemia indica) como no tóxico para perros y gatos.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/crape-myrtle"}
+    },
+    {
+      "slug": "ginkgo", "base": "arbol-ornamental",
+      "nombre": "Ginkgo", "alias": ["Ginkgo biloba", "Nogal de Japón", "Árbol de los cuarenta escudos"], "botanico": "Ginkgo biloba",
+      "resumen": "Un árbol muy antiguo de hojas en forma de abanico que se vuelven amarillo oro en otoño. Lento, longevo y muy resistente.",
+      "consejos": ["Crece lento los primeros años: ten paciencia.", "Si es hembra, sus frutos caídos tienen un olor desagradable."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del ginkgo."}
+    },
+    {
+      "slug": "haya", "base": "arbol-ornamental",
+      "nombre": "Haya", "alias": ["Fagus sylvatica", "Haya verde", "Haya común"], "botanico": "Fagus sylvatica",
+      "resumen": "Un árbol majestuoso de hojas brillantes que en otoño se ponen cobrizas y suelen quedarse en las ramas en invierno. También sirve para cercos.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra."},
+      "riego": {"texto": "Le gusta el suelo fresco y profundo; no tolera el encharcamiento ni las sequías largas."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la haya."}
+    },
+    {
+      "slug": "jacaranda", "base": "arbol-ornamental",
+      "nombre": "Jacarandá", "alias": ["Jacaranda mimosifolia", "Jacaranda"], "botanico": "Jacaranda mimosifolia",
+      "resumen": "Se cubre de flores lilas sobre un follaje fino como de helecho. Un árbol inolvidable para lugares soleados y abrigados.",
+      "temperatura": {"corto": "Heladas suaves", "texto": "De joven sufre con las heladas: protégelo los primeros inviernos. Adulto, aguanta heladas suaves."},
+      "consejos": ["Plántalo en el lugar más soleado y abrigado del jardín: con frío florece menos."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de esta especie. Da como no tóxica a una pariente, la Jacaranda procera."}
+    },
+    {
+      "slug": "liquidambar", "base": "arbol-ornamental",
+      "nombre": "Liquidámbar", "alias": ["Liquidambar styraciflua", "Liquidambar", "Ocozol"], "botanico": "Liquidambar styraciflua",
+      "resumen": "Hojas en forma de estrella que en otoño pasan por amarillos, naranjas, rojos y morados. De los árboles con mejor color de otoño.",
+      "riego": {"texto": "Le gusta el suelo fresco y profundo: en verano, riega en profundidad."},
+      "consejos": ["Necesita espacio: de adulto es un árbol grande. No lo plantes cerca de cañerías ni de la casa."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del liquidámbar."}
+    },
+    {
+      "slug": "magnolio", "base": "arbol-ornamental",
+      "nombre": "Magnolio", "alias": ["Magnolia grandiflora", "Magnolia", "Magnolio grandiflora"], "botanico": "Magnolia grandiflora",
+      "resumen": "Un árbol siempre verde de hojas grandes y brillantes, con enormes flores blancas muy perfumadas en verano.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra."},
+      "trasplante": "Plántalo en otoño o a fines de invierno, en tierra profunda y algo ácida, con espacio: de adulto es un árbol grande. No le gusta que lo trasplanten.",
+      "consejos": ["Casi no necesita poda.", "Sus hojas caídas tardan en descomponerse: sirven como mulch."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del Magnolia grandiflora. Su pariente, la Magnolia stellata, figura como no tóxica."}
+    },
+    {
+      "slug": "magnolia-estrellada", "base": "arbol-ornamental",
+      "nombre": "Magnolia estrellada", "alias": ["Magnolia stellata", "Magnolio stellata", "Magnolia estrella"], "botanico": "Magnolia stellata",
+      "resumen": "Un arbusto o árbol pequeño que a fines de invierno, antes de echar hojas, se cubre de flores blancas en forma de estrella.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra."},
+      "temperatura": {"texto": "Muy resistente al frío; una helada fuerte en plena floración puede manchar las flores."},
+      "trasplante": "En otoño o invierno, en tierra suelta y algo ácida. Ideal para jardines pequeños.",
+      "mascotas": {"toxica": false, "texto": "La ASPCA clasifica la magnolia estrellada (Magnolia stellata) como no tóxica para perros y gatos.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/magnolia-bush"}
+    },
+    {
+      "slug": "stenocarpus", "base": "arbol-ornamental",
+      "nombre": "Stenocarpus", "alias": ["Stenocarpus sinuatus", "Rueda de fuego", "Árbol rueda de fuego"], "botanico": "Stenocarpus sinuatus",
+      "resumen": "Un árbol siempre verde de hojas brillantes y flores rojas que se abren como los rayos de una rueda. Crece lento.",
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta heladas suaves; de joven necesita protección del frío fuerte."},
+      "abono": "Poco y sin fósforo, como las grevilleas, que son de la misma familia.",
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del Stenocarpus."}
+    },
+    {
+      "slug": "eucalipto-dolar", "base": "arbol-ornamental",
+      "nombre": "Eucalipto dólar", "alias": ["Eucalyptus cinerea", "Eucalipto plateado", "Eucalipto"], "botanico": "Eucalyptus cinerea",
+      "resumen": "Hojas redondas y azul plateadas, como monedas, muy usadas en ramos. Crece rápido y es muy resistente.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana el primer verano; después, poco", "frio": "No necesita", "texto": "Aguanta la sequía una vez afirmado."},
+      "consejos": ["Si lo quieres como arbusto y con ramas de hojas redondas, pódalo seguido: las hojas de adulto se alargan."],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA: sus aceites pueden dar vómitos, diarrea, babeo y decaimiento.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/eucalyptus"}
+    },
+    {
+      "slug": "abeto", "base": "conifera",
+      "nombre": "Abeto", "alias": ["Abies", "Árbol de Navidad", "Abeto de Navidad"], "botanico": "Abies spp.",
+      "resumen": "La silueta clásica del árbol de Navidad, con agujas suaves y forma de cono. Después de las fiestas puede seguir creciendo en el jardín.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra. Si lo entras para Navidad, junto a la ventana más luminosa y lejos de la estufa."},
+      "riego": {"texto": "No dejes que se seque: en maceta, riega cada vez que la superficie esté seca. Adentro se seca mucho más rápido."},
+      "consejos": ["Para Navidad, tenlo adentro lo menos posible (dos o tres semanas) y en el lugar más fresco de la casa; después, sácalo a un lugar con media sombra.", "Usa luces que no calienten."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del abeto. Si lo entras para Navidad, ojo también con los adornos y el agua del macetero."}
+    },
+    {
+      "slug": "chamaecyparis", "base": "conifera",
+      "nombre": "Chamaecyparis", "alias": ["Ciprés de Lawson", "Chamaecyparis lawsoniana", "Chamaecyparis obtusa", "Ciprés hinoki", "White Pygmy", "Falso ciprés"], "botanico": "Chamaecyparis lawsoniana y Chamaecyparis obtusa",
+      "resumen": "Coníferas de follaje suave en abanicos, verde, azulado o dorado. Hay enanas para macetas y grandes para cercos.",
+      "variedades": "Lawsoniana (ciprés de Lawson), obtusa (ciprés hinoki, de crecimiento lento y follaje en abanicos) y White Pygmy (enano, de puntas claras): mismos cuidados.",
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del Chamaecyparis."}
+    },
+    {
+      "slug": "tuya", "base": "conifera",
+      "nombre": "Tuya", "alias": ["Thuja", "Thuja occidentalis", "Thuja Smaragd", "Thuja Danica", "Thuja Holmstrup", "Tuya oriental", "Thuja orientalis", "Platycladus orientalis"], "botanico": "Thuja occidentalis y Platycladus orientalis",
+      "resumen": "Coníferas compactas de follaje en escamas, columnares o redondas. Las más usadas para cercos y para dar estructura al jardín.",
+      "variedades": "Danica (globosa y enana), Holmstrup (columnar y lenta), Smaragd (columnar, verde esmeralda) y orientalis (tuya oriental, de follaje en láminas verticales): mismos cuidados.",
+      "consejos_extra": ["Para cercos, recórtala a fines de invierno y a fines de verano, siempre sobre la parte verde."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la tuya."}
+    },
+    {
+      "slug": "junipero", "base": "conifera",
+      "nombre": "Junípero", "alias": ["Juniperus", "Enebro", "Juniperus horizontalis", "Juniperus chinensis"], "botanico": "Juniperus spp.",
+      "resumen": "Coníferas muy resistentes: rastreras para taludes, columnares o en forma de vaso. Aguantan sol, viento y sequía.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana el primer verano; después, poco", "frio": "No necesita", "texto": "Una vez afirmado, aguanta la sequía. Lo que no tolera es el suelo encharcado."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del junípero."}
+    },
+    {
+      "slug": "pino", "base": "conifera",
+      "nombre": "Pino", "alias": ["Pinus", "Pinos", "Pinus thunbergii", "Pino negro japonés"], "botanico": "Pinus spp. (como Pinus thunbergii)",
+      "resumen": "Coníferas de agujas largas, resistentes al viento y a la costa. Hay especies grandes y otras ideales para macetas, bonsái o jardín japonés.",
+      "variedades": "Thunbergii (pino negro japonés, muy usado en bonsái y jardines japoneses) y otros pinos ornamentales: se cuidan igual.",
+      "consejos": ["Para controlar su tamaño, en primavera corta a la mitad las velas (los brotes nuevos) antes de que abran sus agujas."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de estas especies; solo da como no tóxico al Pinus ponderosa."}
+    },
+    {
+      "slug": "pino-limon", "base": "conifera",
+      "nombre": "Pino limón", "alias": ["Ciprés limón", "Goldcrest", "Cupressus macrocarpa", "Cupressus macrocarpa Goldcrest"], "botanico": "Cupressus macrocarpa 'Goldcrest'",
+      "resumen": "Un ciprés de follaje amarillo limón que huele a limón al tocarlo. Ideal en macetas, en terrazas y como árbol de Navidad vivo.",
+      "luz": {"texto": "Pleno sol: con sombra pierde su color dorado."},
+      "riego": {"texto": "No dejes que se seque nunca: en maceta, riega cuando la superficie esté seca. Si se seca, no se recupera."},
+      "consejos": ["Adentro dura poco: tenlo afuera y, para Navidad, solo un par de semanas adentro."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del pino limón."}
+    },
+    {
+      "slug": "podocarpus", "base": "conifera",
+      "nombre": "Podocarpus", "alias": ["Podocarpus salignus", "Podocarpus saligna", "Podocarpus henkelii", "Mañío de hojas largas", "Mañío"], "botanico": "Podocarpus salignus y Podocarpus henkelii",
+      "resumen": "Coníferas de hojas largas y blandas, sin agujas, de aire elegante. Crecen lento y sirven como árbol o como cerco.",
+      "variedades": "Salignus (mañío de hojas largas, nativo de Chile, de hojas colgantes verde azuladas) y henkelii (de hojas largas y colgantes, de origen africano): mismos cuidados.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra; el salignus agradece algo de sombra en verano."},
+      "riego": {"texto": "Les gusta el suelo fresco y levemente húmedo, sin encharcar."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Aguantan el invierno de la zona."},
+      "consejos": ["Aceptan bien la poda: puedes recortarlos para cercos."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de estas especies, pero sí registra como tóxico a su pariente, el Podocarpus macrophyllus."}
+    }
+  ]
+}

@@ -1,0 +1,395 @@
+{
+  "_nota": "Arbustos, cercos y trepadoras del inventario de noviembre de 2026. Una ficha por especie; las variedades van en 'variedades' y en 'alias'. Toxicidad solo con la lista de la ASPCA (perros y gatos, consultada el 04-11-2026).",
+  "lote": "Inventario 2026 · Arbustos y trepadoras",
+  "perfiles": {
+    "arbusto-sol": {
+      "tipo": "exterior", "categoria": "arbustos", "dificultad": 1,
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol o semisombra luminosa; con más sol, más flores y un follaje más tupido."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "Una o dos veces por semana; en maceta, más seguido", "frio": "Solo si no llueve", "texto": "Riega a fondo al pie y deja secar la superficie entre riegos. El primer verano después de plantarlo, no dejes que se seque del todo."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Aguanta el invierno de la zona."},
+      "abono": "Compost o abono de liberación lenta a fines de invierno; en maceta, también a inicios del verano.",
+      "trasplante": "Plántalo en otoño o a fines de invierno, en un hoyo del doble de ancho que el pan de tierra y con compost. En maceta, que tenga al menos 40 cm de ancho.",
+      "consejos": ["Pódalo después de la floración para mantener la forma."],
+      "alertas": [
+        ["Hojas amarillas y tierra mojada", "Exceso de riego o suelo que no drena."],
+        ["Bichitos en los brotes o costritas en las ramas", "Pulgón o conchuela: jabón potásico."]
+      ]
+    },
+    "arbusto-acido": {
+      "tipo": "exterior", "categoria": "arbustos", "dificultad": 2,
+      "luz": {"corto": "Semisombra", "texto": "Semisombra o sol de mañana. El sol fuerte de la tarde le quema las hojas."},
+      "riego": {"corto": "Tierra levemente húmeda", "calor": "2 veces por semana; en maceta, más seguido", "frio": "Solo si no llueve", "texto": "Le gusta la tierra fresca y levemente húmeda, nunca seca del todo ni encharcada. Si puedes, riega con agua de lluvia: el agua con cal le amarillea las hojas."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Aguanta el invierno de la zona; las heladas fuertes pueden quemar los botones."},
+      "abono": "Abono para plantas acidófilas (azaleas y camelias) después de la floración y a fines del verano.",
+      "trasplante": "Plántala en tierra de hoja o sustrato para acidófilas, suelto y con buen drenaje, sin enterrar el cuello. Sus raíces son superficiales: una capa de corteza de pino las protege.",
+      "consejos": ["Pódala justo después de florecer: más tarde cortarías los botones del año siguiente."],
+      "alertas": [
+        ["Hojas amarillas con nervios verdes", "Clorosis por agua o suelo con cal: abono para acidófilas con hierro y agua de lluvia."],
+        ["Botones que se caen sin abrir", "Sed o riego irregular mientras se formaban."],
+        ["Bordes de las hojas secos", "Sol fuerte o viento seco."]
+      ]
+    }
+  },
+  "plantas": [
+    {
+      "slug": "aralia",
+      "nombre": "Aralia", "alias": ["Fatsia japonica", "Fatsia", "Aralia japonesa", "Aralice"], "botanico": "Fatsia japonica",
+      "tipo": "exterior", "categoria": "arbustos", "dificultad": 1,
+      "resumen": "Hojas enormes, brillantes y recortadas como una mano abierta. Un arbusto de sombra con aire tropical, que también vive adentro.",
+      "luz": {"corto": "Semisombra o sombra", "texto": "Semisombra o sombra luminosa. El sol directo le amarillea y quema las hojas. Adentro, luz media a brillante."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "Una o dos veces por semana; en maceta, más seguido", "frio": "Solo si no llueve", "texto": "Riega cuando la superficie esté seca. Agradece la tierra fresca, pero no el encharcamiento."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Aguanta el frío y heladas suaves a la sombra; las fuertes pueden dañar las hojas, pero rebrota."},
+      "abono": "Abono líquido para plantas verdes cada 4 semanas en primavera y verano.",
+      "trasplante": "En otoño o a fines de invierno, en tierra rica y suelta, protegida del viento. En maceta, que sea ancha y pesada.",
+      "consejos": ["Límpiale las hojas con un paño húmedo de vez en cuando.", "Si se pone muy alta o rala, corta un tallo a la mitad en primavera: rebrota desde abajo."],
+      "alertas": [["Hojas amarillas o quemadas", "Exceso de sol."], ["Hojas caídas y lacias", "Sed o calor fuerte: riega y llévala a la sombra."]],
+      "mascotas": {"toxica": false, "texto": "La ASPCA clasifica la aralia japonesa (Fatsia japonica) como no tóxica para perros y gatos.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/japanese-aralia"}
+    },
+    {
+      "slug": "abelia", "base": "arbusto-sol",
+      "nombre": "Abelia", "alias": ["Abelia × grandiflora", "Abelia grandiflora"], "botanico": "Abelia × grandiflora (Linnaea × grandiflora)",
+      "resumen": "Un arbusto de follaje brillante y florcitas blancas o rosadas, perfumadas, de primavera a otoño. Ideal para cercos informales.",
+      "consejos": ["Pódala a fines de invierno, sacando algunas ramas viejas desde la base."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la abelia."}
+    },
+    {
+      "slug": "abutilon", "base": "arbusto-sol",
+      "nombre": "Abutilón", "alias": ["Abutilon", "Farolito chino", "Linterna china"], "botanico": "Abutilon spp.",
+      "resumen": "Flores colgantes como farolitos, amarillas, naranjas, rojas o rosadas, casi todo el año. Crece rápido junto a un muro.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra; si el sol de la tarde es fuerte, mejor algo de sombra."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta heladas suaves. En un lugar abrigado sigue florido gran parte del invierno."},
+      "consejos": ["Despunta las ramas largas en primavera para que crezca más tupido."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del abutilón."}
+    },
+    {
+      "slug": "aucuba",
+      "nombre": "Aucuba", "alias": ["Aucuba japonica", "Laurel japonés", "Aucuba variegada"], "botanico": "Aucuba japonica",
+      "tipo": "exterior", "categoria": "arbustos", "dificultad": 1,
+      "resumen": "Hojas grandes y brillantes, muchas veces moteadas de amarillo. Uno de los pocos arbustos que lucen en la sombra.",
+      "luz": {"corto": "Semisombra o sombra", "texto": "Semisombra o sombra. El sol directo le quema las hojas."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "Una o dos veces por semana", "frio": "Solo si no llueve", "texto": "Riega cuando la tierra esté seca en la superficie. A la sombra aguanta algo de sequía, pero no el encharcamiento."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Muy resistente al frío."},
+      "abono": "Compost o abono de liberación lenta en primavera.",
+      "trasplante": "En otoño o a fines de invierno, en un lugar sombreado. También va bien en maceta grande.",
+      "consejos": ["Las plantas hembra dan frutos rojos si hay un macho cerca."],
+      "alertas": [["Hojas negras en invierno", "Helada fuerte o suelo encharcado."], ["Hojas quemadas", "Sol directo."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la aucuba."}
+    },
+    {
+      "slug": "azalea", "base": "arbusto-acido",
+      "nombre": "Azalea", "alias": ["Azaleas", "Azalea japonesa", "Rhododendron simsii"], "botanico": "Rhododendron spp. (azaleas)",
+      "resumen": "Se cubre de flores en primavera, en blancos, rosados, rojos y lilas. Pide tierra ácida, semisombra y riego constante.",
+      "mascotas": {"toxica": true, "texto": "Tóxica para perros y gatos según la ASPCA, incluso en poca cantidad: puede dar vómitos, babeo, debilidad y problemas al corazón.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/azalea"}
+    },
+    {
+      "slug": "rododendro", "base": "arbusto-acido",
+      "nombre": "Rododendro", "alias": ["Rhododendron", "Rododendros", "Rododendro del Himalaya"], "botanico": "Rhododendron spp.",
+      "resumen": "Un arbusto de hojas grandes y siempre verdes, con ramilletes de flores espectaculares en primavera. Es pariente de la azalea y se cuida igual.",
+      "variedades": "Del Himalaya y los demás rododendros de jardín: mismos cuidados.",
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA, incluso en poca cantidad: puede dar vómitos, babeo, debilidad y problemas al corazón.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/rhododendron"}
+    },
+    {
+      "slug": "boj",
+      "nombre": "Boj", "alias": ["Buxus", "Buxus sempervirens", "Boj variegado"], "botanico": "Buxus sempervirens",
+      "tipo": "exterior", "categoria": "arbustos", "dificultad": 1,
+      "resumen": "Hojitas pequeñas, densas y siempre verdes. El clásico para cercos bajos, bolas y formas recortadas.",
+      "variedades": "Verde y variegado (de borde crema): mismos cuidados; el variegado crece más lento.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "Una o dos veces por semana; en maceta, 2 o 3", "frio": "Solo si no llueve", "texto": "Riega a fondo y deja secar la superficie. En maceta, no dejes que se seque del todo."},
+      "temperatura": {"corto": "Resiste heladas fuertes", "texto": "Muy resistente al frío."},
+      "abono": "Abono de liberación lenta en primavera; en maceta, abono líquido cada 4 semanas en primavera y verano.",
+      "trasplante": "En otoño o a fines de invierno. Para cercos, una planta cada 25 a 30 cm.",
+      "consejos": ["Recórtalo dos veces al año, en primavera y a fines de verano, en un día nublado para que no se quemen los cortes."],
+      "alertas": [["Hojas naranjas o color bronce", "Frío, viento o sol fuerte; en primavera recupera el verde."], ["Manchones de hojas secas que caen", "Hongos por exceso de humedad: mejora la ventilación y no mojes el follaje."]],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA: puede dar vómitos y diarrea.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/boxwood"}
+    },
+    {
+      "slug": "ceanothus", "base": "arbusto-sol",
+      "nombre": "Ceanothus rastrero", "alias": ["Ceanothus", "Lila de California", "Ceanothus thyrsiflorus repens"], "botanico": "Ceanothus thyrsiflorus var. repens",
+      "resumen": "Un arbusto bajo que se extiende y se cubre de flores azules en primavera. Ideal para taludes y suelos secos.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana el primer verano; después, casi nada", "frio": "No necesita", "texto": "Una vez afirmado, aguanta la sequía. El exceso de riego en verano lo debilita."},
+      "consejos": ["No lo podes fuerte: solo despunta después de florecer."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del ceanothus."}
+    },
+    {
+      "slug": "coprosma", "base": "arbusto-sol",
+      "nombre": "Coprosma", "alias": ["Coprosma repens", "Planta espejo", "Coprosma chocolate", "Coprosma Marble Queen", "Coprosma Pink", "Coprosma amarilla", "Coprosma roja", "Coprosma rosada"], "botanico": "Coprosma repens y variedades",
+      "resumen": "Hojas brillantes como laqueadas, en verdes, chocolates, rojos, rosados y jaspeados. Resistente al viento y a la costa.",
+      "variedades": "Amarilla, chocolate, Marble Queen, Pink, roja, rosada y verde: cambia el color de las hojas, los cuidados son los mismos. Las de color intenso lucen más con sol.",
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta heladas suaves; las fuertes pueden dañar las puntas, pero rebrota."},
+      "consejos": ["Recorta las puntas en primavera y verano para que crezca compacta.", "Con el frío, muchas variedades oscurecen o enrojecen sus hojas: es normal."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la coprosma."}
+    },
+    {
+      "slug": "cotoneaster", "base": "arbusto-sol",
+      "nombre": "Cotoneaster rastrero", "alias": ["Cotoneaster", "Cotoneaster dammeri", "Cotoneaster horizontalis"], "botanico": "Cotoneaster spp. (rastreros)",
+      "resumen": "Ramas que se extienden pegadas al suelo, con florcitas blancas en primavera y frutos rojos en otoño. Cubre taludes y muros.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana", "frio": "No necesita", "texto": "Aguanta la sequía una vez afirmado."},
+      "consejos": ["Casi no necesita poda: solo saca las ramas que se salgan de su espacio."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del cotoneaster. Sus frutos atraen a los pájaros; mejor que tu mascota no se los coma."}
+    },
+    {
+      "slug": "daphne", "base": "arbusto-acido",
+      "nombre": "Daphne", "alias": ["Daphne odora", "Dafne", "Laurel de olor"], "botanico": "Daphne odora",
+      "dificultad": 3,
+      "resumen": "Un arbusto pequeño que florece a fines de invierno con ramilletes rosados de un perfume intenso.",
+      "riego": {"corto": "Moderado, sin encharcar", "texto": "Le gusta la tierra fresca, pero muy bien drenada: el encharcamiento la mata."},
+      "consejos": ["No le gusta que la cambien de lugar: elige bien dónde plantarla.", "Usa guantes al podarla: su savia irrita."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la Daphne odora. Las daphnes son conocidas por su savia y sus frutos irritantes."}
+    },
+    {
+      "slug": "laurentina", "base": "arbusto-sol",
+      "nombre": "Laurentina", "alias": ["Durillo", "Viburnum tinus", "Laurentino", "Laurotino", "Laurentina variegada"], "botanico": "Viburnum tinus",
+      "resumen": "Un arbusto siempre verde que florece en invierno con ramilletes blancos o rosados, seguidos de frutitos azules. Ideal para cercos.",
+      "variedades": "Verde y variegada: mismos cuidados; la variegada luce más con algo de sol.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra."},
+      "temperatura": {"texto": "Muy resistente al frío y al viento."},
+      "consejos": ["Pódala en primavera, después de la floración, para mantener la forma o el cerco."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la laurentina."}
+    },
+    {
+      "slug": "evonimo", "base": "arbusto-sol",
+      "nombre": "Evónimo", "alias": ["Euonymus", "Euonymus japonicus", "Euonymus fortunei", "Evónimo enano", "Evónimo yema de huevo", "Evónimo variado", "Bonetero"], "botanico": "Euonymus japonicus y Euonymus fortunei",
+      "resumen": "Arbustos de hojas brillantes, verdes, amarillas o jaspeadas, muy usados en cercos y macetas. Resistentes y fáciles de recortar.",
+      "variedades": "Enano amarillo, variado, verde y yema de huevo (Euonymus japonicus), y Euonymus fortunei, más bajo y rastrero: mismos cuidados. Los de hoja amarilla mantienen mejor su color con sol.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra."},
+      "temperatura": {"texto": "Muy resistente al frío."},
+      "consejos": ["Recórtalo en primavera y a fines de verano.", "Si en una variedad jaspeada sale una rama toda verde, córtala desde su base."],
+      "alertas_extra": [["Polvo blanco en las hojas", "Oídio, común en evónimos: mejora la ventilación y no mojes el follaje."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de estas especies, pero sí registra como tóxicos a otros evónimos (Euonymus atropurpureus)."}
+    },
+    {
+      "slug": "fucsia",
+      "nombre": "Fucsia", "alias": ["Fuchsia", "Fucsias", "Aretito"], "botanico": "Fuchsia × hybrida",
+      "tipo": "exterior", "categoria": "arbustos", "dificultad": 2,
+      "resumen": "Flores colgantes como aretes, en combinaciones de rosado, morado, rojo y blanco, de primavera a otoño.",
+      "luz": {"corto": "Semisombra", "texto": "Semisombra o sol de mañana; el sol fuerte de la tarde la marchita."},
+      "riego": {"corto": "Tierra levemente húmeda", "calor": "Cada 2 o 3 días; en colgante, casi a diario", "frio": "Cada 7 a 10 días", "texto": "Mantén la tierra levemente húmeda: si se seca, bota flores y botones."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta el frío y las heladas suaves; si hiela fuerte, protégela."},
+      "abono": "Abono para plantas con flor cada 2 semanas, de primavera a fines de verano.",
+      "trasplante": "En primavera, en tierra rica y suelta. Le van muy bien los colgantes y las macetas a media sombra.",
+      "consejos": ["Despunta los brotes en primavera para que se ramifique y dé más flores.", "A fines de invierno, poda las ramas a un tercio."],
+      "alertas": [["Bota botones", "Sed, calor o cambios de lugar."], ["Bichitos blancos que vuelan", "Mosca blanca: jabón potásico por debajo de las hojas."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA da como no tóxica a una fucsia (Fuchsia triphylla), pero no tiene ficha de las fucsias híbridas de jardín."}
+    },
+    {
+      "slug": "grevillea", "base": "arbusto-sol",
+      "nombre": "Grevillea", "alias": ["Grevillea juniperina", "Gravilla", "Grevilea"], "botanico": "Grevillea juniperina",
+      "resumen": "Hojitas finas como agujas y flores curvas, rojas o amarillas, que atraen picaflores en invierno y primavera.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana el primer verano; después, poco", "frio": "No necesita", "texto": "Aguanta la sequía una vez afirmada. No tolera el suelo encharcado."},
+      "abono": "Poco y sin fósforo: las grevilleas son sensibles a los abonos fuertes. Un poco de compost basta.",
+      "consejos": ["No uses abonos para plantas con flor ni guano: el fósforo la daña."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la grevillea."}
+    },
+    {
+      "slug": "hortensia",
+      "nombre": "Hortensia", "alias": ["Hortensias", "Hydrangea", "Hydrangea macrophylla"], "botanico": "Hydrangea macrophylla",
+      "tipo": "exterior", "categoria": "arbustos", "dificultad": 2,
+      "resumen": "Grandes bolas de flores azules, rosadas, lilas o blancas en verano. Pide sombra en la tarde y mucha agua.",
+      "luz": {"corto": "Sol de mañana, sombra de tarde", "texto": "Sol de mañana y sombra en la tarde, o semisombra. El sol fuerte de la tarde la marchita."},
+      "riego": {"corto": "Abundante en verano", "calor": "2 o 3 veces por semana; en maceta, a diario", "frio": "Solo si no llueve", "texto": "Le gusta la tierra siempre fresca: en verano riega en abundancia, al pie y temprano."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Aguanta el invierno de la zona."},
+      "abono": "Abono para hortensias o acidófilas en primavera y a inicios del verano.",
+      "trasplante": "En otoño o a fines de invierno, en tierra rica y suelta con compost.",
+      "consejos": ["El color depende del suelo: en tierra ácida salen azules; en tierra con cal, rosadas. Hay abonos para azularlas.", "Pódala a fines de invierno sobre un par de yemas gordas, sin cortar todas las ramas: florece en la madera del año anterior."],
+      "alertas": [["Hojas lacias al mediodía", "Sol fuerte o falta de agua: si se recupera en la tarde, es por el calor."], ["Hojas amarillas con nervios verdes", "Clorosis: abono para acidófilas con hierro."]],
+      "mascotas": {"toxica": true, "texto": "Tóxica para perros y gatos según la ASPCA: puede dar vómitos, diarrea y decaimiento.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/hortensia"}
+    },
+    {
+      "slug": "hipericum", "base": "arbusto-sol",
+      "nombre": "Hipérico", "alias": ["Hypericum calycinum", "Hipericum", "Hipérico rastrero"], "botanico": "Hypericum calycinum",
+      "resumen": "Un cubresuelos de hojas verdes y grandes flores amarillas, llenas de estambres, en verano. Crece bien en taludes y bajo árboles.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra."},
+      "consejos": ["Cada 2 o 3 años, a fines de invierno, córtalo casi a ras de suelo: rebrota más tupido."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de esta especie, pero sí registra como tóxico a su pariente, la hierba de San Juan (Hypericum perforatum)."}
+    },
+    {
+      "slug": "hiedra",
+      "nombre": "Hiedra", "alias": ["Hedera helix", "Hiedra variegada", "Yedra", "Hiedra común"], "botanico": "Hedera helix",
+      "tipo": "exterior", "categoria": "arbustos", "dificultad": 1,
+      "resumen": "Una trepadora siempre verde que cubre muros y cae de las macetas. Aguanta sombra, frío y casi todo.",
+      "variedades": "Verde y variegada: mismos cuidados; la variegada pide más luz y crece más lento.",
+      "luz": {"corto": "Semisombra o sombra", "texto": "Sombra o semisombra; tolera el sol si tiene agua. Adentro, luz brillante sin sol directo."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "Una o dos veces por semana", "frio": "Solo si no llueve", "texto": "Riega cuando la superficie esté seca."},
+      "temperatura": {"corto": "Resiste heladas fuertes", "texto": "Muy resistente al frío."},
+      "abono": "Abono líquido para plantas verdes cada 4 semanas en primavera y verano.",
+      "trasplante": "En maceta o en el jardín, en cualquier época salvo pleno verano.",
+      "consejos": ["Se agarra sola a muros y troncos con sus raicillas: piensa bien dónde la dejas trepar.", "Recórtala en primavera para mantenerla en su lugar."],
+      "alertas": [["Telitas y hojas punteadas", "Arañita roja, típica del aire seco: lava las hojas."], ["Hojas variegadas que se ponen verdes", "Le falta luz."]],
+      "mascotas": {"toxica": true, "texto": "Tóxica para perros y gatos según la ASPCA: sus hojas pueden dar vómitos, dolor de estómago y babeo.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/english-ivy"}
+    },
+    {
+      "slug": "jazmin-del-cabo",
+      "nombre": "Jazmín del Cabo", "alias": ["Gardenia", "Gardenia jasminoides"], "botanico": "Gardenia jasminoides",
+      "tipo": "exterior", "categoria": "arbustos", "dificultad": 3,
+      "resumen": "Flores blancas de un perfume intenso sobre hojas verde oscuro y brillantes. Exigente, pero inolvidable.",
+      "luz": {"corto": "Sol de mañana, sombra de tarde", "texto": "Mucha luz con sol suave de mañana. Adentro, junto a la ventana más luminosa."},
+      "riego": {"corto": "Tierra levemente húmeda", "calor": "Cada 2 o 3 días", "frio": "Cada 7 días", "texto": "Mantén la tierra levemente húmeda, con agua sin cal (de lluvia o reposada). Si se seca, bota los botones."},
+      "temperatura": {"corto": "Protégela de las heladas", "texto": "No tolera las heladas: en invierno, en un lugar abrigado o adentro."},
+      "abono": "Abono para acidófilas cada 3 semanas, de primavera a fines de verano.",
+      "trasplante": "En sustrato para acidófilas, suelto y con buen drenaje.",
+      "consejos": ["Agradece la humedad en el aire: no la pongas cerca de la estufa.", "Corta las flores cuando se pongan amarillas."],
+      "alertas": [["Hojas amarillas con nervios verdes", "Clorosis por agua con cal o falta de hierro: abono para acidófilas y agua de lluvia."], ["Botones que se caen", "Sed, frío, aire seco o cambios de lugar."]],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA, en forma leve: puede dar vómitos y diarrea.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/gardenia"}
+    },
+    {
+      "slug": "leptospermum", "base": "arbusto-sol",
+      "nombre": "Leptospermum", "alias": ["Leptospermum scoparium", "Árbol del té", "Manuka"], "botanico": "Leptospermum scoparium",
+      "resumen": "Un arbusto de hojitas finas que se cubre de florcitas blancas, rosadas o rojas en primavera. Elegante y resistente al viento.",
+      "riego": {"texto": "Riega a fondo y deja secar la superficie. No tolera el encharcamiento, ni que se seque del todo en maceta."},
+      "consejos": ["Pódalo suave después de florecer, sin cortar en la madera vieja sin hojas."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del Leptospermum."}
+    },
+    {
+      "slug": "myoporum", "base": "arbusto-sol",
+      "nombre": "Myoporum", "alias": ["Myoporum laetum", "Mioporo"], "botanico": "Myoporum spp.",
+      "resumen": "Hojas brillantes y florcitas blancas con puntitos lilas. Muy resistente a la costa, al viento y a la sequía; sirve para cercos y como cubresuelos.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana el primer verano; después, poco", "frio": "No necesita", "texto": "Aguanta la sequía una vez afirmado."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta heladas suaves; las fuertes le dañan las hojas."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del Myoporum. Algunas especies del género son conocidas por ser tóxicas para el ganado."}
+    },
+    {
+      "slug": "nandina", "base": "arbusto-sol",
+      "nombre": "Nandina", "alias": ["Nandina domestica", "Bambú sagrado", "Bambú celestial"], "botanico": "Nandina domestica",
+      "resumen": "Tallos como cañas y hojas finas que pasan del verde al rojo en otoño e invierno, con racimos de frutos rojos.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra; con más sol, colores más intensos."},
+      "consejos": ["Para rejuvenecerla, corta a fines de invierno un par de tallos viejos desde la base."],
+      "mascotas": {"toxica": true, "texto": "Tóxica para perros y gatos según la ASPCA, sobre todo sus frutos: contienen compuestos que liberan cianuro y pueden dar debilidad, dificultad para respirar y convulsiones.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/nandina"}
+    },
+    {
+      "slug": "osmanthus", "base": "arbusto-sol",
+      "nombre": "Osmanthus", "alias": ["Osmanthus fragrans", "Osmanthus heterophyllus", "Olivo dulce", "Olivo de té"], "botanico": "Osmanthus fragrans y Osmanthus heterophyllus",
+      "resumen": "Arbustos siempre verdes de flores pequeñas con un perfume dulce que se siente a varios metros. Buenos para cercos.",
+      "variedades": "Fragrans (olivo dulce, de flores muy perfumadas en otoño) y heterophyllus (de hojas como de acebo): mismos cuidados.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del osmanthus."}
+    },
+    {
+      "slug": "pasionaria",
+      "nombre": "Pasionaria", "alias": ["Passiflora", "Passiflora caerulea", "Passiflora alata", "Flor de la pasión", "Mburucuyá"], "botanico": "Passiflora caerulea y Passiflora alata",
+      "tipo": "exterior", "categoria": "arbustos", "dificultad": 1,
+      "resumen": "Una trepadora vigorosa de flores espectaculares, como esculpidas. Cubre rejas y pérgolas en poco tiempo.",
+      "variedades": "Caerulea (flor azul y blanca, muy resistente al frío) y alata (flor roja y perfumada, con fruto comestible; más sensible a las heladas).",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol o semisombra; con más sol, más flores."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "Dos veces por semana", "frio": "Solo si no llueve", "texto": "Riega a fondo y deja secar la superficie entre riegos."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "La caerulea aguanta heladas; la alata necesita un lugar abrigado."},
+      "abono": "Abono para plantas con flor cada 4 semanas en primavera y verano.",
+      "trasplante": "En primavera, junto a una reja o enrejado donde pueda trepar con sus zarcillos.",
+      "consejos": ["Pódala a fines de invierno para que no se enrede de más y florezca mejor."],
+      "alertas": [["Muchas hojas y pocas flores", "Exceso de abono o falta de sol."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la pasionaria."}
+    },
+    {
+      "slug": "pieris", "base": "arbusto-acido",
+      "nombre": "Pieris", "alias": ["Pieris japonica", "Andrómeda"], "botanico": "Pieris japonica",
+      "resumen": "Brotes nuevos rojos o rosados y racimos de flores como campanitas a fines de invierno. Un arbusto de sombra para tierra ácida.",
+      "mascotas": {"toxica": true, "texto": "Tóxica para perros y gatos según la ASPCA: puede dar vómitos, babeo, debilidad y problemas al corazón.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/pieris"}
+    },
+    {
+      "slug": "pitosporo", "base": "arbusto-sol",
+      "nombre": "Pitosporo", "alias": ["Pittosporum", "Pittosporum tobira", "Pittosporum tenuifolium", "Pitosporo nigricans", "Azahar de la China"], "botanico": "Pittosporum tobira y Pittosporum tenuifolium",
+      "resumen": "Arbustos siempre verdes y muy resistentes al viento y a la costa. Ideales para cercos y formas recortadas.",
+      "variedades": "Tobira (hojas gruesas y flores blancas con aroma a azahar) y Nigricans (Pittosporum tenuifolium, de hojitas onduladas y ramas oscuras): mismos cuidados.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra."},
+      "temperatura": {"texto": "Aguanta el frío y el viento costero."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA clasifica el pitosporo japonés (Pittosporum tobira) como no tóxico, pero no tiene ficha del Pittosporum tenuifolium."}
+    },
+    {
+      "slug": "skimmia", "base": "arbusto-acido",
+      "nombre": "Skimmia", "alias": ["Skimmia japonica", "Skimia"], "botanico": "Skimmia japonica",
+      "resumen": "Un arbusto compacto de sombra, con botones rojizos todo el invierno y florcitas perfumadas en primavera.",
+      "luz": {"corto": "Semisombra o sombra", "texto": "Sombra o semisombra: el sol directo le amarillea las hojas."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la skimmia."}
+    },
+    {
+      "slug": "spiraea", "base": "arbusto-sol",
+      "nombre": "Spiraea", "alias": ["Espirea", "Spiraea variegada", "Corona de novia"], "botanico": "Spiraea spp.",
+      "resumen": "Arbustos de ramas arqueadas que se cubren de florcitas blancas o rosadas; algunos tienen hojas doradas o variegadas.",
+      "consejos": ["Las que florecen en primavera se podan justo después de florecer; las de verano, a fines de invierno."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la spiraea."}
+    },
+    {
+      "slug": "veronica", "base": "arbusto-sol",
+      "nombre": "Verónica", "alias": ["Hebe", "Verónica arbustiva", "Hebe Red Edge", "Hebe topiaria", "Hebe ochracea"], "botanico": "Hebe spp. (Veronica)",
+      "resumen": "Arbustos compactos de hojas ordenadas, algunos de borde rojizo, con espigas de flores blancas, lilas o moradas.",
+      "variedades": "Cipher, ocre, Red Edge, topiaria y verde: cambian el color y la forma de la mata; se cuidan igual. Las de hoja chica y gris aguantan mejor el sol y el viento.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra."},
+      "temperatura": {"texto": "Aguanta el frío y el viento costero."},
+      "consejos": ["Corta las espigas secas después de florecer y despunta para que siga compacta."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la verónica (Hebe)."}
+    },
+    {
+      "slug": "weigela", "base": "arbusto-sol",
+      "nombre": "Weigela", "alias": ["Weigela florida", "Weigelia"], "botanico": "Weigela florida",
+      "resumen": "Un arbusto que bota la hoja y en primavera se cubre de flores en forma de trompeta, rosadas o rojas.",
+      "consejos": ["Pódala justo después de florecer, sacando algunas ramas viejas desde la base."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la weigela."}
+    },
+    {
+      "slug": "westringia", "base": "arbusto-sol",
+      "nombre": "Westringia", "alias": ["Westringia fruticosa", "Romero australiano", "Romero de costa"], "botanico": "Westringia fruticosa",
+      "resumen": "Hojitas grises como de romero y florcitas blancas casi todo el año. Muy resistente al viento, a la costa y a la sequía.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana el primer verano; después, poco", "frio": "No necesita", "texto": "Aguanta la sequía una vez afirmada. No tolera el suelo encharcado."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la westringia."}
+    },
+    {
+      "slug": "hibisco",
+      "nombre": "Hibisco", "alias": ["Hibiscus", "Hibisco tropical", "Hibiscus rosa-sinensis", "Rosa china", "Cucarda"], "botanico": "Hibiscus rosa-sinensis",
+      "tipo": "exterior", "categoria": "arbustos", "dificultad": 2,
+      "resumen": "Flores grandes y vistosas que duran un día cada una, pero aparecen sin parar en verano. Pide sol, calor y un lugar abrigado.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol o mucha luz; adentro, junto a la ventana más luminosa."},
+      "riego": {"corto": "Tierra levemente húmeda", "calor": "Cada 2 o 3 días", "frio": "Cada 7 a 10 días", "texto": "Mantén la tierra levemente húmeda en verano; en invierno, deja secar más entre riegos."},
+      "temperatura": {"corto": "Protégela de las heladas", "texto": "No tolera las heladas: en invierno, en un lugar abrigado, bajo techo o adentro."},
+      "abono": "Abono para plantas con flor cada 2 a 3 semanas, de primavera a fines de verano.",
+      "trasplante": "En primavera, en maceta con buen drenaje o en un lugar abrigado del jardín.",
+      "consejos": ["Pódalo a fines de invierno para que brote con fuerza y florezca más.", "Cada flor dura un día: es normal que caigan."],
+      "alertas": [["Bota botones", "Sed, frío o cambios de lugar."], ["Hojas amarillas", "Frío o exceso de riego en invierno."], ["Bichitos en los brotes", "Pulgón: jabón potásico."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de este hibisco. Su pariente, el Hibiscus syriacus, figura como no tóxico."}
+    },
+    {
+      "slug": "convolvulus", "base": "arbusto-sol",
+      "nombre": "Convolvulus", "alias": ["Correhuela", "Convolvulus cneorum", "Convolvulus sabatius", "Campanilla azul", "Convólvulo"], "botanico": "Convolvulus spp. (C. cneorum y C. sabatius)",
+      "resumen": "Flores en forma de embudo, blancas o azules, que se abren con el sol. Hay de follaje plateado y de mata rastrera.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana", "frio": "No necesita", "texto": "Aguanta la sequía una vez afirmado. El exceso de agua lo pudre."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta heladas suaves si el suelo drena bien."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del Convolvulus."}
+    },
+    {
+      "slug": "peonia-arbustiva",
+      "nombre": "Peonía arbustiva", "alias": ["Peonía", "Paeonia suffruticosa", "Peonía arbórea"], "botanico": "Paeonia suffruticosa",
+      "tipo": "exterior", "categoria": "arbustos", "dificultad": 2,
+      "resumen": "Un arbusto que bota la hoja y en primavera da flores enormes, de pétalos como de seda. Lenta, longeva y espectacular.",
+      "luz": {"corto": "Sol de mañana, sombra de tarde", "texto": "Sol de mañana o semisombra luminosa: el sol fuerte de la tarde acorta la vida de las flores."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "Una o dos veces por semana", "frio": "Solo si no llueve", "texto": "Riega a fondo y deja secar la superficie. No tolera el encharcamiento."},
+      "temperatura": {"corto": "Resiste heladas fuertes", "texto": "Muy resistente al frío: lo necesita para florecer."},
+      "abono": "Compost o abono para plantas con flor a fines de invierno y después de la floración.",
+      "trasplante": "En otoño, en un lugar definitivo: no le gusta que la muevan. Si viene injertada, entierra el injerto unos 10 cm.",
+      "consejos": ["Casi no necesita poda: solo saca las ramas secas a fines de invierno.", "Puede tardar uno o dos años en florecer después de plantarla."],
+      "alertas": [["Botones que se secan", "Helada tardía o falta de agua mientras se formaban."], ["Manchas grises en hojas y flores", "Botritis: mejora la ventilación."]],
+      "mascotas": {"toxica": true, "texto": "Tóxica para perros y gatos según la ASPCA: puede dar vómitos y diarrea.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/peony"}
+    },
+    {
+      "slug": "mirto", "base": "arbusto-sol",
+      "nombre": "Mirto", "alias": ["Myrtus communis", "Arrayán europeo"], "botanico": "Myrtus communis",
+      "resumen": "Un arbusto siempre verde de hojitas aromáticas y flores blancas llenas de estambres, seguidas de bayas oscuras.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana", "frio": "No necesita", "texto": "Aguanta la sequía una vez afirmado; en maceta, riega cuando la tierra esté seca."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta heladas suaves."},
+      "consejos": ["Acepta bien la poda: sirve para cercos y formas recortadas."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del mirto."}
+    },
+    {
+      "slug": "dipladenia",
+      "nombre": "Dipladenia", "alias": ["Mandevilla", "Mandevilla sanderi", "Dipladenia sanderi"], "botanico": "Mandevilla sanderi (dipladenia)",
+      "tipo": "exterior", "categoria": "arbustos", "dificultad": 2,
+      "resumen": "Una trepadora de flores en forma de trompeta, rosadas, rojas o blancas, todo el verano. Ideal para macetas en balcones soleados.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol o mucha luz."},
+      "riego": {"corto": "Cuando 2–3 cm estén secos", "calor": "Cada 2 o 3 días", "frio": "Cada 10 días", "texto": "Riega cuando la superficie esté seca; aguanta mejor quedar un poco seca que encharcada."},
+      "temperatura": {"corto": "Protégela de las heladas", "texto": "No tolera las heladas: en invierno, bajo techo o adentro junto a una ventana."},
+      "abono": "Abono para plantas con flor cada 2 semanas, de primavera a fines de verano.",
+      "trasplante": "En primavera, en maceta con buen drenaje y un tutor o enrejado donde enredarse.",
+      "consejos": ["Al podarla sale una savia blanca: usa guantes.", "A fines de invierno, poda las ramas largas a la mitad."],
+      "alertas": [["Hojas amarillas en invierno", "Frío o exceso de riego."], ["Pocas flores", "Falta de sol."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la dipladenia."}
+    }
+  ]
+}

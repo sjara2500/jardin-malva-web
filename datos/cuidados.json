@@ -13,6 +13,17 @@
     "interior": "Plantas de interior",
     "exterior": "Flores y exterior"
   },
+  "categorias": {
+    "interior": "Plantas de interior",
+    "flores": "Flores y plantas de temporada",
+    "aromaticas": "Aromáticas y huerto",
+    "arbustos": "Arbustos, cercos y trepadoras",
+    "frutales": "Frutales",
+    "arboles": "Árboles",
+    "coniferas": "Coníferas",
+    "nativas": "Nativas de Chile",
+    "suculentas": "Suculentas"
+  },
   "primeros_dias": {
     "interior": [
       "Dale un par de semanas para acostumbrarse: pasar del vivero a tu casa la estresa y puede botar alguna hoja. Es normal.",
@@ -31,8 +42,9 @@
     {
       "slug": "monstera",
       "nombre": "Monstera",
-      "alias": ["Costilla de Adán"],
+      "alias": ["Costilla de Adán", "Monstera deliciosa", "Monstera Thai Constellation", "Thai"],
       "botanico": "Monstera deliciosa",
+      "variedades": "Thai Constellation: la misma especie, con hojas salpicadas de crema. Crece más lento y pide más luz, siempre sin sol directo.",
       "tipo": "interior",
       "resumen": "Agradecida y de crecimiento rápido. Con buena luz te regala hojas grandes y cada vez más abiertas.",
       "dificultad": 1,
@@ -176,7 +188,7 @@
     {
       "slug": "singonio",
       "nombre": "Singonio",
-      "alias": ["Syngonium", "Planta punta de flecha"],
+      "alias": ["Syngonium", "Planta punta de flecha", "Syngonium Neon", "Silver Butterfly"],
       "botanico": "Syngonium podophyllum",
       "tipo": "interior",
       "resumen": "Hojas en forma de flecha, verdes, rosadas o jaspeadas. Crece rápido y es fácil.",
@@ -203,7 +215,7 @@
         ["Pierde el color rosado", "Le falta luz."],
         ["Hojas amarillas", "Exceso de riego."]
       ],
-      "variedades": "Neón o rosado, Confetti, Batik y jaspeados: mismos cuidados; los de color piden más luz.",
+      "variedades": "Neón o rosado, Silver Butterfly, Confetti, Batik y jaspeados: mismos cuidados; los de color piden más luz.",
       "mascotas": {
         "toxica": true,
         "texto": "Tóxica para perros y gatos según la ASPCA. Contiene cristales de oxalato de calcio que irritan la boca: babeo, vómitos y dificultad para tragar si la mastican.",
@@ -213,7 +225,7 @@
     {
       "slug": "filodendro",
       "nombre": "Filodendro",
-      "alias": ["Philodendron", "Birkin", "Pink Princess", "Erubescens"],
+      "alias": ["Philodendron", "Birkin", "Pink Princess", "Erubescens", "Black Cardinal", "Cherry"],
       "botanico": "Philodendron spp.",
       "tipo": "interior",
       "resumen": "Una familia enorme de hojas elegantes. Todas comparten cuidados parecidos.",
@@ -240,7 +252,7 @@
         ["Pierde las rayas o el rosado", "Le falta luz."],
         ["Puntas café", "Aire seco o falta de riego."]
       ],
-      "variedades": "Birkin, Pink Princess, erubescens, Zebra y los de hoja de corazón se cuidan igual.",
+      "variedades": "Birkin, Pink Princess, erubescens, Zebra, Black Cardinal, Cherry y los de hoja de corazón se cuidan igual.",
       "mascotas": {
         "toxica": true,
         "texto": "Los filodendros son tóxicos para perros y gatos según la ASPCA. Contienen cristales de oxalato de calcio que irritan la boca: babeo, vómitos y dificultad para tragar si los mastican.",
@@ -466,8 +478,9 @@
     {
       "slug": "helecho",
       "nombre": "Helecho de Boston",
-      "alias": ["Helecho", "Nephrolepis"],
+      "alias": ["Helecho", "Nephrolepis", "Nephrolepis Manito"],
       "botanico": "Nephrolepis exaltata",
+      "variedades": "Manito y las demás variedades de Nephrolepis se cuidan igual.",
       "tipo": "interior",
       "resumen": "Frondoso y fresco. Pide humedad constante, pero es muy agradecido.",
       "dificultad": 2,
@@ -502,8 +515,9 @@
     {
       "slug": "begonia",
       "nombre": "Begonia",
-      "alias": ["Begonia rex", "Begonia Escargot"],
+      "alias": ["Begonia rex", "Begonia Escargot", "Begonia caracol", "Begonia maculata", "Red Kiss", "White Ice", "Hula Pink"],
       "botanico": "Begonia spp.",
+      "variedades": "Rex (hojas de colores), Escargot o caracol (hoja en espiral), Red Kiss, White Ice, Hula Pink y maculata (hojas con lunares plateados y tallos tipo caña, que agradece un tutor): todas se cuidan igual.",
       "tipo": "interior",
       "resumen": "Hojas con dibujos y colores únicos. Le gusta la humedad, pero sin mojar sus hojas.",
       "dificultad": 2,
@@ -609,9 +623,11 @@
     {
       "slug": "rosa",
       "nombre": "Rosal",
-      "alias": ["Rosa", "Rosas"],
+      "alias": ["Rosa", "Rosas", "Rosa trepadora", "Rosa pie alto", "Rosas ramillete", "Flaming Peace", "Freedom", "Red Panther", "Sensación naranja", "Tineke", "Santa Fe", "Leonardo da Vinci", "Charles de Gaulle", "Rosa tigre", "Rosa té limón"],
       "botanico": "Rosa spp.",
+      "variedades": "Flaming Peace, Freedom, Red Panther, Sensación naranja, Tineke, Santa Fe, Leonardo da Vinci, Charles de Gaulle, Tigre y Té limón, en arbusto, ramillete, pie alto o trepadora. Todas se cuidan igual. Las de pie alto necesitan un tutor firme amarrado al tronco; las trepadoras florecen más si guías y amarras sus ramas largas en horizontal.",
       "tipo": "exterior",
+      "categoria": "arbustos",
       "resumen": "Con sol y un poco de constancia, florece de primavera a otoño.",
       "dificultad": 2,
       "luz": {
@@ -645,9 +661,11 @@
     {
       "slug": "lavanda",
       "nombre": "Lavanda",
-      "alias": ["Lavanda francesa", "Lavanda inglesa"],
+      "alias": ["Lavanda francesa", "Lavanda inglesa", "Lavanda bandera", "Lavanda Blue", "Lavanda Goodwin", "Lavandula"],
       "botanico": "Lavandula spp.",
+      "variedades": "Bandera (lavanda de penacho, Lavandula stoechas), Blue, francesa (Lavandula dentata, de hoja dentada) y Goodwin Creek (Lavandula × ginginsii, de hoja gris): todas piden pleno sol y poco riego. La francesa y la Goodwin florecen casi todo el año; la bandera, sobre todo en primavera.",
       "tipo": "exterior",
+      "categoria": "aromaticas",
       "resumen": "Aroma, flores y abejas. Pide sol y poca agua; lo que más la daña es el exceso de riego.",
       "dificultad": 1,
       "luz": {
@@ -720,6 +738,7 @@
       "alias": ["Camellia"],
       "botanico": "Camellia japonica",
       "tipo": "exterior",
+      "categoria": "arbustos",
       "resumen": "Arbusto de hoja brillante que florece en pleno invierno. Le gusta la semisombra y la tierra ácida.",
       "dificultad": 2,
       "luz": {

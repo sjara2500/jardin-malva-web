@@ -1,0 +1,203 @@
+{
+  "_nota": "Plantas de interior del inventario de noviembre de 2026 que no tenían ficha. Una ficha por especie; las variedades van en 'variedades' y en 'alias' para que el buscador las encuentre. Toxicidad solo con la lista de la ASPCA (perros y gatos, consultada el 04-11-2026).",
+  "lote": "Inventario 2026 · Interior",
+  "plantas": [
+    {
+      "slug": "anturio",
+      "nombre": "Anturio",
+      "alias": ["Anthurium", "Anturio rojo", "Flor de flamenco"],
+      "botanico": "Anthurium andraeanum",
+      "tipo": "interior",
+      "categoria": "interior",
+      "dificultad": 2,
+      "resumen": "Flores brillantes, rojas, rosadas o blancas, que duran semanas sobre hojas verdes y lustrosas. Con buena luz florece casi todo el año.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo. Con poca luz sigue verde pero deja de florecer; el sol directo le quema las hojas."},
+      "riego": {"corto": "Cuando 2–3 cm estén secos", "calor": "Cada 5 a 7 días", "frio": "Cada 10 a 14 días", "texto": "Riega cuando los primeros 2 a 3 cm estén secos y bota el agua que quede en el plato. Sus raíces necesitan aire: el encharcamiento las pudre."},
+      "temperatura": {"corto": "Entre 18 y 27 °C", "texto": "Evita que baje de 15 °C y las corrientes de aire. El calor seco de la estufa marchita antes las flores."},
+      "abono": "Abono líquido para plantas con flor, a mitad de dosis, cada 3 a 4 semanas de septiembre a marzo.",
+      "trasplante": "Cada dos años en primavera, en sustrato muy aireado (con corteza de pino o perlita) y una maceta apenas más grande.",
+      "consejos": [
+        "Cuando una flor se ponga verde o café, córtala desde la base del tallo.",
+        "Le gusta la humedad: agrúpalo con otras plantas o pásale un paño húmedo por las hojas."
+      ],
+      "alertas": [
+        ["Hojas amarillas y tierra mojada", "Exceso de riego. Deja secar más entre riegos."],
+        ["No florece", "Le falta luz. Acércalo a una ventana luminosa, sin sol directo."],
+        ["Puntas café", "Aire seco o exceso de abono."]
+      ],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA, que lo registra en su ficha de anturio (Anthurium). Sus cristales de oxalato de calcio irritan la boca: babeo, vómitos y dificultad para tragar.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/flamingo-flower"}
+    },
+    {
+      "slug": "asplenium-nido",
+      "base": "asplenium-osaka",
+      "nombre": "Asplenium nido",
+      "alias": ["Helecho nido de ave", "Asplenium nidus", "Nido de ave"],
+      "botanico": "Asplenium nidus",
+      "resumen": "Hojas enteras, lisas y brillantes que salen en roseta desde un centro afelpado. Un helecho elegante y más fácil que los de hojitas.",
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del helecho nido de ave. Su pariente Asplenium bulbiferum figura como no tóxico."}
+    },
+    {
+      "slug": "calathea-thai-beauty",
+      "base": "calathea",
+      "categoria": "interior",
+      "nombre": "Calathea 'Thai Beauty'",
+      "alias": ["Calathea Thai Beauty", "Calathea"],
+      "botanico": "Goeppertia (Calathea) 'Thai Beauty'",
+      "resumen": "Hojas redondeadas con trazos verde claro y crema, como pinceladas. Pide la misma constancia que todas las calatheas: humedad en el aire y agua reposada."
+    },
+    {
+      "slug": "philodendron-atabapoense",
+      "base": "philodendron-silver-sword",
+      "nombre": "Philodendron atabapoense",
+      "alias": ["Filodendro atabapoense", "Philodendron"],
+      "botanico": "Philodendron atabapoense",
+      "resumen": "Hojas largas y angostas, verdes por encima y burdeos por debajo. Un filodendro trepador de colección que agradece un tutor para crecer."
+    },
+    {
+      "slug": "helecho-pata-de-conejo",
+      "nombre": "Helecho pata de conejo",
+      "alias": ["Davallia", "Pata de conejo", "Helecho pie de conejo"],
+      "botanico": "Davallia spp.",
+      "tipo": "interior",
+      "categoria": "interior",
+      "dificultad": 2,
+      "resumen": "Hojitas finas y unos rizomas peludos que asoman por el borde de la maceta, como patitas. Aguanta mejor el aire seco que otros helechos.",
+      "luz": {"corto": "Luz media indirecta", "texto": "Luz media a brillante, sin sol directo. El sol le quema las hojas finas."},
+      "riego": {"corto": "Cuando 2 cm estén secos", "calor": "Cada 5 a 7 días", "frio": "Cada 10 a 14 días", "texto": "Riega cuando el primer par de centímetros esté seco, alrededor de los rizomas y sin empaparlos. Le gusta que le pulverices agua sobre los rizomas."},
+      "temperatura": {"corto": "Entre 16 y 24 °C", "texto": "Evita que baje de 10 °C y aléjalo de la estufa."},
+      "abono": "Abono líquido para plantas verdes a mitad de dosis cada 4 a 6 semanas, de septiembre a marzo.",
+      "trasplante": "Cada dos o tres años, en una maceta ancha y baja. Los rizomas deben quedar sobre la tierra, no enterrados.",
+      "consejos": [
+        "Los rizomas peludos son parte de la planta: no los cortes ni los cubras con tierra.",
+        "Luce mucho colgando o en macetas bajas y anchas."
+      ],
+      "alertas": [
+        ["Hojas secas y crujientes", "Falta de riego o aire muy seco."],
+        ["Rizomas blandos", "Exceso de agua. Deja secar más entre riegos."]
+      ],
+      "mascotas": {"toxica": false, "texto": "La ASPCA clasifica el helecho pata de conejo (Davallia) como no tóxico para perros y gatos.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/rabbits-foot-fern"}
+    },
+    {
+      "slug": "cryptanthus",
+      "nombre": "Cryptanthus",
+      "alias": ["Estrella de tierra", "Bromelia estrella"],
+      "botanico": "Cryptanthus spp.",
+      "tipo": "interior",
+      "categoria": "interior",
+      "dificultad": 1,
+      "resumen": "Una bromelia baja con forma de estrella y hojas rayadas en rosado, verde o plata. Ideal para terrarios y rincones luminosos.",
+      "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo. Con más luz, sus hojas toman colores más intensos."},
+      "riego": {"corto": "Cuando 2–3 cm estén secos", "calor": "Cada 7 días", "frio": "Cada 10 a 14 días", "texto": "Riega cuando la superficie esté seca. A diferencia de otras bromelias, no guarda agua en el centro: mejor quedarse corto que pasarse."},
+      "temperatura": {"corto": "Entre 16 y 27 °C", "texto": "Evita que baje de 13 °C."},
+      "abono": "Muy poco: abono líquido a un cuarto de dosis una vez al mes en primavera y verano.",
+      "trasplante": "Tiene raíces pequeñas y casi nunca necesita trasplante. Si lo haces, usa mezcla para orquídeas o sustrato con mucha perlita.",
+      "consejos": [
+        "Después de florecer, la roseta madre da hijuelos. Sepáralos cuando tengan un tercio de su tamaño.",
+        "Va muy bien en terrarios abiertos, donde el aire es más húmedo."
+      ],
+      "alertas": [
+        ["Base blanda", "Exceso de riego."],
+        ["Colores apagados", "Le falta luz."]
+      ],
+      "mascotas": {"toxica": false, "texto": "La ASPCA clasifica los Cryptanthus (estrella de tierra) como no tóxicos para perros y gatos.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/earth-star"}
+    },
+    {
+      "slug": "rosario-de-corazones",
+      "nombre": "Rosario de corazones",
+      "alias": ["Ceropegia", "Collar de corazones", "Cadena de corazones", "String of hearts"],
+      "botanico": "Ceropegia woodii",
+      "tipo": "interior",
+      "categoria": "interior",
+      "dificultad": 1,
+      "resumen": "Tallos colgantes y finísimos con hojitas en forma de corazón, verdes y plateadas. Una suculenta colgante que crece rápido con buena luz.",
+      "luz": {"corto": "Luz brillante", "texto": "Luz brillante; acepta sol suave de mañana. Con poca luz los tallos se alargan y las hojas quedan muy separadas."},
+      "riego": {"corto": "Solo con la tierra seca", "calor": "Cada 10 a 14 días", "frio": "Cada 3 a 4 semanas", "texto": "Es suculenta: guarda agua en sus hojas y en unos tubérculos bajo la tierra. Riega solo cuando el sustrato esté seco del todo."},
+      "temperatura": {"corto": "Entre 15 y 29 °C", "texto": "Evita que baje de 10 °C."},
+      "abono": "Abono para suculentas a mitad de dosis una vez al mes en primavera y verano.",
+      "trasplante": "Cada dos o tres años, en maceta con drenaje y sustrato para cactus.",
+      "consejos": [
+        "Se multiplica fácil: apoya un trozo de tallo sobre tierra húmeda y en unas semanas echa raíces.",
+        "Queda preciosa colgando o sobre una repisa alta."
+      ],
+      "alertas": [
+        ["Hojas blandas o amarillas", "Exceso de riego."],
+        ["Hojas arrugadas", "Sed: riega a fondo."],
+        ["Tallos largos y pelados", "Le falta luz."]
+      ],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del rosario de corazones."}
+    },
+    {
+      "slug": "palmera-dama",
+      "nombre": "Palmera dama",
+      "alias": ["Rhapis", "Palmera china", "Palmera de bambú", "Rhapis excelsa"],
+      "botanico": "Rhapis excelsa",
+      "tipo": "interior",
+      "categoria": "interior",
+      "dificultad": 1,
+      "resumen": "Tallos finos como cañas y hojas en abanico. Elegante, de crecimiento lento y muy tolerante a la luz media.",
+      "luz": {"corto": "Luz media a brillante", "texto": "Luz media a brillante, sin sol directo: el sol fuerte le amarillea las hojas. Tolera rincones con menos luz que otras palmeras."},
+      "riego": {"corto": "Cuando 3 cm estén secos", "calor": "Cada 7 a 10 días", "frio": "Cada 2 a 3 semanas", "texto": "Riega a fondo cuando los primeros 3 cm estén secos. Es sensible al cloro y a las sales: usa agua reposada y lava la tierra con abundante agua un par de veces al año."},
+      "temperatura": {"corto": "Entre 15 y 27 °C", "texto": "Aguanta el frío mejor que la mayoría de las palmeras de interior, incluso noches cerca de 5 °C, pero no las heladas."},
+      "abono": "Abono para palmeras o plantas verdes a mitad de dosis cada 6 semanas, de septiembre a marzo.",
+      "trasplante": "Crece lento: trasplántala cada dos o tres años, cuando las raíces llenen la maceta.",
+      "consejos": [
+        "Corta las hojas secas desde la base, sin tirar.",
+        "Si salen puntas café, córtalas siguiendo la forma de la hoja."
+      ],
+      "alertas": [
+        ["Puntas café", "Aire seco, o sales y cloro del agua de riego."],
+        ["Hojas amarillas", "Exceso de sol o de riego."]
+      ],
+      "mascotas": {"toxica": false, "texto": "La ASPCA clasifica la palmera dama (Rhapis) como no tóxica para perros y gatos.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/lady-palm"}
+    },
+    {
+      "slug": "yuca",
+      "nombre": "Yuca",
+      "alias": ["Yucca", "Yucca elephantipes", "Izote"],
+      "botanico": "Yucca spp. (sobre todo Yucca elephantipes)",
+      "tipo": "interior",
+      "categoria": "interior",
+      "dificultad": 1,
+      "resumen": "Tronco firme y un penacho de hojas largas y duras. Muy resistente: aguanta olvidos de riego y se adapta adentro o en el jardín.",
+      "luz": {"corto": "Mucha luz", "texto": "Mucha luz, junto a una ventana; acepta sol directo. Afuera va bien a pleno sol. Con poca luz se inclina y las hojas nuevas salen delgadas."},
+      "riego": {"corto": "Solo con la tierra seca", "calor": "Cada 10 a 15 días", "frio": "Cada 3 a 4 semanas", "texto": "Riega cuando la tierra esté seca en profundidad. Su gran enemigo es el exceso de agua, sobre todo en invierno."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Adentro, la temperatura de la casa le acomoda. Afuera aguanta heladas suaves si está en suelo seco; las fuertes le dañan las hojas."},
+      "abono": "Abono líquido para plantas verdes cada 4 a 6 semanas, de septiembre a marzo.",
+      "trasplante": "Cada dos o tres años en primavera, en maceta pesada para que no se vuelque y con buen drenaje.",
+      "consejos": [
+        "Las puntas de las hojas son duras y pinchan: ubícala lejos de pasillos y de la altura de los niños.",
+        "Si crece demasiado, puedes cortar el tronco en primavera: brota de nuevo bajo el corte."
+      ],
+      "alertas": [
+        ["Hojas amarillas y tronco blando", "Exceso de riego. Deja secar y revisa el drenaje."],
+        ["Puntas café", "Aire seco o riego irregular."]
+      ],
+      "mascotas": {"toxica": true, "texto": "Tóxica para perros y gatos según la ASPCA: contiene saponinas que pueden dar vómitos y decaimiento si la mastican.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/yucca"}
+    },
+    {
+      "slug": "strelitzia-nicolai",
+      "nombre": "Strelitzia nicolai",
+      "alias": ["Ave del paraíso gigante", "Ave del paraíso blanca", "Strelitzia"],
+      "botanico": "Strelitzia nicolai",
+      "tipo": "interior",
+      "categoria": "interior",
+      "dificultad": 2,
+      "resumen": "Hojas enormes, como de plátano, que dan un aire tropical. Adentro necesita mucha luz; afuera, un rincón protegido del viento y de las heladas.",
+      "luz": {"corto": "Mucha luz", "texto": "Mucha luz: junto a una ventana luminosa adentro, o sol y semisombra afuera. Con poca luz se estira y las hojas se inclinan."},
+      "riego": {"corto": "Cuando 3–5 cm estén secos", "calor": "Cada 7 a 10 días", "frio": "Cada 2 a 3 semanas", "texto": "Riega a fondo cuando los primeros centímetros estén secos. Sus raíces son gruesas y se pudren si la tierra pasa mojada."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Adentro, la temperatura de la casa le acomoda. Afuera aguanta el frío, pero las heladas le queman las hojas: plántala en un lugar protegido o cúbrela en las noches de helada."},
+      "abono": "Abono líquido para plantas verdes cada 3 a 4 semanas, de septiembre a marzo.",
+      "trasplante": "Cada dos o tres años en primavera, en una maceta honda y pesada. Le gusta estar algo apretada.",
+      "consejos": [
+        "Las hojas se rajan con el viento: es natural y no le hace daño.",
+        "Límpiale las hojas con un paño húmedo para que respiren y brillen."
+      ],
+      "alertas": [
+        ["Hojas que se enroscan", "Sed o aire muy seco."],
+        ["Manchas café después del invierno", "Frío o helada."],
+        ["Hojas bajas amarillas", "Exceso de riego, o hojas viejas que se renuevan."]
+      ],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de esta especie. Su pariente, el ave del paraíso (Strelitzia reginae), sí figura como tóxica para perros y gatos."}
+    }
+  ]
+}

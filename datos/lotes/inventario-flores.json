@@ -1,0 +1,456 @@
+{
+  "_nota": "Flores, aromáticas y suculentas del inventario de noviembre de 2026. Una ficha por especie; las variedades van en 'variedades' y en 'alias'. Toxicidad solo con la lista de la ASPCA (perros y gatos, consultada el 04-11-2026); si la ASPCA no tiene ficha de la especie, queda 'sin dato'.",
+  "lote": "Inventario 2026 · Flores, aromáticas y suculentas",
+  "perfiles": {
+    "flor-sol": {
+      "tipo": "exterior", "categoria": "flores", "dificultad": 1,
+      "luz": {"corto": "Pleno sol", "texto": "Sol directo al menos medio día. Con poca luz florece menos y se estira."},
+      "riego": {"corto": "Cuando 2–3 cm estén secos", "calor": "En maceta, cada 2 o 3 días; en tierra, 2 veces por semana", "frio": "Cada 7 a 10 días si no llueve", "texto": "Riega cuando la superficie esté seca, al pie de la planta y sin mojar flores ni hojas. En maceta se seca mucho más rápido que en el jardín."},
+      "temperatura": {"corto": "Primavera a otoño", "texto": "Florece de primavera a otoño. Las heladas la dañan."},
+      "abono": "Abono para plantas con flor cada 2 a 3 semanas mientras florece.",
+      "trasplante": "Plántala en tierra suelta con compost; en maceta, de al menos 20 cm de ancho y con agujeros.",
+      "consejos": ["Corta las flores marchitas: así sigue floreciendo por más tiempo."],
+      "alertas": [
+        ["Pocas flores y tallos largos", "Le falta sol."],
+        ["Hojas amarillas y tierra mojada", "Exceso de riego o maceta sin drenaje."],
+        ["Bichitos en los brotes", "Pulgón. Un chorro de agua o jabón potásico."]
+      ]
+    },
+    "perenne-sol": {
+      "tipo": "exterior", "categoria": "flores", "dificultad": 1,
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol para florecer bien."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "Una o dos veces por semana; en maceta, más seguido", "frio": "Solo si no llueve", "texto": "Riega a fondo y deja que la superficie se seque entre riegos. Una vez afirmada en el jardín, aguanta bien algunos días sin agua."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Aguanta el invierno de la zona. En maceta, protege las raíces de las heladas fuertes."},
+      "abono": "Abono para plantas con flor cada 4 semanas en primavera y verano.",
+      "trasplante": "Plántala en primavera u otoño, en tierra con buen drenaje. Cada 3 o 4 años puedes dividir la mata en otoño.",
+      "consejos": ["Corta las flores marchitas para alargar la floración."],
+      "alertas": [
+        ["Hojas amarillas y base blanda", "Exceso de agua o suelo que no drena."],
+        ["Pocas flores", "Falta de sol o de abono."]
+      ]
+    },
+    "flor-invierno": {
+      "tipo": "exterior", "categoria": "flores", "dificultad": 1,
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra. En primavera, cuando el sol aprieta, mejor con sombra en la tarde."},
+      "riego": {"corto": "Tierra levemente húmeda", "calor": "Con el calor termina su temporada", "frio": "Cada 4 a 7 días si no llueve", "texto": "Mantén la tierra levemente húmeda, sin encharcar, y riega al pie."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Es flor de la temporada fría: aguanta heladas y florece de otoño a primavera. Con el calor del verano se termina."},
+      "abono": "Abono para plantas con flor cada 3 semanas mientras florece.",
+      "trasplante": "Plántala de otoño a fines de invierno, en tierra suelta con compost; en maceta, con agujeros.",
+      "consejos": ["Corta las flores marchitas: así sigue floreciendo."],
+      "alertas": [
+        ["Hojas amarillas y tierra mojada", "Exceso de riego."],
+        ["Hojas comidas", "Babosas o caracoles: revisa de noche o después de la lluvia."]
+      ]
+    },
+    "suculenta-ext": {
+      "tipo": "exterior", "categoria": "suculentas", "dificultad": 1,
+      "luz": {"corto": "Pleno sol", "texto": "Sol directo o mucha luz. Con sombra se estira y pierde color."},
+      "riego": {"corto": "Solo con la tierra seca", "calor": "Cada 7 a 10 días en maceta", "frio": "Casi nada: cada 3 a 4 semanas", "texto": "Riega a fondo solo cuando la tierra esté seca del todo y nunca dejes agua en el plato. Se pierden más por exceso de agua que por sed."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta el frío y heladas suaves si está seca. En inviernos muy lluviosos, mejor bajo un alero o en maceta con muy buen drenaje."},
+      "abono": "Abono para cactus y suculentas a mitad de dosis una vez al mes en primavera y verano.",
+      "trasplante": "Sustrato para cactus, o tierra con arena gruesa y perlita, en maceta con agujeros.",
+      "consejos": ["Las hojas que se caen echan raíces: déjalas sobre tierra seca y en unas semanas tendrás plantas nuevas."],
+      "alertas": [
+        ["Hojas blandas y transparentes", "Exceso de riego. Deja secar y revisa el drenaje."],
+        ["Se estira y pierde color", "Le falta sol."],
+        ["Hojas arrugadas", "Sed: riega a fondo."]
+      ]
+    }
+  },
+  "plantas": [
+    {
+      "slug": "agapanto", "base": "perenne-sol",
+      "nombre": "Agapanto", "alias": ["Agapanthus", "Lirio africano", "Flor del amor"], "botanico": "Agapanthus praecox",
+      "resumen": "Matas de hojas largas y, en verano, grandes esferas de flores azules o blancas. Muy resistente y casi sin cuidados.",
+      "luz": {"texto": "Pleno sol o semisombra; con más sol, más flores."},
+      "riego": {"corto": "Resiste la sequía", "calor": "Un riego profundo a la semana", "frio": "No necesita", "texto": "Una vez afirmado, aguanta bien la sequía. En verano, un riego profundo a la semana ayuda a que florezca más."},
+      "consejos": ["Florece mejor cuando está apretado: no lo dividas seguido.", "Corta las varas florales secas al terminar el verano."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del agapanto."}
+    },
+    {
+      "slug": "aquilegia", "base": "perenne-sol",
+      "nombre": "Aquilegia", "alias": ["Aguileña", "Columbina"], "botanico": "Aquilegia spp.",
+      "resumen": "Flores colgantes con espolones, en colores suaves, a fines de primavera. Una perenne delicada que se resiembra sola.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol de mañana o semisombra. En pleno sol de verano se quema."},
+      "consejos": ["Si dejas que algunas flores den semilla, aparecerán plantitas nuevas cerca."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la aquilegia."}
+    },
+    {
+      "slug": "armeria", "base": "perenne-sol",
+      "nombre": "Armeria", "alias": ["Armeria maritima", "Clavelina de mar"], "botanico": "Armeria maritima",
+      "resumen": "Cojines de hojitas finas y pompones rosados o blancos en primavera. Ideal para bordes, rocallas y macetas al sol.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana", "frio": "No necesita", "texto": "Aguanta suelos pobres y la sequía. Lo único que no tolera es el agua estancada."},
+      "consejos": ["Corta las varas secas después de florecer para que se vea ordenada."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la armeria."}
+    },
+    {
+      "slug": "achira",
+      "nombre": "Achira", "alias": ["Canna", "Papa achira", "Achira amarilla", "Achira roja", "Caña de Indias"], "botanico": "Canna indica",
+      "tipo": "exterior", "categoria": "flores", "dificultad": 1,
+      "resumen": "Hojas grandes de aire tropical y flores amarillas, naranjas o rojas en verano. Crece rápido desde sus rizomas.",
+      "variedades": "Amarilla y roja: mismos cuidados.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol para florecer bien; tolera algo de semisombra."},
+      "riego": {"corto": "Abundante en verano", "calor": "2 o 3 veces por semana", "frio": "No la riegues: descansa", "texto": "En verano le gusta la tierra húmeda y los riegos generosos. En invierno se seca la parte de arriba y descansa."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "La helada le quema las hojas, pero los rizomas rebrotan en primavera si el suelo no se encharca. Si hiela fuerte, cúbrelos con hojas secas."},
+      "abono": "Abono para plantas con flor cada 3 semanas, de primavera a fines de verano.",
+      "trasplante": "Planta los rizomas en primavera, a unos 10 cm de profundidad. Cada 3 o 4 años divide la mata a fines de invierno.",
+      "consejos": ["Corta las varas florales secas para que salgan nuevas.", "En otoño, cuando se sequen las hojas, córtalas a ras de suelo."],
+      "alertas": [["Bordes de las hojas secos", "Falta de riego en verano."], ["No florece", "Le falta sol."]],
+      "mascotas": {"toxica": false, "texto": "La ASPCA clasifica la achira (Canna) como no tóxica para perros y gatos.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/canna"}
+    },
+    {
+      "slug": "margarita", "base": "flor-sol",
+      "nombre": "Margarita", "alias": ["Argyranthemum", "Argirantemo", "Agerantemo", "Margarita arbustiva", "Margarita de las Canarias"], "botanico": "Argyranthemum frutescens",
+      "resumen": "Una mata redonda que se cubre de margaritas blancas, rosadas o amarillas de primavera a otoño.",
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta el frío, pero las heladas fuertes la dañan: en maceta, protégela bajo un alero."},
+      "trasplante": "Plántala en primavera en tierra con buen drenaje. Después de cada floración, una poda suave de un tercio la mantiene compacta.",
+      "consejos": ["Corta las flores secas seguido: así no para de florecer."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de esta margarita. Sus parientes, los crisantemos, sí figuran como tóxicos para perros y gatos."}
+    },
+    {
+      "slug": "brachyscome", "base": "flor-sol",
+      "nombre": "Brachyscome", "alias": ["Brachycome", "Margarita del río Swan", "Margarita azul"], "botanico": "Brachyscome iberidifolia e híbridos",
+      "resumen": "Una lluvia de margaritas pequeñas, lilas, azules o blancas, sobre un follaje fino. Perfecta para colgantes y bordes.",
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta el frío suave; las heladas fuertes la dañan."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la Brachyscome."}
+    },
+    {
+      "slug": "campanula", "base": "perenne-sol",
+      "nombre": "Campánula", "alias": ["Campanula", "Campanilla"], "botanico": "Campanula spp.",
+      "resumen": "Flores en forma de campanita, azules, lilas o blancas. Hay de mata baja para macetas y bordes, y también colgantes.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol suave o semisombra; en pleno verano, mejor con sombra en la tarde."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la campánula."}
+    },
+    {
+      "slug": "clavelina", "base": "perenne-sol",
+      "nombre": "Clavelina", "alias": ["Dianthus", "Clavel", "Clavelinas"], "botanico": "Dianthus spp.",
+      "resumen": "Flores pequeñas y perfumadas, rosadas, rojas o blancas, sobre un follaje gris azulado. Florece en primavera y repite si cortas las flores secas.",
+      "riego": {"texto": "Riega cuando la superficie esté seca. No tolera el agua estancada al pie."},
+      "consejos": ["Corta las flores marchitas para que vuelva a florecer.", "Necesita suelo con muy buen drenaje: en maceta, agrégale arena gruesa."],
+      "mascotas": {"toxica": true, "texto": "Tóxica para perros y gatos según la ASPCA, aunque en forma leve: puede dar vómitos y molestias si la mastican, e irritar la piel.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/carnation"}
+    },
+    {
+      "slug": "crisantemo", "base": "perenne-sol",
+      "nombre": "Crisantemo", "alias": ["Chrysanthemum", "Crisantemos", "Mum"], "botanico": "Chrysanthemum × morifolium",
+      "resumen": "Matas cubiertas de flores de colores cálidos en otoño. Florece cuando los días se acortan.",
+      "riego": {"corto": "Cuando 2–3 cm estén secos", "calor": "2 veces por semana; en maceta, día por medio", "frio": "Cada 7 a 10 días si no llueve", "texto": "No dejes que se seque del todo mientras está en flor, pero tampoco lo encharques."},
+      "temperatura": {"texto": "Aguanta el invierno. Después de florecer, corta los tallos a unos 15 cm y rebrotará en primavera."},
+      "consejos": ["Despunta los brotes en primavera y hasta enero: la mata sale más compacta y con más flores.", "Corta las flores marchitas."],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA: puede dar vómitos, diarrea y babeo, e irritar la piel.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/chrysanthemum"}
+    },
+    {
+      "slug": "crocosmia", "base": "perenne-sol",
+      "nombre": "Crocosmia", "alias": ["Montbretia", "Crocosmia × crocosmiiflora"], "botanico": "Crocosmia spp.",
+      "resumen": "Hojas como espadas y varas arqueadas de flores naranjas o rojas en verano. Muy resistente; se extiende con sus cormos.",
+      "consejos": ["Divide las matas cada 3 o 4 años para que no se aprieten.", "Se extiende mucho: plántala donde tenga espacio o en un macetero."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la crocosmia."}
+    },
+    {
+      "slug": "dietes", "base": "perenne-sol",
+      "nombre": "Dietes", "alias": ["Lirio mariposa", "Iris africano", "Dietes grandiflora", "Dietes iridioides"], "botanico": "Dietes spp.",
+      "resumen": "Matas de hojas rígidas y flores blancas como de iris, con manchas amarillas y lilas, de primavera a otoño. Casi indestructible.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana", "frio": "No necesita", "texto": "Una vez afirmada, aguanta la sequía y los suelos pobres."},
+      "consejos": ["No cortes las varas florales después de florecer: vuelven a dar flores la temporada siguiente."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la Dietes."}
+    },
+    {
+      "slug": "dimorfoteca", "base": "perenne-sol",
+      "nombre": "Dimorfoteca", "alias": ["Osteospermum", "Margarita africana", "Dimorphotheca"], "botanico": "Osteospermum ecklonis (dimorfoteca)",
+      "resumen": "Margaritas grandes, blancas, lilas o moradas y de centro oscuro, que se abren con el sol. Florece mucho en primavera.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una o dos veces por semana", "frio": "Solo si no llueve", "texto": "Aguanta la sequía una vez afirmada; el exceso de agua la pudre."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta el frío y las heladas suaves."},
+      "consejos": ["Sus flores se cierran de noche y en días nublados: es normal.", "Después de la floración, poda un tercio para que no se ponga leñosa."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA da como no tóxica a Dimorphotheca pluvialis, pero la dimorfoteca de vivero suele ser Osteospermum, que no tiene ficha."}
+    },
+    {
+      "slug": "gaura", "base": "perenne-sol",
+      "nombre": "Gaura", "alias": ["Gaura rosada", "Gaura lindheimeri", "Mariposas blancas"], "botanico": "Gaura lindheimeri (Oenothera lindheimeri)",
+      "resumen": "Tallos finos con florcitas rosadas o blancas que parecen mariposas al viento. Florece todo el verano.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana", "frio": "No necesita", "texto": "Aguanta la sequía y el calor una vez afirmada. No le gusta el suelo pesado y mojado."},
+      "consejos": ["A mediados del verano, corta los tallos ya florecidos a la mitad y volverá a florecer."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la gaura."}
+    },
+    {
+      "slug": "gazania", "base": "perenne-sol",
+      "nombre": "Gazania", "alias": ["Gazanias", "Gazania rigens"], "botanico": "Gazania spp.",
+      "resumen": "Flores grandes de colores intensos que se abren con el sol, sobre un follaje plateado. Muy resistente al calor y a la costa.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana", "frio": "No necesita", "texto": "Aguanta la sequía y el viento costero. El exceso de agua es lo único que la daña."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta el frío y heladas suaves."},
+      "consejos": ["Sus flores solo se abren con sol: en días nublados se quedan cerradas."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la gazania."}
+    },
+    {
+      "slug": "gerbera",
+      "nombre": "Gerbera", "alias": ["Gerbera jamesonii", "Margarita del Transvaal"], "botanico": "Gerbera jamesonii",
+      "tipo": "exterior", "categoria": "flores", "dificultad": 2,
+      "resumen": "Margaritas grandes, de colores vivos y tallos largos. En maceta o jardín, florece de primavera a otoño.",
+      "luz": {"corto": "Pleno sol", "texto": "Mucho sol, con algo de sombra en las tardes más calurosas del verano. Adentro, junto a la ventana más luminosa."},
+      "riego": {"corto": "Cuando 2–3 cm estén secos", "calor": "Cada 2 o 3 días en maceta", "frio": "Cada 7 a 10 días", "texto": "Riega al pie, sin mojar el centro de la roseta ni las hojas, y deja secar la superficie entre riegos."},
+      "temperatura": {"corto": "Protégela de las heladas", "texto": "No tolera las heladas: en invierno, protégela bajo techo o déjala adentro."},
+      "abono": "Abono para plantas con flor cada 2 semanas mientras florece.",
+      "trasplante": "Plántala con el cuello, donde nacen las hojas, a ras de tierra y nunca enterrado; en maceta, con buen drenaje.",
+      "consejos": ["Corta los tallos de las flores marchitas desde la base."],
+      "alertas": [["Base podrida", "Cuello enterrado o exceso de riego."], ["Polvo blanco en las hojas", "Oídio: mejora la ventilación y no mojes las hojas."], ["Hojas con manchas amarillas", "Falta de abono o exceso de agua."]],
+      "mascotas": {"toxica": false, "texto": "La ASPCA clasifica la gerbera como no tóxica para perros y gatos.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/gerber-daisy"}
+    },
+    {
+      "slug": "heleboro",
+      "nombre": "Heléboro", "alias": ["Helleborus", "Eléboro", "Rosa de Navidad", "Rosa de invierno"], "botanico": "Helleborus spp.",
+      "tipo": "exterior", "categoria": "flores", "dificultad": 2,
+      "resumen": "Florece en pleno invierno, con flores blancas, rosadas o granates que duran semanas. Una perenne de sombra, elegante y longeva.",
+      "luz": {"corto": "Semisombra o sombra", "texto": "Semisombra o sombra luminosa, como bajo árboles que botan la hoja. Evita el sol fuerte de la tarde."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "Una o dos veces por semana", "frio": "La lluvia suele bastar", "texto": "Le gusta el suelo fresco y con materia orgánica, nunca encharcado."},
+      "temperatura": {"corto": "Resiste heladas fuertes", "texto": "Muy resistente al frío: florece con heladas."},
+      "abono": "Compost al pie en otoño y abono para plantas con flor una vez en primavera.",
+      "trasplante": "Plántalo en otoño en tierra rica y suelta. No le gusta que lo cambien de lugar: elige bien dónde.",
+      "consejos": ["En otoño, corta las hojas viejas o manchadas: así las flores lucen más.", "Usa guantes al manipularlo: su savia irrita la piel."],
+      "alertas": [["Hojas con manchas negras", "Hongo: retira las hojas afectadas."], ["No florece", "Planta muy joven o demasiada sombra."]],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA: puede dar vómitos, diarrea, babeo y decaimiento.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/hellebore"}
+    },
+    {
+      "slug": "hemerocallis", "base": "perenne-sol",
+      "nombre": "Hemerocallis", "alias": ["Lirio de día", "Azucena de día", "Hemerocalis"], "botanico": "Hemerocallis spp.",
+      "resumen": "Matas de hojas arqueadas y flores como lirios: cada una dura un día, pero se suceden durante semanas en verano.",
+      "luz": {"texto": "Pleno sol o semisombra; con más sol, más flores."},
+      "consejos": ["Cada flor dura un día: retira las marchitas y deja que abran las siguientes.", "Divide las matas cada 3 o 4 años en otoño."],
+      "mascotas": {"toxica": true, "corto": "Tóxica para gatos", "texto": "La ASPCA la clasifica como tóxica para gatos: aun en pequeñas cantidades (hojas, flores o polen) puede dañarles gravemente los riñones. Para perros figura como no tóxica. Si tienes gatos, mejor no tenerla donde ellos llegan y, ante cualquier sospecha de mordida, ir al veterinario de inmediato.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/day-lilies-many-varieties"}
+    },
+    {
+      "slug": "nerine",
+      "nombre": "Nerine", "alias": ["Nerine bowdenii", "Nerina", "Lirio de Guernsey"], "botanico": "Nerine spp.",
+      "tipo": "exterior", "categoria": "flores", "dificultad": 1,
+      "resumen": "Un bulbo que florece en otoño, cuando casi todo descansa: varas con flores rosadas de pétalos ondulados.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol y un lugar abrigado, como junto a un muro."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "Poco: el bulbo descansa", "frio": "Moderado mientras tenga hojas", "texto": "Riega moderado desde que asoman las varas en otoño y mientras tenga hojas. En verano descansa: casi no la riegues."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta el frío y heladas suaves en un lugar abrigado."},
+      "abono": "Abono para bulbos una vez, cuando aparecen las hojas.",
+      "trasplante": "Planta los bulbos a fines de verano con la punta asomando a ras de tierra. Florece mejor apretada: no la dividas seguido.",
+      "consejos": ["No entierres el bulbo entero: la punta debe quedar a la vista."],
+      "alertas": [["No florece", "Bulbo muy enterrado, falta de sol o recién dividido."], ["Bulbo blando", "Exceso de agua en verano."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la nerine. Es de la familia de las amarilidáceas, que incluye varias plantas tóxicas."}
+    },
+    {
+      "slug": "paquerette", "base": "flor-invierno",
+      "nombre": "Paquerette", "alias": ["Bellis", "Bellis perennis", "Margarita de los prados", "Chiribita"], "botanico": "Bellis perennis",
+      "resumen": "Margaritas pequeñas y redondas, blancas, rosadas o rojas, que florecen de fines de invierno a primavera.",
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la paquerette."}
+    },
+    {
+      "slug": "pensamiento", "base": "flor-invierno",
+      "nombre": "Pensamiento", "alias": ["Pensamientos", "Viola", "Viola × wittrockiana", "Violeta de jardín"], "botanico": "Viola × wittrockiana",
+      "resumen": "Flores con 'carita' en todos los colores, que alegran el jardín de otoño a primavera. Aguanta las heladas.",
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del pensamiento."}
+    },
+    {
+      "slug": "primavera", "base": "flor-invierno",
+      "nombre": "Primavera", "alias": ["Primula", "Prímula", "Primula acaulis", "Primavera Bellissima"], "botanico": "Primula vulgaris (P. acaulis) e híbridos",
+      "resumen": "Rosetas de hojas arrugadas y un ramillete de flores de colores intensos a fines de invierno. Ideal para macetas y bordes a la sombra.",
+      "variedades": "Bellissima y las demás primaveras de jardín se cuidan igual.",
+      "luz": {"corto": "Semisombra", "texto": "Luz suave o semisombra. Adentro dura más en un lugar luminoso y fresco, lejos de la estufa."},
+      "mascotas": {"toxica": true, "texto": "Tóxica para perros y gatos según la ASPCA, en forma leve: puede dar vómitos.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/primrose"}
+    },
+    {
+      "slug": "ranunculo",
+      "nombre": "Ranúnculo", "alias": ["Ranunculus", "Ranunculus asiaticus", "Francesilla"], "botanico": "Ranunculus asiaticus",
+      "tipo": "exterior", "categoria": "flores", "dificultad": 2,
+      "resumen": "Flores redondas de muchos pétalos, como pequeñas rosas, en colores intensos y pastel. Florece en primavera.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol o sol de mañana."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "Ya no se riega: el bulbo descansa", "frio": "Moderado, cuando la superficie esté seca", "texto": "Riega moderado mientras tenga hojas y flores. Sus garras (los bulbos) se pudren con el exceso de agua."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Aguanta el frío y las heladas suaves: crece en invierno y florece en primavera."},
+      "abono": "Abono para plantas con flor cada 3 semanas desde que asoman los botones.",
+      "trasplante": "Planta las garras en otoño, con las 'patitas' hacia abajo y a 5 cm de profundidad. Remójalas un par de horas antes.",
+      "consejos": ["Para florero, córtalas cuando recién empiezan a abrir: duran más de una semana.", "Cuando las hojas se sequen en verano, puedes sacar las garras, secarlas y guardarlas hasta el otoño."],
+      "alertas": [["Garras podridas", "Exceso de agua o suelo pesado."], ["Polvo blanco en las hojas", "Oídio: no mojes las hojas."]],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA: su savia irrita la boca y puede dar vómitos y diarrea.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/buttercup"}
+    },
+    {
+      "slug": "silene-coronaria", "base": "perenne-sol",
+      "nombre": "Silene coronaria", "alias": ["Lychnis coronaria", "Clavel lanudo", "Coronaria"], "botanico": "Silene coronaria (antes Lychnis coronaria)",
+      "resumen": "Hojas plateadas y aterciopeladas y flores de un magenta intenso en verano. Vive bien en suelos secos.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana", "frio": "No necesita", "texto": "Aguanta la sequía y los suelos pobres. El agua estancada la pudre."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la Silene coronaria."}
+    },
+    {
+      "slug": "tagetes", "base": "flor-sol",
+      "nombre": "Tagetes", "alias": ["Clavel de India", "Clavelón", "Copete", "Marigold", "Tagete"], "botanico": "Tagetes spp.",
+      "resumen": "Flores amarillas y naranjas de aroma intenso, de primavera a otoño. Fácil, rápida y aliada del huerto.",
+      "consejos_extra": ["Su aroma ayuda a alejar algunos bichos del huerto: plántala entre las verduras."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del tagetes."}
+    },
+    {
+      "slug": "tulipan",
+      "nombre": "Tulipán", "alias": ["Tulipa", "Tulipanes", "Denmark", "Dynasty", "Lanka", "Morganatic", "Novi Sun", "Orange Juice", "Purple Crystal"], "botanico": "Tulipa spp.",
+      "tipo": "exterior", "categoria": "flores", "dificultad": 2,
+      "resumen": "La flor de bulbo más clásica de la primavera. Florece una vez al año, con colores para todos los gustos.",
+      "variedades": "Denmark, Dynasty, Lanka, Morganatic, Novi Sun, Orange Juice y Purple Crystal: cambian el color y la forma de la flor; los cuidados son los mismos.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol o semisombra luminosa."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "No: el bulbo descansa", "frio": "Moderado mientras tenga hojas", "texto": "Riega moderado desde que asoman las hojas hasta que se secan. El bulbo se pudre con el exceso de agua."},
+      "temperatura": {"corto": "Resiste heladas fuertes", "texto": "Necesita el frío del invierno para florecer bien."},
+      "abono": "Abono para bulbos cuando asoman las hojas y otra vez al terminar la flor.",
+      "trasplante": "Planta los bulbos en otoño (abril a junio) con la punta hacia arriba, a unos 15 cm de profundidad. En maceta, bien juntos y con buen drenaje.",
+      "consejos": ["Cuando termine la flor, corta solo la vara: deja las hojas hasta que se sequen, porque alimentan el bulbo.", "Para que vuelvan a florecer bien, saca los bulbos en verano y guárdalos en un lugar fresco y seco hasta el otoño. Si los guardas en el refrigerador, que sea lejos de la fruta."],
+      "alertas": [["Bulbo blando", "Exceso de agua."], ["Flor chica o sin flor al segundo año", "Le faltó frío o el bulbo se agotó."]],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA, sobre todo el bulbo: puede dar vómitos, diarrea y babeo. Si guardas bulbos, déjalos fuera de su alcance.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/tulip"}
+    },
+    {
+      "slug": "iresine",
+      "nombre": "Iresine", "alias": ["Hoja de sangre", "Iresine herbstii", "Iresine tricolor", "Iresine roja"], "botanico": "Iresine herbstii",
+      "tipo": "exterior", "categoria": "flores", "dificultad": 1,
+      "resumen": "Hojas de colores intensos, rojo vino o con nervaduras amarillas. Se luce por su follaje, en macetas o bordes.",
+      "variedades": "Roja (hoja de sangre) y tricolor: mismos cuidados; con más luz, el color es más intenso.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Mucha luz o sol suave: así mantiene su color. Con poca luz se pone verdosa y se estira."},
+      "riego": {"corto": "Tierra levemente húmeda", "calor": "Cada 2 o 3 días", "frio": "Cada 7 a 10 días", "texto": "Le gusta la tierra levemente húmeda: si se seca, se lacia rápido."},
+      "temperatura": {"corto": "Protégela de las heladas", "texto": "No tolera las heladas: en invierno, déjala bajo techo o adentro, junto a una ventana."},
+      "abono": "Abono para plantas verdes cada 3 semanas en primavera y verano.",
+      "trasplante": "En primavera, en tierra con compost y buen drenaje.",
+      "consejos": ["Despunta los brotes para que crezca tupida.", "Sus esquejes echan raíces fácil en agua: ideal para renovarla cada primavera."],
+      "alertas": [["Se pone lacia", "Sed: riega y se recupera."], ["Pierde color", "Le falta luz."]],
+      "mascotas": {"toxica": false, "texto": "La ASPCA clasifica la hoja de sangre (Iresine) como no tóxica para perros y gatos.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/bloodleaf"}
+    },
+    {
+      "slug": "fosforito", "base": "flor-sol",
+      "nombre": "Fosforito", "alias": ["Cuphea ignea", "Cuphea", "Planta cigarro", "Cigarrito"], "botanico": "Cuphea ignea",
+      "resumen": "Florcitas tubulares rojas con la punta blanca y negra, como un fósforo encendido. Florece casi sin parar y atrae picaflores.",
+      "temperatura": {"corto": "Heladas suaves", "texto": "Aguanta el frío suave; las heladas fuertes la queman, pero suele rebrotar desde la base."},
+      "trasplante": "Plántala en primavera, en tierra con buen drenaje. Una poda suave a fines de invierno la mantiene compacta.",
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del fosforito."}
+    },
+    {
+      "slug": "oxalis-triangular",
+      "nombre": "Oxalis triangular", "alias": ["Oxalis triangularis", "Trébol morado", "Planta mariposa", "Falso trébol"], "botanico": "Oxalis triangularis",
+      "tipo": "exterior", "categoria": "flores", "dificultad": 1,
+      "resumen": "Hojas moradas en forma de mariposa que se cierran de noche, y florcitas rosadas. Va bien adentro o en el jardín a media sombra.",
+      "luz": {"corto": "Sol de mañana, sombra de tarde", "texto": "Luz brillante o sol suave de mañana. Adentro, junto a una ventana luminosa."},
+      "riego": {"corto": "Cuando 2–3 cm estén secos", "calor": "Cada 4 a 6 días", "frio": "Cada 10 a 14 días", "texto": "Riega cuando la superficie esté seca. Crece de bulbitos que se pudren con el exceso de agua."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "Afuera, la helada seca las hojas, pero los bulbitos rebrotan."},
+      "abono": "Abono líquido suave cada 4 semanas en primavera y verano.",
+      "trasplante": "Cada dos años, separando los bulbitos.",
+      "consejos": ["Sus hojas se cierran de noche y se abren con la luz: es su forma de dormir.", "Si se ve cansada y se seca, puede estar en reposo: corta las hojas, riega poco y en unas semanas rebrota."],
+      "alertas": [["Tallos largos y caídos", "Le falta luz."], ["Se seca toda de golpe", "Reposo o exceso de calor: espera y rebrotará."]],
+      "mascotas": {"toxica": true, "texto": "Tóxica para perros y gatos según la ASPCA: contiene oxalatos solubles que, en cantidad, pueden dar vómitos y afectar los riñones.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/shamrock-plant"}
+    },
+    {
+      "slug": "stipa",
+      "nombre": "Stipa", "alias": ["Stipa tenuissima", "Pelo de ángel", "Pasto pluma"], "botanico": "Stipa tenuissima (Nassella tenuissima)",
+      "tipo": "exterior", "categoria": "flores", "dificultad": 1,
+      "resumen": "Una gramínea de hojas finísimas que se mueve con el viento: verde en primavera y dorada en verano. Da movimiento al jardín.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol."},
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana el primer verano; después, casi nada", "frio": "No necesita", "texto": "Muy resistente a la sequía una vez afirmada. Lo que no tolera es el suelo encharcado."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Aguanta las heladas y el frío."},
+      "abono": "No necesita: en suelos muy ricos se pone floja.",
+      "trasplante": "Plántala en otoño o primavera, en suelo con buen drenaje.",
+      "consejos": ["A fines de invierno, peina la mata con los dedos para sacar las hojas secas.", "Se resiembra sola: retira las plantitas que no quieras."],
+      "alertas": [["Centro seco y café", "Exceso de agua o mata vieja: divídela o renuévala."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la Stipa."}
+    },
+    {
+      "slug": "cola-de-caballo",
+      "nombre": "Cola de caballo", "alias": ["Equisetum", "Equiseto", "Equisetum hyemale"], "botanico": "Equisetum spp.",
+      "tipo": "exterior", "categoria": "flores", "dificultad": 1,
+      "resumen": "Tallos verdes, huecos y articulados, sin hojas, de aspecto muy moderno. Le encanta la humedad, incluso con los pies en el agua.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra."},
+      "riego": {"corto": "Tierra siempre húmeda", "calor": "Cada 1 o 2 días; puede estar en un plato con agua", "frio": "Que no se seque", "texto": "Mantén la tierra siempre húmeda: es una planta de orillas de agua."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Muy resistente al frío."},
+      "abono": "No necesita.",
+      "trasplante": "Mejor en maceta o en un macetero enterrado: sus rizomas se extienden mucho y en el jardín es difícil de controlar.",
+      "consejos": ["Ideal para estanques y macetas sin agujero, donde otras plantas se pudrirían."],
+      "alertas": [["Puntas secas", "Le faltó agua."]],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la cola de caballo."}
+    },
+    {
+      "slug": "romero-rastrero",
+      "nombre": "Romero rastrero", "alias": ["Romero", "Romero postrado", "Rosmarinus", "Salvia rosmarinus"], "botanico": "Salvia rosmarinus 'Prostratus' (antes Rosmarinus officinalis)",
+      "tipo": "exterior", "categoria": "aromaticas", "dificultad": 1,
+      "resumen": "Un romero que crece hacia los lados y cae por muros y macetas, con flores azules y el aroma de siempre.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol."},
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana; en maceta, cada 4 o 5 días", "frio": "Casi nada", "texto": "Deja secar la tierra entre riegos. El exceso de agua es lo único que de verdad lo daña."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Aguanta las heladas suaves y el viento costero."},
+      "abono": "Casi no necesita: un poco de compost en primavera.",
+      "trasplante": "En primavera, en suelo con muy buen drenaje; en maceta, mezcla tierra con arena gruesa.",
+      "consejos": ["Córtale puntas seguido para cocinar: así se ramifica más.", "No lo podes sobre madera vieja sin hojas: le cuesta rebrotar."],
+      "alertas": [["Hojas amarillas o negras desde abajo", "Exceso de riego o suelo que no drena."], ["Polvillo blanco", "Oídio por falta de ventilación."]],
+      "mascotas": {"toxica": false, "texto": "La ASPCA clasifica el romero como no tóxico para perros y gatos.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/rosemary"}
+    },
+    {
+      "slug": "cedron",
+      "nombre": "Cedrón", "alias": ["Aloysia citrodora", "Hierba luisa", "Verbena de limón"], "botanico": "Aloysia citrodora",
+      "tipo": "exterior", "categoria": "aromaticas", "dificultad": 1,
+      "resumen": "Un arbusto de hojas con intenso aroma a limón, ideal para infusiones. Crece rápido en primavera y verano.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol y un lugar abrigado."},
+      "riego": {"corto": "Moderado, sin encharcar", "calor": "Una o dos veces por semana", "frio": "Casi nada: bota las hojas", "texto": "Riega a fondo cuando la tierra esté seca en la superficie."},
+      "temperatura": {"corto": "Heladas suaves", "texto": "En invierno bota las hojas y descansa. Aguanta heladas suaves; si hiela fuerte, protege la base con hojas secas o compost."},
+      "abono": "Compost o abono suave en primavera.",
+      "trasplante": "En primavera, en suelo con buen drenaje.",
+      "consejos": ["A fines de invierno, pódalo a la mitad para que brote con fuerza.", "Cosecha hojas en verano y sécalas a la sombra para tener en invierno."],
+      "alertas": [["No rebrota en primavera", "Paciencia: es de los últimos en brotar. Raspa un tallo con la uña: si está verde por dentro, está vivo."]],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA: puede dar vómitos y diarrea si lo comen.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/lemon-verbena"}
+    },
+    {
+      "slug": "poleo",
+      "nombre": "Poleo", "alias": ["Menta poleo", "Mentha pulegium", "Poleo menta"], "botanico": "Mentha pulegium",
+      "tipo": "exterior", "categoria": "aromaticas", "dificultad": 1,
+      "resumen": "Una menta rastrera de hojitas pequeñas y aroma muy intenso, con flores lilas en verano.",
+      "luz": {"corto": "Sol o semisombra", "texto": "Sol o semisombra."},
+      "riego": {"corto": "Tierra levemente húmeda", "calor": "Cada 2 o 3 días", "frio": "Cada 7 a 10 días", "texto": "Le gusta la tierra fresca y húmeda, sin encharcar."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Aguanta el invierno de la zona."},
+      "abono": "Compost en primavera.",
+      "trasplante": "Mejor en maceta, porque se extiende mucho. Divídela cada primavera.",
+      "consejos": ["Corta las puntas seguido para mantenerla tupida."],
+      "alertas": [["Hojas con manchitas de óxido", "Hongo: corta las partes afectadas y mejora la ventilación."]],
+      "mascotas": {"toxica": true, "texto": "Tóxico para perros y gatos según la ASPCA, que registra las mentas (Mentha) como tóxicas: pueden dar vómitos y diarrea. El aceite concentrado de poleo es especialmente peligroso.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/mint"}
+    },
+    {
+      "slug": "frutilla",
+      "nombre": "Frutilla", "alias": ["Frutillas", "Fresa", "Fragaria"], "botanico": "Fragaria × ananassa",
+      "tipo": "exterior", "categoria": "aromaticas", "dificultad": 1,
+      "resumen": "Da frutos dulces de primavera a verano, en el jardín o en macetas y colgantes.",
+      "luz": {"corto": "Pleno sol", "texto": "Pleno sol: con más sol, frutillas más dulces."},
+      "riego": {"corto": "Tierra levemente húmeda", "calor": "Día por medio; en maceta, a diario si hace calor", "frio": "Cada 7 a 10 días", "texto": "Mantén la tierra levemente húmeda, regando al pie y de mañana. Mojar frutos y hojas favorece los hongos."},
+      "temperatura": {"corto": "Resiste heladas", "texto": "Aguanta el invierno; las heladas tardías pueden quemar las flores."},
+      "abono": "Abono para frutales o plantas con flor cada 3 semanas desde que florece.",
+      "trasplante": "Plántala en otoño o a fines de invierno, con la corona (el centro) a ras de tierra.",
+      "consejos": ["Pon paja o mulch bajo las plantas: los frutos no tocan la tierra y no se pudren.", "Corta los estolones (los tallos largos que salen) si quieres más fruta; déjalos si quieres más plantas."],
+      "alertas": [["Frutos con moho gris", "Botritis: retira los afectados y no mojes los frutos."], ["Frutos mordidos", "Babosas o caracoles: revisa de noche."]],
+      "mascotas": {"toxica": false, "texto": "La ASPCA clasifica la frutilla como no tóxica para perros y gatos.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/strawberry"}
+    },
+    {
+      "slug": "echeveria", "base": "suculenta-ext",
+      "nombre": "Echeveria", "alias": ["Echeverias", "Conchitas", "Rosa de alabastro", "Rosetas"], "botanico": "Echeveria spp.",
+      "resumen": "Rosetas carnosas como flores de piedra, en verdes, azulados, rosados y lilas. Fáciles y muy agradecidas con el sol.",
+      "variedades": "Conchitas, rosa de alabastro y las demás echeverias se cuidan igual.",
+      "consejos_extra": ["No mojes el centro de la roseta: el agua estancada la pudre."],
+      "mascotas": {"toxica": false, "texto": "La ASPCA clasifica varias echeverias (Echeveria elegans, E. glauca y otras) como no tóxicas para perros y gatos.", "url": "https://www.aspca.org/pet-care/aspca-poison-control/toxic-and-non-toxic-plants/hens-and-chickens"}
+    },
+    {
+      "slug": "sedum", "base": "suculenta-ext",
+      "nombre": "Sedum", "alias": ["Sedum acre", "Uva de gato", "Pimienta de muro"], "botanico": "Sedum acre",
+      "resumen": "Una alfombra de hojitas carnosas que se cubre de estrellitas amarillas en primavera. Ideal entre piedras y en macetas bajas.",
+      "temperatura": {"corto": "Resiste heladas", "texto": "Muy resistente al frío y a las heladas."},
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha del Sedum acre. Otros sedum figuran como no tóxicos, pero esta especie tiene un sabor picante, de ahí su nombre de pimienta de muro."}
+    },
+    {
+      "slug": "siempreviva", "base": "suculenta-ext",
+      "nombre": "Siempreviva", "alias": ["Sempervivum", "Sempervivum tectorum", "Gallina y pollitos", "Siempreviva mayor"], "botanico": "Sempervivum tectorum y variedades",
+      "resumen": "Rosetas firmes que se multiplican alrededor de la madre. Aguantan frío, sol y olvido como pocas plantas.",
+      "temperatura": {"corto": "Resiste heladas fuertes", "texto": "Muy resistente: aguanta heladas fuertes y hasta nieve."},
+      "consejos_extra": ["La roseta que florece muere después; sus hijas siguen. Retírala con cuidado cuando se seque."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la siempreviva (Sempervivum)."}
+    },
+    {
+      "slug": "aptenia", "base": "suculenta-ext",
+      "nombre": "Aptenia", "alias": ["Aptenia cordifolia", "Rocío", "Escarcha", "Cubresuelo"], "botanico": "Aptenia cordifolia (Mesembryanthemum cordifolium)",
+      "resumen": "Una cubresuelos de hojas carnosas en forma de corazón y florcitas magenta. Cubre rápido taludes y jardineras al sol.",
+      "riego": {"corto": "Resiste la sequía", "calor": "Una vez por semana", "frio": "No necesita", "texto": "Aguanta la sequía; con un riego semanal en verano se ve más tupida."},
+      "consejos_extra": ["Crece rápido y puede invadir: recórtala por los bordes cuando haga falta."],
+      "mascotas": {"toxica": null, "texto": "La ASPCA no tiene ficha de la Aptenia."}
+    },
+    {
+      "slug": "suculentas", "base": "suculenta-ext",
+      "nombre": "Suculentas", "alias": ["Suculenta", "Plantas suculentas", "Crasas"], "botanico": "Varias especies (Crassula, Echeveria, Sedum, Haworthia y otras)",
+      "resumen": "Plantas que guardan agua en sus hojas y tallos. Casi todas comparten lo esencial: mucho sol, poco riego y muy buen drenaje.",
+      "temperatura": {"texto": "La mayoría aguanta el frío seco, pero no las heladas con la tierra mojada. En invierno lluvioso, protégelas bajo techo."},
+      "consejos_extra": ["Si tu suculenta tiene ficha propia en el herbario (echeveria, sedum, siempreviva, aptenia, rosario de corazones), revisa también esa."],
+      "mascotas": {"toxica": null, "texto": "Depende de la especie: la ASPCA da como tóxicas al jade (Crassula), al kalanchoe y al aloe, y como no tóxicas a las echeverias y haworthias. Si no sabes cuál tienes, pregúntanos."}
+    }
+  ]
+}

@@ -45,8 +45,24 @@ WhatsApp y en la web completa los botones llevan a Instagram.
 
 Cada planta tiene su ficha en `jardinmalva.cl/cuidados/<planta>` (luz, riego por
 estación, abono, señales de alerta y toxicidad para mascotas con fuente ASPCA).
-El cliente la abre escaneando el QR de la tarjeta que se entrega con la planta.
-El índice con buscador está en `jardinmalva.cl/cuidados/`.
+El índice con buscador está en `jardinmalva.cl/cuidados/`: desde noviembre de 2026 se usa
+**un solo QR, el del índice** (cartel y QR `imprimibles/qr/`), y el cliente busca su planta
+por nombre común, científico o variedad. Las tarjetas con un QR por planta siguen
+funcionando para las que ya se imprimieron, pero no se hacen para las fichas nuevas.
+
+**Una ficha por especie.** Las variedades no tienen ficha propia: van en `variedades`
+(texto que se muestra en la ficha) y en `alias`, para que el buscador las encuentre
+(p. ej. buscar "Lapins" lleva a Cerezo). En pantalla, "Otros nombres" solo muestra los alias
+que no repiten el nombre botánico ni una variedad ya nombrada.
+
+El índice se ordena por categorías (`categorias` en `datos/cuidados.json`: interior, flores,
+aromáticas, arbustos, frutales, árboles, coníferas, nativas y suculentas). Cada planta lleva
+`"categoria"`; si no la tiene, va a interior o a flores según su `tipo`.
+
+Cada ficha tiene arriba el botón "¿Aún no la tienes? Consulta el stock por Instagram":
+abre los mensajes de Instagram y copia una consulta con el nombre de la planta para pegarla
+(Instagram no permite dejar el texto escrito). El icono, un globo de conversación con una
+hoja, es `consulta` en `ICONOS` del generador.
 
 - `datos/cuidados.json` — los textos de todas las fichas y los datos de contacto.
 - `herramientas/generar_cuidados.py` — crea `public/cuidados/` (solo Python 3).
@@ -64,8 +80,10 @@ pon la toxicidad solo si está en la ASPCA (con su enlace), ejecuta los dos scri
 Si la ASPCA no tiene ficha de la planta, usa `"toxica": null` con un texto que lo diga:
 la ficha muestra "Sin dato verificado" y la tarjeta "Toxicidad sin verificar".
 
-Lotes del inventario: `datos/lotes/*.json` (por ahora `tomo1-interior.json`, las plantas de
-interior del Tomo I con su código JM-T1). Cada lote puede definir `perfiles` (cuidados comunes,
+Lotes del inventario: `datos/lotes/*.json` (`tomo1-interior.json`, las plantas de interior
+del Tomo I con su código JM-T1, y los cinco `inventario-*.json` del inventario de noviembre
+de 2026: interior, flores-aromáticas-suculentas, arbustos, árboles-frutales-coníferas y nativas).
+Los perfiles son comunes a todos los lotes. Cada lote puede definir `perfiles` (cuidados comunes,
 p. ej. calatheas o ficus) y plantas con `"base": "<perfil o ficha>"`, que heredan esos cuidados;
 lo que pongas en la planta manda sobre lo heredado (`consejos_extra` y `alertas_extra` se suman).
 `equivalencias` asigna un código del inventario a una ficha que ya existía. Cada lote genera

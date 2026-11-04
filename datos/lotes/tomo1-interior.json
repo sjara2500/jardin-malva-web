@@ -111,7 +111,7 @@
     },
     {
       "slug": "calathea-star-gray", "codigo": "JM-T1-162", "base": "calathea",
-      "nombre": "Calathea Star Gray", "alias": ["Calathea"], "botanico": "Goeppertia sp. (Calathea)",
+      "nombre": "Calathea Star Gray", "alias": ["Calathea", "Grey Star", "Calathea Grey Star"], "botanico": "Goeppertia sp. (Calathea)",
       "resumen": "Una calathea de follaje dibujado. Como todas, pide humedad, agua sin cloro y nada de sol directo."
     },
     {
@@ -287,7 +287,7 @@
     },
     {
       "slug": "manto-de-eva", "codigo": "JM-T1-182",
-      "nombre": "Manto de Eva", "alias": ["Alocasia"], "botanico": "Alocasia sp.",
+      "nombre": "Manto de Eva", "alias": ["Alocasia", "Oreja de elefante"], "botanico": "Alocasia sp.",
       "tipo": "interior", "dificultad": 3,
       "resumen": "Hojas grandes y escultóricas en forma de flecha. Pide luz, humedad y un riego cuidadoso.",
       "luz": {"corto": "Luz brillante indirecta", "texto": "Luz brillante sin sol directo. Con poca luz las hojas nuevas salen pequeñas y con tallos débiles."},
@@ -349,7 +349,7 @@
     },
     {
       "slug": "philodendron-florida", "codigo": "JM-T1-192", "base": "filodendro",
-      "nombre": "Philodendron Florida", "alias": ["Filodendro Florida"], "botanico": "Philodendron 'Florida'",
+      "nombre": "Philodendron Florida", "alias": ["Filodendro Florida", "Florida Ghost", "Philodendron Ghost"], "variedades": "Florida Ghost: sus hojas nuevas salen casi blancas y se van poniendo verdes con los días. Pide un poco más de luz, sin sol directo.", "botanico": "Philodendron 'Florida'",
       "resumen": "Un filodendro trepador de hojas lobuladas. Con un tutor crece más alto y con hojas más grandes."
     },
     {

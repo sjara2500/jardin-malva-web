@@ -41,9 +41,10 @@ NIVEL_TXT = {1: "baja", 2: "media", 3: "alta"}
 NIVELES = {
     "luz": {
         1: ["Luz media, sin sol directo", "Luz media indirecta", "Luz media, tolera poca",
-            "Poca o mucha luz", "Semisombra", "Sombra luminosa"],
+            "Poca o mucha luz", "Semisombra", "Sombra luminosa", "Semisombra o sombra"],
         2: ["Luz brillante indirecta", "Luz media a brillante", "Mucha luz indirecta",
-            "Mucha luz, sin sol fuerte", "Mucha luz y lugar fresco"],
+            "Mucha luz, sin sol fuerte", "Mucha luz y lugar fresco", "Sol o semisombra",
+            "Sol de mañana, sombra de tarde"],
         3: ["Luz brillante", "Mucha luz", "Mucha luz, junto a la ventana", "Pleno sol",
             "Sol directo, 6 h o más", "Sol directo, 5–6 h"],
     },
@@ -51,18 +52,21 @@ NIVELES = {
         1: ["Cuando 3–5 cm estén secos", "Cuando 5 cm estén secos", "Con la tierra casi seca",
             "Cuando la tierra esté casi seca", "Con la mitad de la tierra seca",
             "Solo con la tierra seca", "Poco: deja secar entre riegos",
-            "Inmersión con raíces plateadas"],
+            "Inmersión con raíces plateadas", "Resiste la sequía"],
         2: ["Cuando 3 cm estén secos", "Cuando 2–3 cm estén secos", "Cuando 2 cm estén secos",
             "Deja secar la superficie", "Regular, sin encharcar", "Por el plato, sin mojar el centro",
-            "Profundo, al pie y de mañana", "Remojo cuando la base esté seca"],
+            "Profundo, al pie y de mañana", "Remojo cuando la base esté seca",
+            "Moderado, sin encharcar", "Profundo y espaciado"],
         3: ["Siempre levemente húmeda", "Siempre levemente húmedo", "Tierra levemente húmeda",
             "Tierra siempre levemente húmeda", "Tierra apenas húmeda", "Siempre húmedo",
-            "Húmedo, sin mojar el centro", "Frecuente en verano"],
+            "Húmedo, sin mojar el centro", "Frecuente en verano", "Tierra siempre húmeda",
+            "Abundante en verano"],
     },
     # temperatura: "Entre X y Y °C" se resuelve por la mínima (≤13 → 1, 14–16 → 2, ≥17 → 3)
     "temperatura": {
-        1: ["Aguanta el invierno", "Resiste frío suave", "Fresca", "Fresca, de 10 a 18 °C"],
-        2: ["Primavera a otoño"],
+        1: ["Aguanta el invierno", "Resiste frío suave", "Fresca", "Fresca, de 10 a 18 °C",
+            "Resiste heladas", "Resiste heladas fuertes"],
+        2: ["Primavera a otoño", "Heladas suaves", "Protégela de las heladas"],
         3: [],
     },
 }
@@ -83,6 +87,15 @@ def nivel(p, campo):
             return 1 if minima <= 13 else (2 if minima <= 16 else 3)
     return NIVEL_DE[campo].get(corto)
 TIPO_TEXTO = {"interior": "Planta de interior", "exterior": "Flor y exterior"}
+# Cómo se nombra cada categoría en la cabecera de la ficha (el índice usa datos["categorias"])
+CATEGORIA_TEXTO = {"interior": "Planta de interior", "flores": "Flor y planta de temporada",
+                   "aromaticas": "Aromática y huerto", "arbustos": "Arbusto o trepadora",
+                   "frutales": "Frutal", "arboles": "Árbol", "coniferas": "Conífera",
+                   "nativas": "Nativa de Chile", "suculentas": "Suculenta"}
+
+
+def categoria(p):
+    return p.get("categoria") or ("interior" if p["tipo"] == "interior" else "flores")
 
 
 def e(texto):
@@ -189,6 +202,8 @@ def cargar():
             codigos.add(p["codigo"])
         if p.get("tipo") not in datos["grupos"]:
             errores.append(f"{ref}: tipo desconocido '{p.get('tipo')}'")
+        elif categoria(p) not in datos["categorias"]:
+            errores.append(f"{ref}: categoría desconocida '{p.get('categoria')}'")
         if p.get("dificultad") not in DIFICULTAD:
             errores.append(f"{ref}: dificultad debe ser 1, 2 o 3")
         riego = p.get("riego", {})
@@ -257,6 +272,8 @@ ICONOS = {
     "alerta": '<path d="M10.3 4.2 2.6 17.5A2 2 0 0 0 4.3 20.5h15.4a2 2 0 0 0 1.7-3L13.7 4.2a2 2 0 0 0-3.4 0Z"/><path d="M12 9.5v4M12 17h.01"/>',
     "dedo": '<path d="M9 11V5.5a1.5 1.5 0 0 1 3 0V11"/><path d="M12 10.5V9a1.5 1.5 0 0 1 3 0v2"/><path d="M15 10.5a1.5 1.5 0 0 1 3 0V15a6 6 0 0 1-6 6h-.6a6 6 0 0 1-4.6-2.2L4.6 16a1.6 1.6 0 0 1 2.4-2.1L9 15.5"/>',
     "check": '<path d="M5 12.5 10 17.5 19 7"/>',
+    # globo de conversación con una hoja dentro: "pregúntanos por esta planta"
+    "consulta": '<path d="M6.5 4h11A2.5 2.5 0 0 1 20 6.5v7a2.5 2.5 0 0 1-2.5 2.5H12l-4.6 3.6V16h-.9A2.5 2.5 0 0 1 4 13.5v-7A2.5 2.5 0 0 1 6.5 4Z"/><path d="M8.8 12.8c0-2.9 2.1-4.8 6.2-5 0 3.6-2.2 5.5-5.1 5.4"/><path d="M8.8 12.8 12 9.9"/>',
     "flecha": '<path d="M5 12h14M13 6l6 6-6 6"/>',
     "atras": '<path d="M19 12H5M11 18l-6-6 6-6"/>',
     "estrella": '<path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1 5.8L12 16.8l-5.2 2.8 1-5.8L3.5 9.7l5.9-.8Z"/>',
@@ -357,6 +374,19 @@ p{margin:0}
 .alias{font-size:.95rem;color:var(--oliva-osc)}
 .lead{max-width:44ch;font-size:1.08rem;margin-top:6px}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+/* ¿Aún no la tienes? Consulta de stock por Instagram */
+.stock-box{margin-top:16px}
+.stock{display:inline-flex;align-items:center;gap:12px;max-width:100%;min-height:52px;padding:7px 16px 7px 7px;border-radius:999px;background:var(--blanco);border:1px solid rgba(126,98,121,.35);color:var(--bosque);text-decoration:none;transition:border-color .25s var(--ease),background-color .25s var(--ease)}
+.stock:hover{border-color:var(--malva-txt);background:#FBF8FA}
+.stock-ico{width:38px;height:38px;flex:none;border-radius:50%;display:grid;place-items:center;background:#EEE4EC;color:var(--malva-txt)}
+.stock-ico svg{width:23px;height:23px}
+.stock-txt{display:grid;gap:1px;line-height:1.25;min-width:0}
+.stock-txt b{font:500 .98rem/1.25 var(--f-body)}
+.stock-txt span{font-size:.86rem;color:var(--oliva-osc)}
+.stock-fl{width:17px;height:17px;flex:none;color:var(--malva-txt);transition:transform .25s var(--ease)}
+.stock:hover .stock-fl{transform:translateX(3px)}
+.stock-aviso{margin-top:8px;font-size:.86rem;color:var(--oliva-osc)}
+.stock-aviso:empty{display:none}
 .chip{display:inline-flex;align-items:center;gap:9px;min-height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--linea);background:var(--blanco);font-size:.9rem;color:var(--bosque)}
 .dots{display:inline-flex;gap:4px}
 .dots i{width:7px;height:7px;border-radius:50%;background:var(--salvia)}
@@ -451,7 +481,12 @@ p{margin:0}
 .buscador svg{position:absolute;left:16px;top:50%;width:20px;height:20px;transform:translateY(-50%);color:var(--oliva)}
 .buscador input{width:100%;min-height:52px;padding:0 16px 0 46px;border-radius:999px;border:1px solid rgba(41,45,40,.28);background:var(--blanco);font:400 1rem var(--f-body);color:var(--carbon)}
 .buscador input:focus{outline:2px solid var(--malva-osc);outline-offset:2px}
-.grupo{display:grid;gap:12px}
+.cuenta{margin-top:10px;font-size:.9rem;color:var(--oliva-osc)}
+.accesos ul{list-style:none;margin:0 0 30px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
+.accesos a{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--linea);background:var(--blanco);color:var(--bosque);font-size:.9rem;text-decoration:none;transition:border-color .2s}
+.accesos a:hover{border-color:var(--bosque)}
+.accesos span{font-size:.8rem;color:var(--malva-txt)}
+.grupo{display:grid;gap:12px;scroll-margin-top:80px}
 .grupo+.grupo{margin-top:30px}
 .lista{list-style:none;margin:0;padding:0;display:grid;gap:10px}
 @media (min-width:640px){.lista{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -482,18 +517,34 @@ JS = r"""
       }, function(){});
     });
   });
+  // ¿Aún no la tienes?: copia la consulta para pegarla en Instagram
+  Array.prototype.forEach.call(d.querySelectorAll('[data-stock]'), function(a){
+    a.addEventListener('click', function(){
+      var av = a.parentNode.querySelector('[data-stock-aviso]');
+      if (!(navigator.clipboard && window.isSecureContext)) return;
+      navigator.clipboard.writeText(a.getAttribute('data-stock')).then(function(){
+        if (av) av.textContent = 'Copiamos tu consulta: pégala en el chat de Instagram.';
+      }, function(){});
+    });
+  });
   // Buscador del índice
   var q = d.querySelector('[data-buscar]');
   if (q) {
     var items = Array.prototype.slice.call(d.querySelectorAll('[data-q]'));
     var grupos = Array.prototype.slice.call(d.querySelectorAll('[data-grupo]'));
     var vacio = d.querySelector('[data-vacio]');
+    var accesos = d.querySelector('[data-accesos]');
     var norm = function(s){ return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
     var filtrar = function(){
-      var t = norm(q.value.trim()), n = 0;
-      items.forEach(function(li){ var ok = !t || li.getAttribute('data-q').indexOf(t) > -1; li.hidden = !ok; if (ok) n++; });
+      var ps = norm(q.value.trim()).split(/\s+/).filter(Boolean), n = 0;
+      items.forEach(function(li){
+        var h = li.getAttribute('data-q');
+        var ok = ps.every(function(w){ return h.indexOf(w) > -1; });
+        li.hidden = !ok; if (ok) n++;
+      });
       grupos.forEach(function(g){ g.hidden = !g.querySelector('[data-q]:not([hidden])'); });
       if (vacio) vacio.hidden = n > 0;
+      if (accesos) accesos.hidden = ps.length > 0;
     };
     q.addEventListener('input', filtrar);
     filtrar();
@@ -592,6 +643,38 @@ def cierre(datos, nombre_planta=None, titulo=None, texto=None, compartir=True):
 """
 
 
+def alias_visibles(p):
+    """Los alias sirven al buscador; en la ficha se muestran solo los que aportan:
+    fuera los que repiten el nombre botánico o una variedad ya nombrada abajo."""
+    nom, bot, var = normalizar(p["nombre"]), normalizar(p["botanico"]), normalizar(p.get("variedades", ""))
+
+    def en(t, texto):
+        return bool(t) and re.search(r"(?<![a-z0-9])" + re.escape(t) + r"(?![a-z0-9])", texto) is not None
+
+    vistos, salida = set(), []
+    for a in p.get("alias", []):
+        n = normalizar(a)
+        resto = n.split(" ", 1)[1] if " " in n else ""
+        if (n in vistos or n == nom or en(n, bot) or en(n, var) or en(resto, var)
+                or n.startswith(nom + " ")):
+            continue
+        vistos.add(n)
+        salida.append(a)
+    return salida
+
+
+def boton_stock(datos, nombre):
+    """Botón para quien aún no tiene la planta: abre los mensajes de Instagram y copia
+    una consulta lista para pegar (Instagram no permite dejar el texto escrito)."""
+    ig = datos["contacto"]["instagram"]
+    msj = f"Hola, Jardín Malva. ¿Tienen {nombre} en stock?"
+    return (f'<div class="stock-box"><a class="stock" href="https://ig.me/m/{e(ig)}" target="_blank" rel="noopener" '
+            f'data-stock="{e(msj)}"><span class="stock-ico">{icono("consulta")}</span>'
+            f'<span class="stock-txt"><b>¿Aún no la tienes?</b><span>Consulta el stock por Instagram</span></span>'
+            f'{icono("flecha", "stock-fl")}</a>'
+            f'<p class="stock-aviso" data-stock-aviso aria-live="polite"></p></div>')
+
+
 def mascotas_corto(m):
     if m is None:
         return None
@@ -609,10 +692,11 @@ def pagina_planta(datos, p, v_css, v_js):
     titulo = f"Cómo cuidar tu {nombre} · Jardín Malva"
     desc = f"Cuidados de {nombre} ({p['botanico']}): luz, riego, abono y señales de alerta. {p['resumen']}"
     m = p.get("mascotas")
-    tipo_txt = TIPO_TEXTO[p["tipo"]]
+    tipo_txt = CATEGORIA_TEXTO[categoria(p)]
     alias = ""
-    if p.get("alias"):
-        alias = f'\n    <p class="alias">Otros nombres: {e(", ".join(p["alias"]))}</p>'
+    visibles = alias_visibles(p)
+    if visibles:
+        alias = f'\n    <p class="alias">Otros nombres: {e(", ".join(visibles))}</p>'
     dots = "".join(f'<i class="on"></i>' if i < p["dificultad"] else "<i></i>" for i in range(3))
 
     def tile_nivel(ic, campo, lb, que):
@@ -697,6 +781,7 @@ def pagina_planta(datos, p, v_css, v_js):
     <p class="bot">{e(p['botanico'])}</p>{alias}
     <p class="lead">{e(p['resumen'])}</p>
     <div class="chips"><span class="chip"><span class="dots" aria-hidden="true">{dots}</span>{e(DIFICULTAD[p['dificultad']])}</span></div>
+    {boton_stock(datos, nombre)}
   </div>
 </section>
 
@@ -767,19 +852,20 @@ def pagina_planta(datos, p, v_css, v_js):
 def pagina_indice(datos, v_css, v_js):
     titulo = "Cuidados de tus plantas · Jardín Malva"
     desc = "Fichas de cuidado de las plantas de Jardín Malva: luz, riego, abono y si son seguras para tus mascotas."
-    grupos = []
-    for tipo, nombre_grupo in datos["grupos"].items():
-        plantas = sorted((p for p in datos["plantas"] if p["tipo"] == tipo), key=lambda p: normalizar(p["nombre"]))
+    grupos, accesos = [], []
+    for cat, nombre_grupo in datos["categorias"].items():
+        plantas = sorted((p for p in datos["plantas"] if categoria(p) == cat), key=lambda p: normalizar(p["nombre"]))
         if not plantas:
             continue
+        accesos.append(f'<li><a href="#cat-{cat}">{e(nombre_grupo)} <span>{len(plantas)}</span></a></li>')
         items = []
         for p in plantas:
-            q = normalizar(" ".join([p["nombre"], p["botanico"], *p.get("alias", [])]))
+            q = normalizar(" ".join([p["nombre"], p["botanico"], *p.get("alias", []), p.get("variedades", "")]))
             items.append(
                 f'      <li data-q="{e(q)}"><a href="/cuidados/{e(p["slug"])}">'
                 f'<span class="n">{e(p["nombre"])}</span><span class="b">{e(p["botanico"])}</span>'
                 f'<span class="r">{e(p["luz"]["corto"])} · {e(DIFICULTAD[p["dificultad"]])}</span>{icono("flecha")}</a></li>')
-        grupos.append(f"""  <div class="grupo" data-grupo>
+        grupos.append(f"""  <div class="grupo" data-grupo id="cat-{cat}">
     <h2>{e(nombre_grupo)}</h2>
     <ul class="lista">
 {chr(10).join(items)}
@@ -792,12 +878,14 @@ def pagina_indice(datos, v_css, v_js):
   <div class="wrap">
     <p class="eyebrow">Fichas de cuidado</p>
     <h1 id="t-indice">Cuidados de tus plantas</h1>
-    <p class="lead">Escanea el código de tu tarjeta o busca tu planta aquí. Luz, riego y todo lo que necesita para crecer contigo.</p>
+    <p class="lead">Busca tu planta por su nombre: luz, riego y todo lo que necesita para crecer contigo.</p>
     <label class="buscador"><span class="sr">Buscar planta</span>{icono("buscar")}<input type="search" placeholder="Busca tu planta: monstera, lavanda…" autocomplete="off" data-buscar></label>
+    <p class="cuenta">{len(datos["plantas"])} fichas. Busca por nombre común, científico o variedad.</p>
   </div>
 </section>
 <section class="sec">
   <div class="wrap">
+    <nav class="accesos" aria-label="Categorías" data-accesos><ul>{"".join(accesos)}</ul></nav>
 {chr(10).join(grupos)}
     <p class="vacio" data-vacio hidden>No encontramos esa planta. Escríbenos y te ayudamos con sus cuidados.</p>
   </div>
