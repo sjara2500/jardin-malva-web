@@ -487,6 +487,25 @@ p{margin:0}
 .buscador input{width:100%;min-height:52px;padding:0 16px 0 46px;border-radius:999px;border:1px solid rgba(41,45,40,.28);background:var(--blanco);font:400 1rem var(--f-body);color:var(--carbon)}
 .buscador input:focus{outline:2px solid var(--malva-osc);outline-offset:2px}
 .cuenta{margin-top:10px;font-size:.9rem;color:var(--oliva-osc)}
+/* Filtros del índice: nivel de cuidado y no tóxicas para mascotas */
+.filtros{display:flex;flex-wrap:wrap;gap:14px 26px;margin-top:18px;max-width:760px}
+.f-grupo{margin:0;padding:0;border:0;min-width:0}
+.f-grupo legend{padding:0;margin-bottom:8px;font:500 .7rem/1.3 var(--f-body);letter-spacing:.17em;text-transform:uppercase;color:var(--malva-txt)}
+.f-chips{display:flex;flex-wrap:wrap;gap:8px}
+.f-chip{position:relative;display:inline-flex;cursor:pointer}
+.f-chip input{position:absolute;opacity:0;width:1px;height:1px;margin:0;pointer-events:none}
+.f-chip>span{display:inline-flex;align-items:center;gap:8px;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid rgba(41,45,40,.28);background:var(--blanco);color:var(--bosque);font-size:.9rem;transition:background-color .2s,border-color .2s,color .2s}
+.f-chip:hover>span{border-color:var(--bosque)}
+.f-chip input:checked+span{background:var(--bosque);border-color:var(--bosque);color:var(--crema)}
+.f-chip input:focus-visible+span{outline:2px solid var(--malva-osc);outline-offset:2px}
+.f-chip .dots i{background:rgba(38,61,50,.2)}
+.f-chip .dots i.on{background:var(--bosque)}
+.f-chip input:checked+span .dots i{background:rgba(245,240,230,.35)}
+.f-chip input:checked+span .dots i.on{background:var(--crema)}
+.f-pet svg{width:18px;height:18px;flex:none;color:#2F5A2E}
+.f-pet input:checked+span{background:#E3EFDE;border-color:#2F5A2E;color:#2F5A2E}
+.f-pet input:checked+span::after{content:"";width:6px;height:11px;margin:-3px 2px 0 2px;border:solid #2F5A2E;border-width:0 2px 2px 0;transform:rotate(45deg)}
+.lista .r .ok{color:#2F5A2E}
 .accesos ul{list-style:none;margin:0 0 30px;padding:0;display:flex;flex-wrap:wrap;gap:8px}
 .accesos a{display:inline-flex;align-items:center;gap:7px;min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--linea);background:var(--blanco);color:var(--bosque);font-size:.9rem;text-decoration:none;transition:border-color .2s}
 .accesos a:hover{border-color:var(--bosque)}
@@ -532,25 +551,62 @@ JS = r"""
       }, function(){});
     });
   });
-  // Buscador del índice
+  // Buscador y filtros del índice
   var q = d.querySelector('[data-buscar]');
   if (q) {
     var items = Array.prototype.slice.call(d.querySelectorAll('[data-q]'));
     var grupos = Array.prototype.slice.call(d.querySelectorAll('[data-grupo]'));
     var vacio = d.querySelector('[data-vacio]');
     var accesos = d.querySelector('[data-accesos]');
-    var norm = function(s){ return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); };
+    var filtros = d.querySelector('[data-filtros]');
+    var cuenta = d.querySelector('[data-cuenta]');
+    var total = cuenta ? cuenta.getAttribute('data-total') : '';
+    var textoCuenta = cuenta ? cuenta.textContent : '';
+    var NIVEL = {'1': 'facil', '2': 'medio', '3': 'atencion'};
+    var norm = function(s){ return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); };
+    var cuidado = function(){ var r = d.querySelector('input[name="cuidado"]:checked'); return r ? r.value : ''; };
+    var soloOk = function(){ var c = d.querySelector('input[name="mascotas"]'); return !!(c && c.checked); };
     var filtrar = function(){
-      var ps = norm(q.value.trim()).split(/\s+/).filter(Boolean), n = 0;
+      var ps = norm(q.value.trim()).split(/\s+/).filter(Boolean), dif = cuidado(), pet = soloOk(), n = 0;
       items.forEach(function(li){
         var h = li.getAttribute('data-q');
-        var ok = ps.every(function(w){ return h.indexOf(w) > -1; });
+        var ok = ps.every(function(w){ return h.indexOf(w) > -1; })
+          && (!dif || li.getAttribute('data-dif') === dif)
+          && (!pet || li.getAttribute('data-pet') === 'ok');
         li.hidden = !ok; if (ok) n++;
       });
-      grupos.forEach(function(g){ g.hidden = !g.querySelector('[data-q]:not([hidden])'); });
-      if (vacio) vacio.hidden = n > 0;
+      grupos.forEach(function(g){
+        var vis = g.querySelectorAll('[data-q]:not([hidden])').length;
+        g.hidden = !vis;
+        var acc = accesos && accesos.querySelector('[data-acceso="' + g.id + '"]');
+        if (acc) { acc.hidden = !vis; acc.querySelector('[data-n]').textContent = vis; }
+      });
+      var activo = ps.length > 0 || dif || pet;
+      if (vacio) {
+        vacio.hidden = n > 0;
+        vacio.querySelector('[data-vacio-busca]').hidden = !ps.length;
+        vacio.querySelector('[data-vacio-filtro]').hidden = !!ps.length;
+      }
       if (accesos) accesos.hidden = ps.length > 0;
+      if (cuenta) cuenta.textContent = activo ? (n === 1 ? 'Mostrando 1 de ' : 'Mostrando ' + n + ' de ') + total + ' fichas.' : textoCuenta;
     };
+    var guardar = function(){
+      if (!window.history || !history.replaceState) return;
+      var u = new URL(location.href), dif = cuidado();
+      if (dif) u.searchParams.set('cuidado', NIVEL[dif]); else u.searchParams.delete('cuidado');
+      if (soloOk()) u.searchParams.set('mascotas', 'no-toxicas'); else u.searchParams.delete('mascotas');
+      history.replaceState(null, '', u.pathname + u.search + u.hash);
+    };
+    if (filtros) {
+      filtros.hidden = false;
+      var params = new URLSearchParams(location.search);
+      var pedido = params.get('cuidado');
+      Object.keys(NIVEL).forEach(function(k){
+        if (NIVEL[k] === pedido) { var r = filtros.querySelector('input[name="cuidado"][value="' + k + '"]'); if (r) r.checked = true; }
+      });
+      if (params.get('mascotas') === 'no-toxicas') { var c = filtros.querySelector('input[name="mascotas"]'); if (c) c.checked = true; }
+      filtros.addEventListener('change', function(){ filtrar(); guardar(); });
+    }
     q.addEventListener('input', filtrar);
     filtrar();
   }
@@ -869,20 +925,23 @@ def pagina_planta(datos, p, v_css, v_js):
 
 def pagina_indice(datos, v_css, v_js):
     titulo = "Cuidados de tus plantas · Jardín Malva"
-    desc = "Fichas de cuidado de las plantas de Jardín Malva: luz, riego, abono y si son seguras para tus mascotas."
+    desc = "Fichas de cuidado de las plantas de Jardín Malva: luz, riego, abono y su toxicidad para mascotas."
     grupos, accesos = [], []
     for cat, nombre_grupo in datos["categorias"].items():
         plantas = sorted((p for p in datos["plantas"] if categoria(p) == cat), key=lambda p: normalizar(p["nombre"]))
         if not plantas:
             continue
-        accesos.append(f'<li><a href="#cat-{cat}">{e(nombre_grupo)} <span>{len(plantas)}</span></a></li>')
+        accesos.append(f'<li data-acceso="cat-{cat}"><a href="#cat-{cat}">{e(nombre_grupo)} <span data-n>{len(plantas)}</span></a></li>')
         items = []
         for p in plantas:
             q = normalizar(" ".join([p["nombre"], p["botanico"], *p.get("alias", []), p.get("variedades", "")]))
+            m = p.get("mascotas") or {}
+            pet = {True: "tox", False: "ok"}.get(m.get("toxica"), "sd")
+            marca_pet = ' · <span class="ok">No tóxica para mascotas</span>' if pet == "ok" else ""
             items.append(
-                f'      <li data-q="{e(q)}"><a href="/cuidados/{e(p["slug"])}">'
+                f'      <li data-q="{e(q)}" data-dif="{p["dificultad"]}" data-pet="{pet}"><a href="/cuidados/{e(p["slug"])}">'
                 f'<span class="n">{e(p["nombre"])}</span><span class="b">{e(p["botanico"])}</span>'
-                f'<span class="r">{e(p["luz"]["corto"])} · {e(DIFICULTAD[p["dificultad"]])}</span>{icono("flecha")}</a></li>')
+                f'<span class="r">{e(p["luz"]["corto"])} · {e(DIFICULTAD[p["dificultad"]])}{marca_pet}</span>{icono("flecha")}</a></li>')
         grupos.append(f"""  <div class="grupo" data-grupo id="cat-{cat}">
     <h2>{e(nombre_grupo)}</h2>
     <ul class="lista">
@@ -899,14 +958,31 @@ def pagina_indice(datos, v_css, v_js):
     <h1 id="t-indice">Cuidados de tus plantas</h1>
     <p class="lead">Busca tu planta por su nombre: luz, riego y todo lo que necesita para crecer contigo.</p>
     <label class="buscador"><span class="sr">Buscar planta</span>{icono("buscar")}<input type="search" placeholder="Busca tu planta: monstera, lavanda…" autocomplete="off" data-buscar></label>
-    <p class="cuenta">{len(datos["plantas"])} fichas. Busca por nombre común, científico o variedad.</p>
+    <div class="filtros" data-filtros hidden>
+      <fieldset class="f-grupo">
+        <legend>Cuidado</legend>
+        <div class="f-chips">
+          <label class="f-chip"><input type="radio" name="cuidado" value="" checked><span>Todos</span></label>
+          <label class="f-chip"><input type="radio" name="cuidado" value="1"><span><span class="dots" aria-hidden="true"><i class="on"></i><i></i><i></i></span>Fácil</span></label>
+          <label class="f-chip"><input type="radio" name="cuidado" value="2"><span><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span>Medio</span></label>
+          <label class="f-chip"><input type="radio" name="cuidado" value="3"><span><span class="dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span>Pide atención</span></label>
+        </div>
+      </fieldset>
+      <fieldset class="f-grupo">
+        <legend>Mascotas</legend>
+        <div class="f-chips">
+          <label class="f-chip f-pet"><input type="checkbox" name="mascotas" value="no-toxicas"><span>{icono("pata")}Solo no tóxicas para perros y gatos</span></label>
+        </div>
+      </fieldset>
+    </div>
+    <p class="cuenta" data-cuenta aria-live="polite" data-total="{len(datos["plantas"])}">{len(datos["plantas"])} fichas. Busca por nombre común, científico o variedad.</p>
   </div>
 </section>
 <section class="sec">
   <div class="wrap">
     <nav class="accesos" aria-label="Categorías" data-accesos><ul>{"".join(accesos)}</ul></nav>
 {chr(10).join(grupos)}
-    <p class="vacio" data-vacio hidden>No encontramos esa planta. Escríbenos y te ayudamos con sus cuidados.</p>
+    <p class="vacio" data-vacio hidden><span data-vacio-busca>No encontramos esa planta. Escríbenos y te ayudamos con sus cuidados.</span><span data-vacio-filtro hidden>Ninguna planta cumple con esos filtros. Prueba quitando alguno.</span></p>
   </div>
 </section>
 </main>

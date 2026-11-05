@@ -55,6 +55,13 @@ funcionando para las que ya se imprimieron, pero no se hacen para las fichas nue
 (p. ej. buscar "Lapins" lleva a Cerezo). En pantalla, "Otros nombres" solo muestra los alias
 que no repiten el nombre botánico ni una variedad ya nombrada.
 
+En el índice hay dos filtros, que se combinan con el buscador: **cuidado** (Fácil, Medio o
+Pide atención, según `dificultad` 1, 2 o 3) y **solo no tóxicas para perros y gatos** (las
+fichas con `"toxica": false`; las "sin dato" no entran). La dirección guarda los filtros para
+compartirla, p. ej. `jardinmalva.cl/cuidados/?mascotas=no-toxicas` o
+`?cuidado=facil&mascotas=no-toxicas`. Sin JavaScript, los filtros no se muestran y la lista
+completa sigue visible.
+
 El índice se ordena por categorías (`categorias` en `datos/cuidados.json`: interior, flores,
 aromáticas, arbustos, frutales, árboles, coníferas, nativas y suculentas). Cada planta lleva
 `"categoria"`; si no la tiene, va a interior o a flores según su `tipo`.
