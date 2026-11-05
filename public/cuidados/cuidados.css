@@ -46,6 +46,11 @@ p{margin:0}
 .top-link{display:inline-flex;align-items:center;gap:6px;font-size:.92rem;color:var(--oliva-osc);text-decoration:none;white-space:nowrap}
 .top-link svg{width:18px;height:18px}
 .top-link:hover{color:var(--bosque)}
+.top-link .emb{width:20px;height:27px;flex:none}
+/* Índice: logo del Herbario (horizontal en móvil para no bajar el buscador; vertical a la derecha en escritorio) */
+.marca{display:block;margin:0 0 6px}
+.marca img{display:block;width:auto;height:68px}
+@media (min-width:820px){.hero-indice .wrap{grid-template-columns:minmax(0,1fr) auto;column-gap:clamp(40px,6vw,72px);align-items:center}.hero-indice .wrap>*{grid-column:1}.hero-indice .marca{grid-column:2;grid-row:1/span 5;margin:0}.hero-indice .marca img{width:240px;height:auto}.hero-indice .rama{display:none}.hero-indice h1{max-width:none}}
 @media (max-width:370px){.top .brand span{display:none}}
 .foot{background:var(--bosque);color:var(--salvia);padding:36px 0 44px;font-size:.92rem}
 .foot .wrap{display:grid;gap:12px;justify-items:start}

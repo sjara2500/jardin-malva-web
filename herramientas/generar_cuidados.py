@@ -356,6 +356,11 @@ p{margin:0}
 .top-link{display:inline-flex;align-items:center;gap:6px;font-size:.92rem;color:var(--oliva-osc);text-decoration:none;white-space:nowrap}
 .top-link svg{width:18px;height:18px}
 .top-link:hover{color:var(--bosque)}
+.top-link .emb{width:20px;height:27px;flex:none}
+/* Índice: logo del Herbario (horizontal en móvil para no bajar el buscador; vertical a la derecha en escritorio) */
+.marca{display:block;margin:0 0 6px}
+.marca img{display:block;width:auto;height:68px}
+@media (min-width:820px){.hero-indice .wrap{grid-template-columns:minmax(0,1fr) auto;column-gap:clamp(40px,6vw,72px);align-items:center}.hero-indice .wrap>*{grid-column:1}.hero-indice .marca{grid-column:2;grid-row:1/span 5;margin:0}.hero-indice .marca img{width:240px;height:auto}.hero-indice .rama{display:none}.hero-indice h1{max-width:none}}
 @media (max-width:370px){.top .brand span{display:none}}
 .foot{background:var(--bosque);color:var(--salvia);padding:36px 0 44px;font-size:.92rem}
 .foot .wrap{display:grid;gap:12px;justify-items:start}
@@ -588,8 +593,17 @@ def cabeza(datos, titulo, descripcion, ruta, v_css):
 """
 
 
+# Logo del Herbario (submarca). Los SVG los genera herramientas/generar_logo_herbario.py:
+# si cambia el nombre de la guía, se regeneran y estas páginas lo toman solas.
+EMBLEMA = '<img class="emb" src="/assets/herbario-emblema.svg" width="20" height="27" alt="">'
+LOGO_HERBARIO = ('<picture class="marca">'
+                 '<source media="(min-width:820px)" srcset="/assets/herbario-logo.svg" width="404" height="366">'
+                 '<img src="/assets/herbario-horizontal.svg" width="658" height="266" alt="Herbario · Jardín Malva">'
+                 '</picture>')
+
+
 def cabecera(enlace_indice=True):
-    derecha = (f'<a class="top-link" href="/cuidados/">{icono("hoja")}Todas las fichas</a>'
+    derecha = (f'<a class="top-link" href="/cuidados/">{EMBLEMA}Todas las fichas</a>'
                if enlace_indice else "")
     return f"""<header class="top">
   <div class="wrap">
@@ -877,9 +891,10 @@ def pagina_indice(datos, v_css, v_js):
   </div>""")
     cuerpo = f"""{cabecera(enlace_indice=False)}
 <main>
-<section class="hero" aria-labelledby="t-indice">
+<section class="hero hero-indice" aria-labelledby="t-indice">
   {RAMA}
   <div class="wrap">
+    {LOGO_HERBARIO}
     <p class="eyebrow">Fichas de cuidado</p>
     <h1 id="t-indice">Cuidados de tus plantas</h1>
     <p class="lead">Busca tu planta por su nombre: luz, riego y todo lo que necesita para crecer contigo.</p>
@@ -1048,7 +1063,7 @@ def pagina_mascotas(datos, v_css, v_js):
 <header class="top">
   <div class="wrap">
     <a class="brand" href="/" aria-label="Jardín Malva, inicio"><img src="/assets/logo-128.webp" width="38" height="38" alt=""><span>Jardín Malva</span></a>
-    <a class="top-link" href="/cuidados/">{icono("hoja")}Fichas de cuidado</a>
+    <a class="top-link" href="/cuidados/">{EMBLEMA}Fichas de cuidado</a>
   </div>
 </header>
 <main>
